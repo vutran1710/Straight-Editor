@@ -12,6 +12,7 @@
 (load "~/.emacs.d/projectile-init")
 (load "~/.emacs.d/magit-init")
 (load "~/.emacs.d/helm-projectile-init")
+(load "~/.emacs.d/expand-region-init")
 
 (load "~/.emacs.d/keybindings")
 
