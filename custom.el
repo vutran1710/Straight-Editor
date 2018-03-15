@@ -13,6 +13,10 @@
 (load "~/.emacs.d/magit-init")
 (load "~/.emacs.d/helm-projectile-init")
 (load "~/.emacs.d/expand-region-init")
+(load "~/.emacs.d/webmode-init")
+(load "~/.emacs.d/ace-window-init")
+
+(load "~/.emacs.d/user-defined")
 
 (load "~/.emacs.d/keybindings")
 

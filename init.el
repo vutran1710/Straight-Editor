@@ -13,7 +13,7 @@
  '(custom-enabled-themes (quote (misterioso)))
  '(package-selected-packages
 	 (quote
-		(expand-region helm-ag helm-projectile magit projectile swiper-helm avy))))
+		(ace-window web-mode expand-region helm-ag helm-projectile magit projectile swiper-helm avy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
