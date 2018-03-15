@@ -1,7 +1,6 @@
 (global-set-key (kbd "<f4>") 'split-window-horizontally)
 (global-set-key (kbd "<f5>") 'split-window-vertically)
 (global-set-key (kbd "<f6>") 'package-install)
-(global-set-key (kbd "<f7>") 'recentf-open-files)
 (global-set-key (kbd "<f9>") 'eval-buffer)
 
 (global-set-key (kbd "C-c C-k") 'copy-line)
