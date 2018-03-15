@@ -2,7 +2,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-(fringe-mode '(8 . 0))
+(fringe-mode '(4 . 0))
 (recentf-mode 1)
 (electric-pair-mode 1)
 (global-linum-mode 1)
