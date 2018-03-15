@@ -26,6 +26,7 @@
 (load "~/.emacs.d/yaml-mode-init")
 (load "~/.emacs.d/restclient-init")
 (load "~/.emacs.d/indent-guide-init")
+(load "~/.emacs.d/diff-hl-init")
 
 (load "~/.emacs.d/user-defined")
 

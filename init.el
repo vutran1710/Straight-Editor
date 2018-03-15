@@ -16,7 +16,7 @@
  '(global-company-mode t)
  '(package-selected-packages
 	 (quote
-		(indent-guide helm-themes emmet-mode know-your-http-well lenlen-theme company-tern company company-jedi company-restclient company-web ag restclient restclient-test yaml-mode elpy ace-window web-mode expand-region helm-ag helm-projectile magit projectile swiper-helm avy))))
+		(diff-hl indent-guide helm-themes emmet-mode know-your-http-well lenlen-theme company-tern company company-jedi company-restclient company-web ag restclient restclient-test yaml-mode elpy ace-window web-mode expand-region helm-ag helm-projectile magit projectile swiper-helm avy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
