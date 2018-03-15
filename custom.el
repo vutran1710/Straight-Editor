@@ -14,6 +14,8 @@
 (load "~/.emacs.d/helm-init")
 (load "~/.emacs.d/avy-init")
 (load "~/.emacs.d/ag-init")
+(load "~/.emacs.d/company-init")
+(load "~/.emacs.d/know-http-init")
 (load "~/.emacs.d/projectile-init")
 (load "~/.emacs.d/magit-init")
 (load "~/.emacs.d/helm-projectile-init")

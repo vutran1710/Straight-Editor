@@ -1,4 +1,5 @@
 (require 'web-mode)
+(require 'emmet-mode)
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -25,6 +26,8 @@
 
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
-;; (setq web-mode-content-types-alist
-;;			'(("ts"  . "\\.ts[x]?\\'")
-;;				("jsx" . "\\.js[x]?\\'")))
+
+;; Emmet tweak
+(setq emmet-expand-jsx-className? t)
+(setq emmet-self-closing-tag-style " /")
+(setq emmet-move-cursor-between-quotes t)
