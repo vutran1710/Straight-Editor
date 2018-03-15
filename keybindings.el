@@ -14,3 +14,6 @@
 (global-set-key (kbd "M-v") 'backward-kill-word)
 
 (global-set-key (kbd "C-c h") 'recenter)
+
+(global-set-key (kbd "C-c b") 'switch-to-previous-buffer)
+(global-set-key (kbd "C-x k") 'volatile-kill-buffer)
