@@ -30,6 +30,8 @@
 (load "~/.emacs.d/diff-hl-init")
 (load "~/.emacs.d/dashboard-init")
 (load "~/.emacs.d/yas-init")
+(load "~/.emacs.d/aggressive-indent-init")
+(load "~/.emacs.d/multi-cursor-init")
 
 (load "~/.emacs.d/user-defined")
 
