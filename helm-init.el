@@ -9,6 +9,7 @@
 (global-set-key (kbd "C-s") 'swiper-helm)
 (global-set-key (kbd "C-c r") 'helm-recentf)
 (global-set-key (kbd "C-c t") 'helm-themes)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
 
 
 (provide 'may-helm)

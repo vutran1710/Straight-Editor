@@ -15,6 +15,7 @@
 
 (setq-default fringes-outside-margins t)
 (setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
 (setq-default linum-format " %3d  ")
 (setq-default line-spacing 0)
 
