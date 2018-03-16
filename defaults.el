@@ -12,7 +12,7 @@
 (global-linum-mode 1)
 (show-paren-mode 1)
 (electric-indent-mode 1)
-
+(delete-selection-mode 1)
 
 (setq auto-save-default nil)
 (setq make-backup-files nil)

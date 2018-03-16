@@ -34,6 +34,7 @@
 (load "~/.emacs.d/multi-cursor-init")
 (load "~/.emacs.d/js2-mode-init")
 (load "~/.emacs.d/undo-tree-init")
+(load "~/.emacs.d/keychord-init")
 
 (load "~/.emacs.d/user-defined")
 
