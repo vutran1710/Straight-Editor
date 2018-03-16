@@ -1,3 +1,4 @@
+;; Set keys
 (global-set-key (kbd "<f4>") 'split-window-horizontally)
 (global-set-key (kbd "<f5>") 'split-window-vertically)
 (global-set-key (kbd "<f6>") 'package-install)
@@ -15,4 +16,7 @@
 (global-set-key (kbd "C-c h") 'recenter)
 
 (global-set-key (kbd "C-c b") 'switch-to-previous-buffer)
-(global-set-key (kbd "C-x k") 'volatile-kill-buffer)
+
+
+;; Unset keys
+(global-unset-key (kbd "C-x k"))
