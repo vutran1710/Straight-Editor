@@ -4,3 +4,5 @@ auto-save-list/
 recentf
 network-security.data
 *bookmarks*
+.mc-lists.el
+eshell/
