@@ -1,5 +1,8 @@
 (require 'company)
 (require 'company-web-html)
+(require 'company-tern)
+(require 'company-jedi)
+(require 'company-restclient)
 
 (add-hook 'after-init-hook 'global-company-mode)
 
