@@ -11,6 +11,7 @@
 (setq mac-command-modifier 'control)
 
 (load "~/.emacs.d/defaults")
+
 (load "~/.emacs.d/helm-init")
 (load "~/.emacs.d/avy-init")
 (load "~/.emacs.d/ag-init")
@@ -28,6 +29,7 @@
 (load "~/.emacs.d/indent-guide-init")
 (load "~/.emacs.d/diff-hl-init")
 (load "~/.emacs.d/dashboard-init")
+(load "~/.emacs.d/yas-init")
 
 (load "~/.emacs.d/user-defined")
 

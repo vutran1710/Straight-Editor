@@ -31,3 +31,5 @@
 (setq emmet-expand-jsx-className? t)
 (setq emmet-self-closing-tag-style " /")
 (setq emmet-move-cursor-between-quotes t)
+
+(global-set-key (kbd "C-q") 'emmet-expand-yas)
