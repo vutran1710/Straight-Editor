@@ -80,7 +80,7 @@ static char *gnus-pointer[] = {
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
    (quote
-    (undo-tree tern js2-refactor js2-mode multiple-cursors monokai-theme monokai-alt-theme alect-themes aggressive-indent yasnippet darktooth-theme paper-theme panda-theme dashboard page-break-lines diff-hl indent-guide helm-themes emmet-mode know-your-http-well lenlen-theme company-tern company company-jedi company-restclient company-web ag restclient restclient-test yaml-mode elpy ace-window web-mode expand-region helm-ag helm-projectile magit projectile swiper-helm avy)))
+    (exec-path-from-shell undo-tree tern js2-refactor js2-mode multiple-cursors monokai-theme monokai-alt-theme alect-themes aggressive-indent yasnippet darktooth-theme paper-theme panda-theme dashboard page-break-lines diff-hl indent-guide helm-themes emmet-mode know-your-http-well lenlen-theme company-tern company company-jedi company-restclient company-web ag restclient restclient-test yaml-mode elpy ace-window web-mode expand-region helm-ag helm-projectile magit projectile swiper-helm avy)))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)

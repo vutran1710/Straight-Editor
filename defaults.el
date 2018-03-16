@@ -1,3 +1,7 @@
+(require 'exec-path-from-shell)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -24,10 +28,10 @@
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
 (setq electric-pair-pairs '(
-														(?\' . ?\')
-														(?\` . ?\`)
-														(?\{ . ?\})
-														) )
+                            (?\' . ?\')
+                            (?\` . ?\`)
+                            (?\{ . ?\})
+                            ) )
 
 (set-face-attribute 'default nil :font "Overpass Mono 12")
 (set-frame-font "Overpass Mono 12" nil t)
