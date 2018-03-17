@@ -1,3 +1,8 @@
+;; Unset keys
+(global-unset-key (kbd "C-x k"))
+(global-unset-key (kbd "M-;"))
+
+
 ;; Set keys
 (global-set-key (kbd "<f4>") 'split-window-horizontally)
 (global-set-key (kbd "<f5>") 'split-window-vertically)
@@ -12,11 +17,8 @@
 (global-set-key (kbd "M-n") 'forward-paragraph)
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-v") 'backward-kill-word)
+(global-set-key (kbd "M-;") 'comment-line)
 
 (global-set-key (kbd "C-c h") 'recenter)
 
 (global-set-key (kbd "C-c b") 'switch-to-previous-buffer)
-
-
-;; Unset keys
-(global-unset-key (kbd "C-x k"))

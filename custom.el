@@ -35,9 +35,9 @@
 (load "~/.emacs.d/pkg/js2-mode-init")
 (load "~/.emacs.d/pkg/undo-tree-init")
 (load "~/.emacs.d/pkg/keychord-init")
+(load "~/.emacs.d/pkg/themes-init")
 
 (load "~/.emacs.d/user-defined")
-
 (load "~/.emacs.d/keybindings")
 
 (provide 'custom)

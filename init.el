@@ -13,10 +13,10 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(compilation-message-face (quote default))
- '(custom-enabled-themes (quote (darktooth)))
+ '(custom-enabled-themes (quote (doom-vibrant)))
  '(custom-safe-themes
    (quote
-    ("a4d03266add9a1c8f12b5309612cbbf96e1291773c7bc4fb685bfdaf83b721c6" default)))
+    ("4e21fb654406f11ab2a628c47c1cbe53bab645d32f2c807ee2295436f09103c6" "a4d03266add9a1c8f12b5309612cbbf96e1291773c7bc4fb685bfdaf83b721c6" default)))
  '(diary-entry-marker (quote font-lock-variable-name-face))
  '(emms-mode-line-icon-image-cache
    (quote
@@ -77,10 +77,13 @@ static char *gnus-pointer[] = {
      ("#A75B00" . 70)
      ("#F309DF" . 85)
      ("#3C3D37" . 100))))
+ '(jdee-db-active-breakpoint-face-colors (cons "#1c1f24" "#51afef"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#1c1f24" "#7bc275"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#1c1f24" "#484854"))
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
    (quote
-    (key-chord exec-path-from-shell undo-tree tern js2-refactor js2-mode multiple-cursors monokai-theme monokai-alt-theme alect-themes aggressive-indent yasnippet darktooth-theme paper-theme panda-theme dashboard page-break-lines diff-hl indent-guide helm-themes emmet-mode know-your-http-well lenlen-theme company-tern company company-jedi company-restclient company-web ag restclient restclient-test yaml-mode elpy ace-window web-mode expand-region helm-ag helm-projectile magit projectile swiper-helm avy)))
+    (tango-plus-theme tango-2-theme doom-themes key-chord exec-path-from-shell undo-tree tern js2-refactor js2-mode multiple-cursors monokai-theme monokai-alt-theme alect-themes aggressive-indent yasnippet darktooth-theme paper-theme panda-theme dashboard page-break-lines diff-hl indent-guide helm-themes emmet-mode know-your-http-well lenlen-theme company-tern company company-jedi company-restclient company-web ag restclient restclient-test yaml-mode elpy ace-window web-mode expand-region helm-ag helm-projectile magit projectile swiper-helm avy)))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(vc-annotate-background nil)
