@@ -9,11 +9,12 @@
 (fringe-mode '(4 . 0))
 (recentf-mode 1)
 (electric-pair-mode 1)
-(global-linum-mode 1)
 (show-paren-mode 1)
 (electric-indent-mode 1)
 (delete-selection-mode 1)
 
+(add-hook 'prog-mode-hook 'linum-mode)
+(add-hook 'text-mode-hook 'linum-mode)
 (setq auto-save-default nil)
 (setq make-backup-files nil)
 

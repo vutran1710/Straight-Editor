@@ -11,15 +11,16 @@
 (setq mac-command-modifier 'control)
 
 (load "~/.emacs.d/defaults")
+(load "~/.emacs.d/user-defined")
+(load "~/.emacs.d/keybindings")
 
-(load "~/.emacs.d/pkg/helm-init")
+;; must-have
+(load "~/.emacs.d/pkg/auto-complete-init")
 (load "~/.emacs.d/pkg/avy-init")
 (load "~/.emacs.d/pkg/ag-init")
-(load "~/.emacs.d/pkg/company-init")
 (load "~/.emacs.d/pkg/know-http-init")
 (load "~/.emacs.d/pkg/projectile-init")
 (load "~/.emacs.d/pkg/magit-init")
-(load "~/.emacs.d/pkg/helm-projectile-init")
 (load "~/.emacs.d/pkg/expand-region-init")
 (load "~/.emacs.d/pkg/webmode-init")
 (load "~/.emacs.d/pkg/ace-window-init")
@@ -32,12 +33,19 @@
 (load "~/.emacs.d/pkg/yas-init")
 (load "~/.emacs.d/pkg/aggressive-indent-init")
 (load "~/.emacs.d/pkg/multi-cursor-init")
-(load "~/.emacs.d/pkg/js2-mode-init")
 (load "~/.emacs.d/pkg/undo-tree-init")
 (load "~/.emacs.d/pkg/keychord-init")
 (load "~/.emacs.d/pkg/themes-init")
 
-(load "~/.emacs.d/user-defined")
-(load "~/.emacs.d/keybindings")
+
+;; Ivy or helm?
+;;; Ivy
+(load "~/.emacs.d/pkg/counsel-init")
+
+;;; Helm
+;;(load "~/.emacs.d/pkg/helm-init")
+;;(load "~/.emacs.d/pkg/company-init")
+;;(load "~/.emacs.d/pkg/helm-projectile-init")
+
 
 (provide 'custom)
