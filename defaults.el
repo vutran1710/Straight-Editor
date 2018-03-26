@@ -17,11 +17,11 @@
 (add-hook 'text-mode-hook 'linum-mode)
 (setq auto-save-default nil)
 (setq make-backup-files nil)
-
+(setq-default line-spacing 0)
 (setq-default fringes-outside-margins t)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
-(setq-default linum-format " %3d  ")
+(setq-default linum-format "%3d  ")
 (setq-default line-spacing 0)
 
 (fset 'yes-or-no-p 'y-or-n-p)
