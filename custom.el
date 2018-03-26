@@ -27,7 +27,6 @@
 (load "~/.emacs.d/pkg/elpy-init")
 (load "~/.emacs.d/pkg/yaml-mode-init")
 (load "~/.emacs.d/pkg/restclient-init")
-(load "~/.emacs.d/pkg/indent-guide-init")
 (load "~/.emacs.d/pkg/diff-hl-init")
 (load "~/.emacs.d/pkg/dashboard-init")
 (load "~/.emacs.d/pkg/yas-init")
