@@ -14,8 +14,11 @@
 (load "~/.emacs.d/user-defined")
 (load "~/.emacs.d/keybindings")
 
-;; must-have
-(load "~/.emacs.d/pkg/auto-complete-init")
+;; Auto-complete or Company?
+;;(load "~/.emacs.d/pkg/auto-complete-init")
+(load "~/.emacs.d/pkg/company-init")
+
+;; Must-have
 (load "~/.emacs.d/pkg/avy-init")
 (load "~/.emacs.d/pkg/ag-init")
 (load "~/.emacs.d/pkg/know-http-init")
@@ -23,6 +26,7 @@
 (load "~/.emacs.d/pkg/magit-init")
 (load "~/.emacs.d/pkg/expand-region-init")
 (load "~/.emacs.d/pkg/webmode-init")
+(load "~/.emacs.d/pkg/cider-init")
 (load "~/.emacs.d/pkg/ace-window-init")
 (load "~/.emacs.d/pkg/elpy-init")
 (load "~/.emacs.d/pkg/yaml-mode-init")
@@ -42,9 +46,7 @@
 (load "~/.emacs.d/pkg/counsel-init")
 
 ;;; Helm
-;;(load "~/.emacs.d/pkg/helm-init")
-;;(load "~/.emacs.d/pkg/company-init")
-;;(load "~/.emacs.d/pkg/helm-projectile-init")
-
+;; (load "~/.emacs.d/pkg/helm-init")
+;; (load "~/.emacs.d/pkg/helm-projectile-init")
 
 (provide 'custom)
