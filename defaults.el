@@ -15,6 +15,8 @@
 
 (add-hook 'prog-mode-hook 'linum-mode)
 (add-hook 'text-mode-hook 'linum-mode)
+(add-hook 'cider-repl-mode-hook 'linum-mode)
+
 (setq auto-save-default nil)
 (setq make-backup-files nil)
 (setq-default line-spacing 0)
