@@ -19,7 +19,7 @@
 
 (setq auto-save-default nil)
 (setq make-backup-files nil)
-(setq-default line-spacing 0)
+(setq-default line-spacing 3)
 (setq-default fringes-outside-margins t)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
@@ -36,5 +36,5 @@
                             (?\{ . ?\})
                             ) )
 
-(set-face-attribute 'default nil :font "Overpass Mono 12")
-(set-frame-font "Overpass Mono 12" nil t)
+(set-face-attribute 'default nil :font "Andale Mono 12")
+(set-frame-font "Andale Mono 12" nil t)
