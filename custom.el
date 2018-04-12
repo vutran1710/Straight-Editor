@@ -15,7 +15,7 @@
 (load "~/.emacs.d/keybindings")
 
 ;; Auto-complete or Company?
-;;(load "~/.emacs.d/pkg/auto-complete-init")
+;; (load "~/.emacs.d/pkg/auto-complete-init")
 (load "~/.emacs.d/pkg/company-init")
 
 ;; Must-have

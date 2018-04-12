@@ -36,5 +36,5 @@
                             (?\{ . ?\})
                             ) )
 
-(set-face-attribute 'default nil :font "Andale Mono 12")
-(set-frame-font "Andale Mono 12" nil t)
+(set-face-attribute 'default nil :font "Operator Mono Book 12")
+(set-frame-font "Operator Mono Book 12" nil t)
