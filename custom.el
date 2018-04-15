@@ -25,7 +25,6 @@
 (load "~/.emacs.d/pkg/smartparens-init")
 (load "~/.emacs.d/pkg/projectile-init")
 (load "~/.emacs.d/pkg/magit-init")
-(load "~/.emacs.d/pkg/expand-region-init")
 (load "~/.emacs.d/pkg/webmode-init")
 (load "~/.emacs.d/pkg/cider-init")
 (load "~/.emacs.d/pkg/ace-window-init")
