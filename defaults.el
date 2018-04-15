@@ -8,7 +8,6 @@
 
 (fringe-mode '(4 . 0))
 (recentf-mode 1)
-(electric-pair-mode 1)
 (show-paren-mode 1)
 (electric-indent-mode 1)
 (delete-selection-mode 1)
@@ -19,7 +18,6 @@
 
 (setq auto-save-default nil)
 (setq make-backup-files nil)
-(setq-default line-spacing 3)
 (setq-default fringes-outside-margins t)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
@@ -29,12 +27,6 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
-
-(setq electric-pair-pairs '(
-                            (?\' . ?\')
-                            (?\` . ?\`)
-                            (?\{ . ?\})
-                            ) )
 
 (set-face-attribute 'default nil :font "Operator Mono Book 12")
 (set-frame-font "Operator Mono Book 12" nil t)

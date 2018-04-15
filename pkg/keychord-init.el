@@ -9,5 +9,6 @@
 
 (key-chord-define-global "kk" 'volatile-kill-buffer)
 (key-chord-define-global "p[" 'projectile-switch-project)
+(key-chord-define-global ",." 'sp-unwrap-sexp)
 
 (key-chord-mode 1)
