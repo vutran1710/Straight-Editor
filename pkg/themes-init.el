@@ -5,4 +5,15 @@
      (progn (message "installing %s" package)
             (package-refresh-contents)
             (package-install package))))
- '(doom-themes tango-plus-theme darktooth-theme gruvbox-theme faff-theme farmhouse-theme dakrone-light-theme material-theme twilight-theme))
+ '(tango-plus-theme
+   darktooth-theme
+   gruvbox-theme
+   faff-theme
+   farmhouse-theme
+   material-theme
+   twilight-theme
+   greymatters-theme
+   hemisu-theme
+   nord-theme
+   tao-theme
+   zenburn-theme))
