@@ -8,11 +8,11 @@
 (package-initialize)
 
 (server-start)
-(setq mac-command-modifier 'control)
 
 (load "~/.emacs.d/defaults")
 (load "~/.emacs.d/user-defined")
 (load "~/.emacs.d/keybindings")
+(load "~/.emacs.d/mac-modifier")
 
 ;; Auto-complete or Company?
 ;; (load "~/.emacs.d/pkg/auto-complete-init")
@@ -37,7 +37,6 @@
 (load "~/.emacs.d/pkg/aggressive-indent-init")
 (load "~/.emacs.d/pkg/multi-cursor-init")
 (load "~/.emacs.d/pkg/rainbow-delimiters-init")
-;; (load "~/.emacs.d/pkg/telephone-init")
 (load "~/.emacs.d/pkg/undo-tree-init")
 (load "~/.emacs.d/pkg/keychord-init")
 (load "~/.emacs.d/pkg/themes-init")
