@@ -6,7 +6,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (mac-auto-operator-composition-mode)
-(fringe-mode '(4 . 0))
+(fringe-mode '(6 . 0))
 (recentf-mode 1)
 (show-paren-mode 1)
 (electric-indent-mode 1)
