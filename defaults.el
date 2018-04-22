@@ -5,8 +5,8 @@
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-(mac-auto-operator-composition-mode)
-(fringe-mode '(6 . 0))
+;; (mac-auto-operator-composition-mode)
+(fringe-mode '(4 . 0))
 (recentf-mode 1)
 (show-paren-mode 1)
 (electric-indent-mode 1)
@@ -21,12 +21,12 @@
 (setq-default fringes-outside-margins t)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
-(setq-default linum-format "%3d  ")
+(setq-default linum-format " %3d  ")
 (setq-default line-spacing 3)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Fira Code Light 12")
-(set-frame-font "Fira Code Light 12" nil t)
+(set-face-attribute 'default nil :font "Fira Mono for Powerline 12")
+(set-frame-font "Fira Mono for Powerline 12" nil t)
