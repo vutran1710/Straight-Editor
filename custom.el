@@ -1,18 +1,9 @@
-(require 'package)
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                    (not (gnutls-available-p))))
-       (proto (if no-ssl "http" "https")))
-  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-  (when (< emacs-major-version 24)
-    (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
-(package-initialize)
-
 (server-start)
 
+(load "~/.emacs.d/mac-modifier")
+(load "~/.emacs.d/keybindings")
 (load "~/.emacs.d/defaults")
 (load "~/.emacs.d/user-defined")
-(load "~/.emacs.d/keybindings")
-(load "~/.emacs.d/mac-modifier")
 
 ;; Auto-complete or Company?
 ;; (load "~/.emacs.d/pkg/auto-complete-init")

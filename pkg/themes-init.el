@@ -10,10 +10,8 @@
    gruvbox-theme
    faff-theme
    farmhouse-theme
-   material-theme
    twilight-theme
    greymatters-theme
    hemisu-theme
    nord-theme
-   tao-theme
-   zenburn-theme))
+   tao-theme))
