@@ -23,6 +23,7 @@
 (load "~/.emacs.d/pkg/yaml-mode-init")
 (load "~/.emacs.d/pkg/restclient-init")
 (load "~/.emacs.d/pkg/diff-hl-init")
+(load "~/.emacs.d/pkg/hlinum-init")
 ;; (load "~/.emacs.d/pkg/dashboard-init")
 (load "~/.emacs.d/pkg/yas-init")
 (load "~/.emacs.d/pkg/aggressive-indent-init")

@@ -25,7 +25,7 @@
 (setq-default line-spacing 0)
 
 (when (window-system)
-  (set-frame-size (selected-frame) 120 45)
+  (set-frame-size (selected-frame) 130 40)
   (set-frame-position (selected-frame) 50 30))
 
 (fset 'yes-or-no-p 'y-or-n-p)
