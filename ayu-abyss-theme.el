@@ -3,12 +3,11 @@
 
 (custom-theme-set-faces
  'ayu-abyss
- '(default ((t (:family "Fira Code" :foundry "nil" :width normal :height 120 :weight light :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "#c3c0bb" :background "#090f12" :stipple nil :inherit nil))))
- '(cursor ((t (:background "dark red"))))
+ '(default ((t (:inherit nil :stipple nil :background "#000919" :foreground "#c3c0bb" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Overpass Mono"))))
+ '(cursor ((t (:background "DarkOrange1"))))
  '(fixed-pitch ((t (:family "Monospace"))))
  '(variable-pitch ((((type w32)) (:foundry "outline" :family "Arial")) (t (:family "Sans Serif"))))
  '(escape-glyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
- '(homoglyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
  '(minibuffer-prompt ((t (:foreground "#9DA5B4"))))
  '(highlight ((t (:background "#3E4451"))))
  '(region ((t (:background "#3E4451"))))
@@ -47,6 +46,11 @@
  '(match ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "RoyalBlue3")) (((class color) (min-colors 8) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 8) (background dark)) (:foreground "white" :background "blue")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "gray"))))
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch)))))
- '(linum ((t (:foreground "gray18")))))
+ '(linum ((t (:foreground "gray17"))))
+ '(sml/line-number ((t (:foreground "red" :weight bold))))
+ '(sml/filename ((t (:foreground "khaki4" :weight bold))))
+ '(sml/modes ((t (:foreground "gold1"))))
+ '(sml/git ((t (:foreground "#66ceff"))))
+ '(sml/minor-modes ((t (:foreground "gray30")))))
 
 (provide-theme 'ayu-abyss)
