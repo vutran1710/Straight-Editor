@@ -22,7 +22,11 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 (setq-default linum-format " %3d  ")
-(setq-default line-spacing 3)
+(setq-default line-spacing 2)
+
+(when (window-system)
+  (set-frame-size (selected-frame) 120 45)
+  (set-frame-position (selected-frame) 50 30))
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
