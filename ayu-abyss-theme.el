@@ -1,9 +1,9 @@
 (deftheme ayu-abyss
-  "Created 2018-04-23.")
+  "Created 2018-05-06.")
 
 (custom-theme-set-faces
  'ayu-abyss
- '(default ((t (:inherit nil :stipple nil :background "#000919" :foreground "#c3c0bb" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Overpass Mono"))))
+ '(default ((t (:family "Fira Code" :foundry "nil" :width normal :height 120 :weight light :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "#c3c0bb" :background "#000919" :stipple nil :inherit nil))))
  '(cursor ((t (:background "DarkOrange1"))))
  '(fixed-pitch ((t (:family "Monospace"))))
  '(variable-pitch ((((type w32)) (:foundry "outline" :family "Arial")) (t (:family "Sans Serif"))))
@@ -46,11 +46,7 @@
  '(match ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "RoyalBlue3")) (((class color) (min-colors 8) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 8) (background dark)) (:foreground "white" :background "blue")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "gray"))))
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch)))))
- '(linum ((t (:foreground "gray17"))))
- '(sml/line-number ((t (:foreground "red" :weight bold))))
- '(sml/filename ((t (:foreground "khaki4" :weight bold))))
- '(sml/modes ((t (:foreground "gold1"))))
- '(sml/git ((t (:foreground "#66ceff"))))
- '(sml/minor-modes ((t (:foreground "gray30")))))
+ '(linum-highlight-face ((t (:foreground "gray70"))))
+ '(linum ((t (:foreground "gray10")))))
 
 (provide-theme 'ayu-abyss)
