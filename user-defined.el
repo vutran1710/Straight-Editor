@@ -54,3 +54,11 @@ two curly braces, otherwise do a regular newline and indent"
              (split-line)
              (indent-for-tab-command))
     (newline-and-indent)))
+
+
+(defun lunaryorn-new-buffer-frame ()
+  "Create a new frame with a new empty buffer."
+  (interactive)
+  (let ((buffer (generate-new-buffer "untitled")))
+    (set-buffer-major-mode buffer)
+    (display-buffer buffer '(display-buffer-pop-up-frame . nil))))
