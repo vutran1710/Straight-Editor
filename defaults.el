@@ -32,5 +32,5 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Fira Code Light 12")
-(set-frame-font "Fira Code Light 12" nil t)
+(set-face-attribute 'default nil :font "Hasklig 12")
+(set-frame-font "Hasklig 12" nil t)
