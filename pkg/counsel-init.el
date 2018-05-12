@@ -18,3 +18,6 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c k") 'counsel-ag)
 (global-set-key (kbd "C-;") 'counsel-projectile-find-file)
+
+(define-key ivy-minibuffer-map (kbd "M-v") 'ivy-backward-kill-word)
+(define-key ivy-minibuffer-map (kbd "M-d") 'ivy-kill-word)
