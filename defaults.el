@@ -19,18 +19,18 @@
 (setq auto-save-default nil)
 (setq make-backup-files nil)
 (setq-default fringes-outside-margins t)
-(setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
-(setq-default linum-format " %3d  ")
-(setq-default line-spacing 0)
+(setq-default linum-format "%3d  ")
+(setq-default line-spacing 1)
 
 (when (window-system)
   (set-frame-size (selected-frame) 130 40)
   (set-frame-position (selected-frame) 50 30))
+(setq-default mac-use-title-bar t)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Overpass Mono 12")
-(set-frame-font "Overpass Mono 12" nil t)
+(set-face-attribute 'default nil :font "Fira Code Light 12")
+(set-frame-font "Fira Code Light 12" nil t)
