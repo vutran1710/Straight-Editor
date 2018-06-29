@@ -7,9 +7,7 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
-(setq tramp-default-method "ssh")
 (scroll-bar-mode -1)
-(menu-bar-mode -1)
 (tool-bar-mode -1)
 ;;(mac-auto-operator-composition-mode)
 (fringe-mode '(6 . 0))
@@ -26,6 +24,7 @@
 (setq make-backup-files nil)
 (setq-default fringes-outside-margins t)
 (setq-default indent-tabs-mode nil)
+(setq tramp-default-method "ssh")
 (setq-default linum-format "%3d  ")
 (setq-default line-spacing 1)
 
