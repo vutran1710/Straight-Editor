@@ -7,6 +7,7 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+(setq tramp-default-method "ssh")
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -26,7 +27,7 @@
 (setq-default fringes-outside-margins t)
 (setq-default indent-tabs-mode nil)
 (setq-default linum-format "%3d  ")
-(setq-default line-spacing 2)
+(setq-default line-spacing 1)
 
 (when (window-system)
   (set-frame-size (selected-frame) 130 40)
@@ -37,8 +38,8 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Droid Sans Mono 12")
-(set-frame-font "Droid Sans Mono 12" nil t)
+(set-face-attribute 'default nil :font "Fira Code Light 12")
+(set-frame-font "Fira Code Light 12" nil t)
 
 (provide 'default)
 ;;; defaults.el ends here

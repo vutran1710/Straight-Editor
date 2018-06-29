@@ -1,3 +1,8 @@
+;;; package -- summary
+
+;;; Commentary:
+
+;;; Code:
 (server-start)
 
 (load "~/.emacs.d/mac-modifier")
@@ -46,3 +51,4 @@
 ;; (load "~/.emacs.d/pkg/helm-projectile-init")
 
 (provide 'custom)
+;;; custom.el ends here

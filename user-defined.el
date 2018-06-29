@@ -62,3 +62,8 @@ two curly braces, otherwise do a regular newline and indent"
   (let ((buffer (generate-new-buffer "untitled")))
     (set-buffer-major-mode buffer)
     (display-buffer buffer '(display-buffer-pop-up-frame . nil))))
+
+(defun connect-vutrio ()
+  "Connect to vutr.io."
+  (interactive)
+  (dired "/vu@vutr.io:/"))
