@@ -14,4 +14,8 @@
    greymatters-theme
    hemisu-theme
    nord-theme
-   tao-theme))
+   tao-theme
+   subatomic-theme))
+
+(provide 'themes-init)
+;;; themes-init.el ends here
