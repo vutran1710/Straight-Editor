@@ -8,6 +8,7 @@
  '(tango-plus-theme
    darktooth-theme
    gruvbox-theme
+   dracula-theme
    faff-theme
    farmhouse-theme
    twilight-theme
