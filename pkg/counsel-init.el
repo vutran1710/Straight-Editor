@@ -1,7 +1,9 @@
+;;; package --- summary
 (require 'ivy)
 (require 'counsel)
 (require 'swiper)
 
+;;; Code:
 (ivy-mode 1)
 (counsel-projectile-mode)
 
@@ -21,3 +23,8 @@
 
 (define-key ivy-minibuffer-map (kbd "M-v") 'ivy-backward-kill-word)
 (define-key ivy-minibuffer-map (kbd "M-d") 'ivy-kill-word)
+(define-key ivy-minibuffer-map (kbd "C-v") 'ivy-backward-delete-char)
+(define-key ivy-minibuffer-map (kbd "C-d") 'ivy-delete-char)
+
+(provide 'counsel-init)
+;;; counsel-init ends here
