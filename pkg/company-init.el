@@ -3,6 +3,8 @@
 (require 'company-jedi)
 (require 'company-restclient)
 
+(cl-old-struct-compat-mode 1)
+
 (add-hook 'after-init-hook 'global-company-mode)
 
 (add-to-list 'company-backends 'company-tern)

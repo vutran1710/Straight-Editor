@@ -40,7 +40,7 @@
 (load "~/.emacs.d/pkg/undo-tree-init")
 (load "~/.emacs.d/pkg/keychord-init")
 (load "~/.emacs.d/pkg/themes-init")
-(load "~/.emacs.d/pkg/emacs-js-setup.el")
+(load "~/.emacs.d/pkg/javascript-init.el")
 
 ;; Ivy or helm?
 ;;; Ivy
