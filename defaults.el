@@ -23,10 +23,11 @@
 (setq auto-save-default nil)
 (setq make-backup-files nil)
 (setq-default fringes-outside-margins t)
+(setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 (setq tramp-default-method "ssh")
 (setq-default linum-format "%3d  ")
-(setq-default line-spacing 1)
+(setq-default line-spacing 2)
 
 (when (window-system)
   (set-frame-size (selected-frame) 130 40)
@@ -36,7 +37,6 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
-
 (set-face-attribute 'default nil :font "Fira Code Light 12")
 (set-frame-font "Fira Code Light 12" nil t)
 
