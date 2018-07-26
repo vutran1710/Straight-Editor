@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: import-default
+# key: ird
+# --
+import ${1:module} from '${2:module-path}'

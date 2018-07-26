@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dict_key_value
+# key: key
+# --
+'${1:key}': ${2:value}

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: arrow{}
+# key: ar2
+# --
+${1:function} = ($2) => {
+  $0
+}

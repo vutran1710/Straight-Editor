@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: extract-state
+# key: _st
+# --
+const { $1 } = this.state

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: init default
+# key: init
+# --
+:url = http://localhost:${1:3000}
+:res = ${2:todos}
+
+GET :url/:res$0

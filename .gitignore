@@ -1,0 +1,9 @@
+elpa/
+.tern*
+network-security.data
+projectile-bookmarks.eld
+recentf
+smex-items
+url/
+auto-save-list/
+eshell/

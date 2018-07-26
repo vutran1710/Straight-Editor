@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: post
+# key: post
+# --
+POST ${1::url/:res}
+Content-Type: ${2:application/json}
+Authorization: ${3:some-bearer}
+{${4:body}}
+$0
