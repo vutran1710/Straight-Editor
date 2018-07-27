@@ -12,6 +12,7 @@
 (load "~/.emacs.d/pkg/company-init")
 
 ;; Must-have
+(load "~/.emacs.d/pkg/editorconfig-init")
 (load "~/.emacs.d/pkg/avy-init")
 (load "~/.emacs.d/pkg/ag-init")
 (load "~/.emacs.d/pkg/know-http-init")

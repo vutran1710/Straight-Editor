@@ -40,9 +40,16 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
-(set-face-attribute 'default nil :font "Ubuntu Mono 14")
-(set-frame-font "Ubuntu Mono 14" nil t)
+(set-face-attribute 'default nil :font "Droid Sans Mono 13")
+(set-frame-font "Droid Sans Mono 13" nil t)
 (setq custom-theme-directory "~/.emacs.d/themes")
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
 
 (provide 'default)
 ;;; defaults.el ends here

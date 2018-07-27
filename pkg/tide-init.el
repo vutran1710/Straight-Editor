@@ -25,10 +25,6 @@
                             :insertSpaceAfterFunctionKeywordForAnonymousFunctions t
                             :placeOpenBraceOnNewLineForFunctions nil
                             :placeOpenBraceOnNewLineForControlBlocks nil
-                            :indentSize 2
-                            :tabSize 2
-                            :convertTabsToSpaces: t
-                            :indentation 2
                             :insertSpaceAfterSemicolonInForStatements t
                             :insertSpaceBeforeAndAfterBinaryOperators t
                             :insertSpaceAfterKeywordsInControlFlowStatements t))
