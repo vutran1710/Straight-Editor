@@ -13,6 +13,7 @@
 
 ;; Must-have
 (load "~/.emacs.d/pkg/editorconfig-init")
+(load "~/.emacs.d/pkg/anzu-init")
 (load "~/.emacs.d/pkg/avy-init")
 (load "~/.emacs.d/pkg/ag-init")
 (load "~/.emacs.d/pkg/know-http-init")
@@ -30,8 +31,7 @@
 (load "~/.emacs.d/pkg/tide-init")
 (load "~/.emacs.d/pkg/yas-init")
 (load "~/.emacs.d/pkg/aggressive-indent-init")
-(load "~/.emacs.d/pkg/telephone-init")
-(load "~/.emacs.d/pkg/multi-cursor-init")
+(load "~/.emacs.d/pkg/modeline-init")
 (load "~/.emacs.d/pkg/undo-tree-init")
 (load "~/.emacs.d/pkg/keychord-init")
 (load "~/.emacs.d/pkg/themes-init")
