@@ -1,4 +1,4 @@
-(require 'avy)
-
-(global-set-key (kbd "C-c c") 'avy-goto-char)
-(global-set-key (kbd "C-c f") 'avy-goto-char-in-line)
+(use-package avy
+  :ensure t
+  :bind (("C-." . avy-goto-char)
+         ("C-," . avy-goto-char-in-line)))

@@ -31,7 +31,6 @@
 (setq tramp-default-method "ssh")
 (setq-default linum-format "%3d  ")
 (setq-default line-spacing 2)
-(setq-default frame-title-format '("vutr@io :: %b ::"))
 (when (window-system)
   (set-frame-size (selected-frame) 150 70)
   (set-frame-position (selected-frame) 50 30))
