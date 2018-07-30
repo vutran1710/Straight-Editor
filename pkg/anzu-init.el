@@ -1,6 +1,6 @@
 (use-package anzu
   :ensure t
-  :config
-  (global-anzu-mode +1)
-  (global-set-key [remap query-replace] 'anzu-query-replace)
-  (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp))
+  :hook (after-init . global-anzu-mode)
+  :bind (([remap query-replace] . anzu-query-replace)
+         ([remap query-replace-regexp] . anzu-query-replace-regexp)
+         ("M-r" . anzu-query-replace-at-cursor)))

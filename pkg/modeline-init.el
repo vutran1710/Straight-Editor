@@ -2,4 +2,4 @@
   :ensure t
   :defer t
   :hook (after-init . doom-modeline-init)
-  :config (setq doom-modeline-height 23))
+  :config (setq doom-modeline-height 21))
