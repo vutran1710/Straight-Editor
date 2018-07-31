@@ -33,6 +33,10 @@
 (setq tramp-default-method "ssh")
 (setq-default linum-format "%3d  ")
 (setq-default line-spacing 2)
+
+(setq visible-bell nil
+      ring-bell-function 'ignore)
+
 (when (window-system)
   (set-frame-size (selected-frame) 150 80)
   (set-frame-position (selected-frame) 50 30))
