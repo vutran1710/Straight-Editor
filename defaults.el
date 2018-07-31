@@ -24,8 +24,10 @@
 (setq auto-save-default nil)
 (setq make-backup-files nil)
 (setq-default fringes-outside-margins t)
-;;(set-default 'truncate-lines t)
-(setq-default visual-line-mode t)
+
+(add-hook 'text-mode-hook '(lambda() (turn-on-auto-fill) (set-fill-column 120)))
+(add-hook 'prog-mode-hook 'visual-line-mode)
+
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 (setq tramp-default-method "ssh")
