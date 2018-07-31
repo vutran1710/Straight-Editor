@@ -35,20 +35,12 @@
   (set-frame-size (selected-frame) 150 70)
   (set-frame-position (selected-frame) 50 30))
 (setq-default mac-use-title-bar t)
-
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (set-face-attribute 'default nil :font "Fira Code 12")
 (set-frame-font "Fira Code 12" nil t)
 (setq custom-theme-directory "~/.emacs.d/themes")
-
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(require 'use-package)
-(setq use-package-always-ensure t)
 
 (provide 'default)
 ;;; defaults.el ends here
