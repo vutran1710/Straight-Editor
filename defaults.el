@@ -32,7 +32,7 @@
 (setq-default linum-format "%3d  ")
 (setq-default line-spacing 2)
 (when (window-system)
-  (set-frame-size (selected-frame) 150 70)
+  (set-frame-size (selected-frame) 150 80)
   (set-frame-position (selected-frame) 50 30))
 (setq-default mac-use-title-bar t)
 (fset 'yes-or-no-p 'y-or-n-p)

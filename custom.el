@@ -33,6 +33,7 @@
 (load "~/.emacs.d/pkg/keychord-init")
 (load "~/.emacs.d/pkg/themes-init")
 (load "~/.emacs.d/pkg/dashboard-init")
+(load "~/.emacs.d/pkg/org-init")
 
 ;; Language IDE
 (load "~/.emacs.d/pkg/javascript-init.el")
