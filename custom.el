@@ -21,22 +21,27 @@
 (load "~/.emacs.d/pkg/projectile-init")
 (load "~/.emacs.d/pkg/magit-init")
 (load "~/.emacs.d/pkg/webmode-init")
-(load "~/.emacs.d/pkg/cider-init")
 (load "~/.emacs.d/pkg/ace-window-init")
-(load "~/.emacs.d/pkg/elpy-init")
 (load "~/.emacs.d/pkg/yaml-mode-init")
 (load "~/.emacs.d/pkg/restclient-init")
 (load "~/.emacs.d/pkg/diff-hl-init")
 (load "~/.emacs.d/pkg/flycheck-init")
-(load "~/.emacs.d/pkg/tide-init")
 (load "~/.emacs.d/pkg/yas-init")
 (load "~/.emacs.d/pkg/aggressive-indent-init")
 (load "~/.emacs.d/pkg/modeline-init")
 (load "~/.emacs.d/pkg/undo-tree-init")
 (load "~/.emacs.d/pkg/keychord-init")
 (load "~/.emacs.d/pkg/themes-init")
-(load "~/.emacs.d/pkg/javascript-init.el")
 (load "~/.emacs.d/pkg/dashboard-init")
+
+;; Language IDE
+(load "~/.emacs.d/pkg/scala-init.el")
+(load "~/.emacs.d/pkg/javascript-init.el")
+(load "~/.emacs.d/pkg/tide-init")
+(load "~/.emacs.d/pkg/elpy-init")
+(load "~/.emacs.d/pkg/cider-init")
+(load "~/.emacs.d/pkg/alchemist-init")
+(load "~/.emacs.d/pkg/markdown-init")
 
 ;; Ivy or helm?
 ;; Ivy
