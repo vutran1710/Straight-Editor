@@ -35,12 +35,12 @@
 (load "~/.emacs.d/pkg/dashboard-init")
 
 ;; Language IDE
-(load "~/.emacs.d/pkg/scala-init.el")
 (load "~/.emacs.d/pkg/javascript-init.el")
 (load "~/.emacs.d/pkg/tide-init")
 (load "~/.emacs.d/pkg/elpy-init")
 (load "~/.emacs.d/pkg/cider-init")
 (load "~/.emacs.d/pkg/alchemist-init")
+(load "~/.emacs.d/pkg/elm-init")
 (load "~/.emacs.d/pkg/markdown-init")
 
 ;; Ivy or helm?
