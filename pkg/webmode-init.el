@@ -10,16 +10,17 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html.eex\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 
 (defun my-web-mode-hook ()
   "Code format and js hook."
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-enable-auto-pairing t)
-  (setq web-mode-enable-css-colorization t)
-  (setq web-mode-enable-current-element-highlight t))
+  (setq-local web-mode-markup-indent-offset 2)
+  (setq-local web-mode-css-indent-offset 2)
+  (setq-local web-mode-enable-auto-pairing t)
+  (setq-local web-mode-enable-css-colorization t)
+  (setq-local web-mode-enable-current-element-highlight t))
 
 (add-hook 'web-mode-hook #'my-web-mode-hook)
 
