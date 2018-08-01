@@ -3,8 +3,7 @@
 ;;; Code:
 (use-package org
   :ensure t
-  :init (use-package ox-gfm
-          :ensure t)
+  :init (use-package toc-org :ensure t)
   :config
   (setq-default org-agenda-skip-unavailable-files t
                 org-hide-leading-stars t
@@ -18,13 +17,9 @@
                   (sequence "NEXT(n)" "ACTIVE(a)" "WAITING(w)" "LATER(l)" "|" "CANCELLED(c)"))
                 org-log-done 'time
                 org-src-fontify-natively t)
-  (add-hook 'after-save-hook 'org-to-md-save-hook)
-  (add-hook 'org-mode-hook (lambda () (setq-local linum-format "  "))))
-
-(defun org-to-md-save-hook ()
-  "Auto save to README.md when org name is README."
-  (when (string= (buffer-name) "README.org")
-    (org-gfm-export-to-markdown)))
+  (add-hook 'org-mode-hook (lambda () (setq-local linum-format "  ")))
+  (add-hook 'org-mode-hook 'toc-org-enable)
+  (add-to-list 'org-tag-alist '("TOC" . ?T)))
 
 (provide 'org-init.el)
 ;;; org-init ends here

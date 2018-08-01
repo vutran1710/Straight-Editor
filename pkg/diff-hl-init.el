@@ -2,4 +2,5 @@
   :ensure t
   :config
   (global-diff-hl-mode)
-  (diff-hl-flydiff-mode))
+  (diff-hl-flydiff-mode)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
