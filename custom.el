@@ -16,7 +16,6 @@
 (load "~/.emacs.d/pkg/anzu-init")
 (load "~/.emacs.d/pkg/avy-init")
 (load "~/.emacs.d/pkg/ag-init")
-(load "~/.emacs.d/pkg/know-http-init")
 (load "~/.emacs.d/pkg/smartparens-init")
 (load "~/.emacs.d/pkg/projectile-init")
 (load "~/.emacs.d/pkg/magit-init")
