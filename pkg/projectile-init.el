@@ -1,4 +1,4 @@
-(require 'projectile)
-
-(projectile-global-mode)
-(global-set-key (kbd "C-c m") 'projectile-vc)
+(use-package projectile
+  :ensure t
+  :config (projectile-global-mode)
+  :bind ("C-c m" . projectile-vc))
