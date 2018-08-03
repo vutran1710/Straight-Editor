@@ -23,3 +23,5 @@
 
 (global-set-key (kbd "C-c b") 'switch-to-previous-buffer)
 (global-set-key (kbd "C-c n") 'lunaryorn-new-buffer-frame)
+
+(global-set-key (kbd "RET") 'my-fancy-newline)

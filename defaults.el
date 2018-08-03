@@ -13,7 +13,7 @@
 (fringe-mode '(4 . 0))
 (recentf-mode 1)
 (show-paren-mode 1)
-(electric-indent-mode 1)
+(electric-indent-mode -1)
 (delete-selection-mode 1)
 (blink-cursor-mode -1)
 
