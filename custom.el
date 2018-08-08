@@ -51,8 +51,8 @@
 ;; (load "~/.emacs.d/pkg/helm-init")
 ;; (load "~/.emacs.d/pkg/helm-projectile-init")
 
-;;(load "~/.emacs.d/pkg/hlinum-init")
-;;(load "~/.emacs.d/pkg/rainbow-delimiters-init")
+;; (load "~/.emacs.d/pkg/hlinum-init")
+;; (load "~/.emacs.d/pkg/rainbow-delimiters-init")
 (load "~/.emacs.d/keybindings")
 
 (provide 'custom)

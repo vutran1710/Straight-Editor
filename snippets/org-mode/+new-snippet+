@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: blockcode
+# key: src
+# --
+#+begin_src ${1: code}
+$0
+#+end_src
