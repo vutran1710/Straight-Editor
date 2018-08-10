@@ -1,7 +1,19 @@
 (use-package yasnippet
   :ensure t
-  :bind ("M-<tab>" . yas-expand)
+  :after company
   :config
-  (yas-reload-all)
-  (add-hook 'prog-mode-hook 'yas-minor-mode)
-  (add-hook 'restclient-mode-hook 'yas-minor-mode))
+
+  ;; Adding yasnippet support to company
+  (add-to-list 'company-backends '(company-yasnippet))
+
+  ;; Activate global
+  (yas-global-mode))
+
+(use-package yasnippet-snippets
+  :ensure t
+  :after yasnippet
+  )
+
+(use-package ivy-yasnippet
+  :ensure t
+  :after yasnippet)
