@@ -9,3 +9,4 @@ auto-save-list/
 eshell/
 .temp.el
 flycheck_*
+company-statistics-cache.el
