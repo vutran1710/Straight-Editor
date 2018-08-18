@@ -2,10 +2,12 @@
   :ensure t
   :config
   ;; Global
-  (setq company-idle-delay 1
-        company-minimum-prefix-length 1
+  (setq company-idle-delay 0
+        company-minimum-prefix-length 2
         company-show-numbers t
-        company-tooltip-limit 20)
+        company-tooltip-limit 20
+        company-require-match nil
+        company-dabbrev-downcase nil)
 
 
   ;; Facing
@@ -18,7 +20,9 @@
     (set-face-attribute 'company-scrollbar-fg nil :background "gray40"))
 
   ;; Default backends
-  (setq company-backends '((company-files company-restclient) (company-elisp)))
+  (setq company-frontends '(company-pseudo-tooltip-unless-just-one-frontend
+                            company-echo-metadata-frontend))
+  (setq company-backends '((company-capf company-dabbrev-code company-files company-restclient) (company-elisp)))
 
   ;; Activating globally
   (global-company-mode t))

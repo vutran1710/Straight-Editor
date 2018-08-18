@@ -17,6 +17,7 @@
 (defun my-web-mode-hook ()
   "Code format and js hook."
   (setq-local web-mode-markup-indent-offset 2)
+  (setq-local web-mode-code-indent-offset 2)
   (setq-local web-mode-css-indent-offset 2)
   (setq-local web-mode-enable-auto-pairing t)
   (setq-local web-mode-enable-css-colorization t)

@@ -1,4 +1,5 @@
 (require 'tide)
+(require 'web-mode)
 
 (defun my/use-tslint-from-node-modules ()
   (let* ((root (locate-dominating-file
@@ -16,6 +17,7 @@
   (flycheck-mode +1)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode +1)
+  (yas-reload-all)
   (tide-hl-identifier-mode +1)
   (my/use-tslint-from-node-modules))
 
@@ -29,6 +31,11 @@
                             :insertSpaceBeforeAndAfterBinaryOperators t
                             :insertSpaceAfterKeywordsInControlFlowStatements t))
 
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "tsx" (file-name-extension buffer-file-name))
+              (setup-tide-mode))))
 
 (add-hook 'before-save-hook 'tide-format-before-save)
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
