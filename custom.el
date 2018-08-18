@@ -12,6 +12,8 @@
 (load "~/.emacs.d/pkg/company-init")
 
 ;; Must-have
+(load "~/.emacs.d/pkg/treemacs-init")
+;; (load "~/.emacs.d/pkg/diredbar-init")
 (load "~/.emacs.d/pkg/editorconfig-init")
 (load "~/.emacs.d/pkg/anzu-init")
 (load "~/.emacs.d/pkg/avy-init")
@@ -33,6 +35,7 @@
 (load "~/.emacs.d/pkg/themes-init")
 (load "~/.emacs.d/pkg/dashboard-init")
 (load "~/.emacs.d/pkg/org-init")
+(load "~/.emacs.d/pkg/better-sql-init")
 
 ;; Language IDE
 (load "~/.emacs.d/pkg/javascript-init.el")
