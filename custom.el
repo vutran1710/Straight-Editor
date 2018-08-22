@@ -13,7 +13,6 @@
 
 ;; Must-have
 (load "~/.emacs.d/pkg/treemacs-init")
-;; (load "~/.emacs.d/pkg/diredbar-init")
 (load "~/.emacs.d/pkg/editorconfig-init")
 (load "~/.emacs.d/pkg/anzu-init")
 (load "~/.emacs.d/pkg/avy-init")
@@ -35,7 +34,6 @@
 (load "~/.emacs.d/pkg/themes-init")
 (load "~/.emacs.d/pkg/dashboard-init")
 (load "~/.emacs.d/pkg/org-init")
-(load "~/.emacs.d/pkg/better-sql-init")
 
 ;; Language IDE
 (load "~/.emacs.d/pkg/javascript-init.el")
@@ -46,13 +44,8 @@
 (load "~/.emacs.d/pkg/elm-init")
 (load "~/.emacs.d/pkg/markdown-init")
 
-;; Ivy or helm?
 ;; Ivy
 (load "~/.emacs.d/pkg/counsel-init")
-
-;;; Helm
-;; (load "~/.emacs.d/pkg/helm-init")
-;; (load "~/.emacs.d/pkg/helm-projectile-init")
 
 ;; (load "~/.emacs.d/pkg/hlinum-init")
 ;; (load "~/.emacs.d/pkg/rainbow-delimiters-init")

@@ -1,27 +1,47 @@
 ;;; emacs-js.el --- JS-mode Setup                -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
+(use-package js2-mode
+  :ensure t
+  :init
+  (use-package js2-refactor :ensure t)
+  (use-package tern :ensure t)
+  (use-package xref-js2 :ensure t)
+  (use-package rjsx-mode :ensure t)
+  (use-package eslintd-fix :ensure t)
+  :config
+  (add-to-list 'auto-mode-alist '("\\.json\\'" . js2-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . rjsx-mode))
 
-(require 'js2-mode)
-(require 'js2-refactor)
-(require 'tern)
-(require 'xref-js2)
-(require 'rjsx-mode)
-(require 'eslintd-fix)
+  (setq-default js2-basic-indent 2
+                js2-basic-offset 2
+                js2-auto-indent-p t
+                js2-cleanup-whitespace t
+                js2-enter-indents-newline t
+                js2-indent-on-enter-key t
+                js2-global-externs (list "window" "module" "require" "buster" "sinon" "assert" "refute" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "location" "__dirname" "console" "JSON" "jQuery" "$"))
+  (setq js2-mode-show-parse-errors nil
+        js2-mode-show-strict-warnings nil)
+  ;; We have JS files in Scripts directories, ignore that
+  (add-to-list 'xref-js2-ignored-dirs "public")
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.json\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
+  ;; tern will override js2r keybindings...
+  (define-key tern-mode-keymap (kbd "C-c C-r") nil)
 
-(setq-default js2-basic-indent 2
-              js2-basic-offset 2
-              js2-auto-indent-p t
-              js2-cleanup-whitespace t
-              js2-enter-indents-newline t
-              js2-indent-on-enter-key t
-              js2-global-externs (list "window" "module" "require" "buster" "sinon" "assert" "refute" "setTimeout" "clearTimeout" "setInterval" "clearInterval" "location" "__dirname" "console" "JSON" "jQuery" "$"))
-(setq js2-mode-show-parse-errors nil)
-(setq js2-mode-show-strict-warnings nil)
+  ;; ... and xref.
+  (define-key tern-mode-keymap (kbd "M-.") nil)
+  (define-key tern-mode-keymap (kbd "M-,") nil)
+
+  (js2r-add-keybindings-with-prefix "C-c C-r")
+  (define-key js-mode-map (kbd "M-.") nil)
+  (define-key js-mode-map (kbd "C-c C-j") nil)
+
+  ;; eslint parser executable can be overridden in some projects but marked as
+  ;; risky, so silence that.
+  (put 'flycheck-javascript-eslint-executable 'risky-local-variable nil)
+  (add-to-list 'company-backends 'company-tern)
+  (add-hook 'js-mode-hook #'setup-js-buffer))
+
 
 (defun my/use-eslint-from-node-modules ()
   (let* ((root (locate-dominating-file
@@ -51,23 +71,6 @@
   (set (make-local-variable 'company-dabbrev-ignore-case) nil)
   (set (make-local-variable 'company-dabbrev-downcase) nil))
 
-;; We have JS files in Scripts directories, ignore that
-(add-to-list 'xref-js2-ignored-dirs "public")
-
-;; tern will override js2r keybindings...
-(define-key tern-mode-keymap (kbd "C-c C-r") nil)
-
-;; ... and xref.
-(define-key tern-mode-keymap (kbd "M-.") nil)
-(define-key tern-mode-keymap (kbd "M-,") nil)
-
-(js2r-add-keybindings-with-prefix "C-c C-r")
-(define-key js-mode-map (kbd "M-.") nil)
-(define-key js-mode-map (kbd "C-c C-j") nil)
-
-;; eslint parser executable can be overridden in some projects but marked as
-;; risky, so silence that.
-(put 'flycheck-javascript-eslint-executable 'risky-local-variable nil)
 
 (defun kill-tern-process ()
   "Kill the tern process if any.
@@ -76,8 +79,6 @@ unreachable."
   (interactive)
   (delete-process "Tern"))
 
-(add-to-list 'company-backends 'company-tern)
-(add-hook 'js-mode-hook #'setup-js-buffer)
 
 (provide 'javascript-init.el)
 ;;; javascript-init.el ends here

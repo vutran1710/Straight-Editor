@@ -16,8 +16,8 @@
           treemacs-follow-after-init          t
           treemacs-follow-recenter-distance   0.1
           treemacs-goto-tag-strategy          'refetch-index
-          treemacs-indentation                1
-          treemacs-indentation-string         (propertize ": " 'face 'font-lock-comment-face)
+          treemacs-indentation                2
+          treemacs-indentation-string         (propertize " " 'face 'font-lock-comment-face)
           treemacs-is-never-other-window      nil
           treemacs-no-png-images              nil
           treemacs-project-follow-cleanup     nil
