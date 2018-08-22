@@ -1,17 +1,14 @@
-;;; emacs-js.el --- JS-mode Setup                -*- lexical-binding: t; -*-
-;;; Commentary:
-;;; Code:
 (use-package js2-mode
   :ensure t
   :init
   (use-package js2-refactor :ensure t)
   (use-package tern :ensure t)
   (use-package xref-js2 :ensure t)
-  (use-package rjsx-mode :ensure t)
   (use-package eslintd-fix :ensure t)
+  (use-package web-mode :ensure t)
   :config
   (add-to-list 'auto-mode-alist '("\\.json\\'" . js2-mode))
-  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . rjsx-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
 
   (setq-default js2-basic-indent 2
                 js2-basic-offset 2
@@ -66,10 +63,7 @@
   (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)
 
   (setq js2-include-node-externs t)
-  (setq js2-pretty-multiline-declarations nil)
-
-  (set (make-local-variable 'company-dabbrev-ignore-case) nil)
-  (set (make-local-variable 'company-dabbrev-downcase) nil))
+  (setq js2-pretty-multiline-declarations nil))
 
 
 (defun kill-tern-process ()

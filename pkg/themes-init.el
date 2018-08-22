@@ -9,8 +9,6 @@
    darktooth-theme
    gruvbox-theme
    dracula-theme
-   faff-theme
-   farmhouse-theme
    twilight-theme
    greymatters-theme
    hemisu-theme

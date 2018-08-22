@@ -1,19 +1,12 @@
 ;;; package -- summary
-
 ;;; Commentary:
-
 ;;; Code:
 (load "~/.emacs.d/mac-modifier")
 (load "~/.emacs.d/defaults")
 (load "~/.emacs.d/user-defined")
 
-;; Auto-complete or Company?
-;; (load "~/.emacs.d/pkg/auto-complete-init")
-(load "~/.emacs.d/pkg/company-init")
-
 ;; Must-have
-(load "~/.emacs.d/pkg/treemacs-init")
-(load "~/.emacs.d/pkg/editorconfig-init")
+(load "~/.emacs.d/pkg/company-init")
 (load "~/.emacs.d/pkg/anzu-init")
 (load "~/.emacs.d/pkg/avy-init")
 (load "~/.emacs.d/pkg/ag-init")
@@ -32,24 +25,28 @@
 (load "~/.emacs.d/pkg/undo-tree-init")
 (load "~/.emacs.d/pkg/keychord-init")
 (load "~/.emacs.d/pkg/themes-init")
-(load "~/.emacs.d/pkg/dashboard-init")
-(load "~/.emacs.d/pkg/org-init")
 
 ;; Language IDE
+(load "~/.emacs.d/pkg/org-init")
 (load "~/.emacs.d/pkg/javascript-init.el")
 (load "~/.emacs.d/pkg/tide-init")
 (load "~/.emacs.d/pkg/elpy-init")
 (load "~/.emacs.d/pkg/cider-init")
 (load "~/.emacs.d/pkg/alchemist-init")
-(load "~/.emacs.d/pkg/elm-init")
 (load "~/.emacs.d/pkg/markdown-init")
 
 ;; Ivy
 (load "~/.emacs.d/pkg/counsel-init")
 
+;; Keybindings
+(load "~/.emacs.d/keybindings")
+
+;; Eye-candy
+;; (load "~/.emacs.d/pkg/treemacs-init")
+;; (load "~/.emacs.d/pkg/editorconfig-init")
+;; (load "~/.emacs.d/pkg/dashboard-init")
 ;; (load "~/.emacs.d/pkg/hlinum-init")
 ;; (load "~/.emacs.d/pkg/rainbow-delimiters-init")
-(load "~/.emacs.d/keybindings")
 
 (provide 'custom)
 ;;; custom.el ends here

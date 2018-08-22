@@ -4,11 +4,10 @@
   ;; Global
   (setq company-idle-delay 0
         company-minimum-prefix-length 2
-        company-show-numbers t
+        company-show-numbers nil
         company-tooltip-limit 20
         company-require-match nil
         company-dabbrev-downcase nil)
-
 
   ;; Facing
   (unless (face-attribute 'company-tooltip :background)
@@ -19,14 +18,8 @@
     (set-face-attribute 'company-scrollbar-bg nil :inherit 'company-tooltip :background "gray20")
     (set-face-attribute 'company-scrollbar-fg nil :background "gray40"))
 
-  ;; Default backends
-  (setq company-frontends '(company-pseudo-tooltip-unless-just-one-frontend
-                            company-echo-metadata-frontend))
   (setq company-backends '((company-capf company-dabbrev-code company-files company-restclient) (company-elisp)))
-
-  ;; Activating globally
   (global-company-mode t))
-
 
 (use-package company-quickhelp
   :ensure t
