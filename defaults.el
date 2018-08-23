@@ -3,8 +3,9 @@
 ;; Some default settings for EMACS
 
 ;;; Code:
-(require 'exec-path-from-shell)
-(when (memq window-system '(mac ns x))
+(use-package exec-path-from-shell
+  :ensure t
+  :init
   (exec-path-from-shell-initialize))
 
 (scroll-bar-mode -1)

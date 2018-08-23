@@ -1,40 +1,36 @@
-(use-package company-tern :ensure t)
-(use-package company-jedi :ensure t)
-(use-package company-restclient :ensure t)
-
 (use-package company
   :ensure t
-  :hook (after-init . global-company-mode)
-  :bind (("M-/" . company-complete-common-or-cycle)
-         ("C-x C-p" . company-files)
-         :map company-active-map
-         ("<tab>" . company-complete-common-or-cycle)
-         ("M-n" . company-select-next-or-abort)
-         ("M-p" . company-select-previous-or-abort))
   :config
-  (add-hook 'after-init 'global-company-mode)
-  (setq company-minimum-prefix-length 3
-        company-require-match nil
-        company-idle-delay nil
+  ;; Global
+  (setq company-idle-delay 0
+        company-minimum-prefix-length 2
+        company-show-numbers nil
+        company-tooltip-limit 20
         company-tooltip-align-annotations t
+        company-require-match nil
         company-echo-delay 0
-        company-frontends
-        '(company-pseudo-tooltip-unless-just-one-frontend
-          company-echo-metadata-frontend)
-        company-backends
-        '((company-capf company-dabbrev-code
-                        :with
-                        company-yasnippet
-                        company-restclient
-                        company-tern
-                        company-jedi
-                        company-files))))
+        company-dabbrev-downcase nil)
 
-(use-package company-buffer-line
-  :commands (company-same-mode-buffer-lines)
-  :bind ("C-x C-l" . company-same-mode-buffer-lines))
+  ;; Facing
+  (unless (face-attribute 'company-tooltip :background)
+    (set-face-attribute 'company-tooltip nil :background "black" :foreground "gray40")
+    (set-face-attribute 'company-tooltip-selection nil :inherit 'company-tooltip :background "gray15")
+    (set-face-attribute 'company-preview nil :background "black")
+    (set-face-attribute 'company-preview-common nil :inherit 'company-preview :foreground "gray40")
+    (set-face-attribute 'company-scrollbar-bg nil :inherit 'company-tooltip :background "gray20")
+    (set-face-attribute 'company-scrollbar-fg nil :background "gray40"))
 
-(use-package company-statistics
+  (setq company-frontends '(company-pseudo-tooltip-unless-just-one-frontend
+                            company-echo-metadata-frontend))
+  (setq company-backends '((company-capf company-dabbrev-code :with
+                                         company-yasnippet
+                                         company-files
+                                         company-restclient
+                                         company-elisp)))
+  (global-company-mode t))
+
+(use-package company-quickhelp
   :ensure t
-  :defer t
-  :hook (global-company-mode . company-statistics-mode))
+  :after company
+  :config
+  (company-quickhelp-mode 1))

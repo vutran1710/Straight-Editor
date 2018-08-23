@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: import hyperapp
+# key: hype
+# --
+import { h } from 'hyperapp'
+
+
+const ${1:Component} = ($2) => ($3)
+
+export default {$1}
