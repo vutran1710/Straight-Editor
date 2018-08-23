@@ -9,6 +9,8 @@
                 company-tooltip-limit 20
                 company-tooltip-align-annotations t
                 company-require-match nil
+                company-dabbrev-code-other-buffers 'all
+                company-dabbrev-code-everywhere t
                 company-echo-delay 0
                 company-dabbrev-downcase nil)
 
@@ -24,7 +26,7 @@
   (setq company-frontends '(company-pseudo-tooltip-frontend
                             company-echo-metadata-frontend))
   (setq company-backends
-        '((company-dabbrev company-abbrev company-capf company-files company-keywords)))
+        '((company-dabbrev company-dabbrev-code company-abbrev company-capf company-files company-keywords)))
 
   (global-company-mode t))
 

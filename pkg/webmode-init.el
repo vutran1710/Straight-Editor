@@ -30,9 +30,9 @@
 
   (defun company-web-mode-hook ()
     (set (make-local-variable 'company-backends)
-         '(company-css company-web company-tern company-semantic company-files
-                       (company-dabbrev-code company-gtags company-etags company-keywords company-tern)
-                       (company-dabbrev company-capf company-keywords))))
+         '(company-dabbrev-code company-dabbrev company-css company-web company-tern company-semantic company-files
+                                (company-dabbrev-code company-gtags company-etags company-keywords company-tern)
+                                (company-dabbrev company-capf company-keywords))))
 
   (add-hook 'web-mode-hook (lambda ()
                              (tern-mode)
