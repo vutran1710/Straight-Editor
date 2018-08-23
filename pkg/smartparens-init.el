@@ -7,6 +7,4 @@
   ("C-'" . sp-rewrap-sexp)
   ("C->" . sp-slurp-hybrid-sexp)
   ("C-]" . sp-mark-sexp)
-  :config
-  (progn
-    (show-smartparens-global-mode t)))
+  :config (smartparens-global-mode t))

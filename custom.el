@@ -14,7 +14,6 @@
 (load "~/.emacs.d/pkg/smartparens-init")
 (load "~/.emacs.d/pkg/projectile-init")
 (load "~/.emacs.d/pkg/magit-init")
-(load "~/.emacs.d/pkg/webmode-init")
 (load "~/.emacs.d/pkg/ace-window-init")
 (load "~/.emacs.d/pkg/yaml-mode-init")
 (load "~/.emacs.d/pkg/restclient-init")
@@ -28,8 +27,8 @@
 (load "~/.emacs.d/pkg/themes-init")
 
 ;; Language IDE
+(load "~/.emacs.d/pkg/webmode-init")
 (load "~/.emacs.d/pkg/org-init")
-(load "~/.emacs.d/pkg/javascript-init.el")
 (load "~/.emacs.d/pkg/tide-init")
 (load "~/.emacs.d/pkg/elpy-init")
 (load "~/.emacs.d/pkg/cider-init")
