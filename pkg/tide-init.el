@@ -30,13 +30,3 @@
   (yas-reload-all)
   (tide-hl-identifier-mode +1)
   (my/use-tslint-from-node-modules))
-
-;; aligns annotation to the right hand side
-(setq company-tooltip-align-annotations t)
-(setq tide-format-options '(
-                            :insertSpaceAfterFunctionKeywordForAnonymousFunctions t
-                            :placeOpenBraceOnNewLineForFunctions nil
-                            :placeOpenBraceOnNewLineForControlBlocks nil
-                            :insertSpaceAfterSemicolonInForStatements t
-                            :insertSpaceBeforeAndAfterBinaryOperators t
-                            :insertSpaceAfterKeywordsInControlFlowStatements t))

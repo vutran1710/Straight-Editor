@@ -6,7 +6,9 @@
         company-minimum-prefix-length 2
         company-show-numbers nil
         company-tooltip-limit 20
+        company-tooltip-align-annotations t
         company-require-match nil
+        company-echo-delay 0
         company-dabbrev-downcase nil)
 
   ;; Facing
@@ -18,7 +20,13 @@
     (set-face-attribute 'company-scrollbar-bg nil :inherit 'company-tooltip :background "gray20")
     (set-face-attribute 'company-scrollbar-fg nil :background "gray40"))
 
-  (setq company-backends '((company-capf company-dabbrev-code company-files company-restclient) (company-elisp)))
+  (setq company-frontends '(company-pseudo-tooltip-unless-just-one-frontend
+                            company-echo-metadata-frontend))
+  (setq company-backends '((company-capf company-dabbrev-code :with
+                                         company-yasnippet
+                                         company-files
+                                         company-restclient
+                                         company-elisp)))
   (global-company-mode t))
 
 (use-package company-quickhelp
