@@ -1,11 +1,14 @@
 (use-package web-mode
   :ensure t
-  :init (use-package emmet-mode
-          :ensure t
-          :config (setq emmet-expand-jsx-className? t
-                        emmet-self-closing-tag-style " /"
-                        emmet-move-cursor-between-quotes t))
+  :init
+  (use-package emmet-mode
+    :ensure t
+    :config (setq emmet-expand-jsx-className? t
+                  emmet-self-closing-tag-style " /"
+                  emmet-move-cursor-between-quotes t))
+  (use-package flycheck :ensure t)
   :config
+  (global-flycheck-mode 1)
   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))

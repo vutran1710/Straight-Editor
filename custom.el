@@ -6,6 +6,7 @@
 (load "~/.emacs.d/user-defined")
 
 ;; Must-have
+(load "~/.emacs.d/pkg/restart-emacs-init")
 (load "~/.emacs.d/pkg/company-init")
 (load "~/.emacs.d/pkg/anzu-init")
 (load "~/.emacs.d/pkg/avy-init")
