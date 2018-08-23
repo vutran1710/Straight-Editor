@@ -1,7 +1,10 @@
-;;; package --- summary
 (use-package counsel
   :ensure t
-  :init (use-package ivy :ensure t) (use-package swiper :ensure t) (use-package counsel-projectile :ensure t)
+  :init
+  (use-package ivy :ensure t)
+  (use-package swiper :ensure t)
+  (use-package counsel-projectile :ensure t)
+  (use-package smex :ensure t)
   :config
   (ivy-mode 1)
   (counsel-projectile-mode)
@@ -17,6 +20,7 @@
   (global-set-key (kbd "C-c t") 'counsel-load-theme)
   (global-set-key (kbd "C-c p p") 'counsel-projectile-switch-project)
   (global-set-key (kbd "C-c p s") 'counsel-projectile-ag)
+  (global-set-key (kbd "M-j") 'ivy-yank-word)
 
   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
   (global-set-key (kbd "C-c k") 'counsel-ag)
@@ -28,4 +32,3 @@
   (define-key ivy-minibuffer-map (kbd "C-d") 'ivy-delete-char))
 
 (provide 'counsel-init)
-;;; counsel-init ends here

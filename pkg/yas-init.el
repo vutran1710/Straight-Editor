@@ -3,9 +3,6 @@
   :after company
   :config
 
-  ;; Adding yasnippet support to company
-  (add-to-list 'company-backends '(company-yasnippet))
-
   ;; Activate global
   (yas-global-mode))
 

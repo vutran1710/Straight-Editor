@@ -2,6 +2,7 @@
   :ensure t
   :init
   (use-package company-tern :ensure t)
+  (use-package company-web :ensure t)
   (use-package eslintd-fix :ensure t)
   ;; (use-package prettier-js :ensure t)
   (use-package xref-js2 :ensure t)
@@ -25,22 +26,21 @@
                           '(json-jsonlist))))
 
   :config
+  (add-hook 'flycheck-mode-hook #'use-eslint-from-node-modules)
+
+  (defun company-web-mode-hook ()
+    (set (make-local-variable 'company-backends)
+         '(company-css company-web company-tern company-semantic company-files
+                       (company-dabbrev-code company-gtags company-etags company-keywords company-tern)
+                       (company-dabbrev company-capf company-keywords))))
+
   (add-hook 'web-mode-hook (lambda ()
                              (tern-mode)
                              (company-mode)
-                             (add-to-list 'company-backends 'company-tern)
                              ;; (prettier-js-mode)
                              (eslintd-fix-mode t)
+                             (company-web-mode-hook)
                              (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
-
-  (add-hook 'flycheck-mode-hook #'use-eslint-from-node-modules)
-
-  (set (make-local-variable 'company-backends)
-       '(company-bbdb
-         company-nxml company-css
-         company-semantic company-files
-         (company-dabbrev-code company-gtags company-etags company-keywords company-tern :with company-yasnippet)
-         (company-dabbrev company-capf company-keywords :with company-yasnippet)))
 
   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))

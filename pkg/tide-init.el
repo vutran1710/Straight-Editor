@@ -21,11 +21,18 @@
     (when (and tslint (file-executable-p tslint))
       (setq-local flycheck-javascript-tslint-executable tslint))))
 
+(defun company-tide-mode-hook ()
+  (set (make-local-variable 'company-backends)
+       '(company-css company-web company-tern company-semantic company-files
+                     (company-dabbrev-code company-gtags company-etags company-keywords company-tern)
+                     (company-dabbrev company-capf company-keywords))))
+
 (defun setup-tide-mode ()
   (interactive)
   (tide-setup)
   (flycheck-mode +1)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (company-tide-mode-hook)
   (eldoc-mode +1)
   (yas-reload-all)
   (tide-hl-identifier-mode +1)
