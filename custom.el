@@ -26,6 +26,10 @@
 (load "~/.emacs.d/pkg/keychord-init")
 (load "~/.emacs.d/pkg/themes-init")
 
+;; Extra utils
+(load "~/.emacs.d/pkg/extra/google-init")
+
+
 ;; Language IDE
 (load "~/.emacs.d/pkg/webmode-init")
 (load "~/.emacs.d/pkg/org-init")
