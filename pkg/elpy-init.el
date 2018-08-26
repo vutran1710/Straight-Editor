@@ -6,5 +6,4 @@
   (setq python-shell-interpreter "ipython"
         python-shell-interpreter-args "-i --simple-prompt"
         elpy-shell-use-project-root nil
-        elpy-set-test-runner "pytest"
-        elpy-test-pytest-runner-command '("pytest" "-s" "--service=talentmind" "--env=local")))
+        elpy-set-test-runner "pytest"))
