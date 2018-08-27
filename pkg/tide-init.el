@@ -36,4 +36,5 @@
   (eldoc-mode +1)
   (yas-reload-all)
   (tide-hl-identifier-mode +1)
+  (setq typescript-indent-level '2)
   (my/use-tslint-from-node-modules))

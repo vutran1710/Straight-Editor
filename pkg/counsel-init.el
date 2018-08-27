@@ -8,6 +8,7 @@
   :config
   (ivy-mode 1)
   (counsel-projectile-mode)
+  (smex-initialize)
 
   (setq ivy-use-virtual-buffers t
         enable-recursive-minibuffers t
