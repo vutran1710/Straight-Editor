@@ -28,7 +28,7 @@
 
 ;; Extra utils
 (load "~/.emacs.d/pkg/extra/google-init")
-
+(load "~/.emacs.d/pkg/extra/beacon-init")
 
 ;; Language IDE
 (load "~/.emacs.d/pkg/docker-init")
