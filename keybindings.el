@@ -54,3 +54,8 @@
 
 ;; Expand region
 (global-set-key (kbd "C-]") 'er/expand-region)
+
+
+;; Yasnippet
+;; Using tab to expand snippet by default
+;; (global-set-key (kbd "<TAB>") 'yas-expand-snippet)

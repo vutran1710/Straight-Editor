@@ -1,15 +1,11 @@
 (use-package yasnippet
   :ensure t
   :after company
-  :config
-
-  ;; Activate global
-  (yas-global-mode))
+  :config (yas-global-mode))
 
 (use-package yasnippet-snippets
   :ensure t
-  :after yasnippet
-  )
+  :after yasnippet)
 
 (use-package ivy-yasnippet
   :ensure t

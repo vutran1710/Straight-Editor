@@ -30,11 +30,11 @@
 (load "~/.emacs.d/pkg/projectile-init")
 (load "~/.emacs.d/pkg/counsel-init")
 (load "~/.emacs.d/pkg/company-init")
+(load "~/.emacs.d/pkg/yas-init")
 (load "~/.emacs.d/pkg/diff-hl-init")
 (load "~/.emacs.d/pkg/restclient-init")
 ;; (load "~/.emacs.d/pkg/yaml-mode-init")
 ;; (load "~/.emacs.d/pkg/flycheck-init")
-;; (load "~/.emacs.d/pkg/yas-init")
 
 ;; ;; Language IDE
 ;; (load "~/.emacs.d/pkg/docker-init")
