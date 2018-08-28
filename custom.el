@@ -38,7 +38,7 @@
 
 ;; ;; Language IDE
 (load "~/.emacs.d/pkg/yaml-mode-init")
-;; (load "~/.emacs.d/pkg/elpy-init")
+(load "~/.emacs.d/pkg/elpy-init")
 ;; (load "~/.emacs.d/pkg/docker-init")
 ;; (load "~/.emacs.d/pkg/webmode-init")
 ;; (load "~/.emacs.d/pkg/tide-init")
