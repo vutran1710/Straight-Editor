@@ -18,7 +18,8 @@
         '((company-dabbrev company-dabbrev-code company-capf company-files company-keywords)))
 
   (global-company-mode t)
-  :hook (elisp-mode . (lambda () (add-to-list 'company-backends company-elisp))))
+  :hook (elisp-mode . (lambda ()
+                        (add-to-list 'company-backends 'company-elisp))))
 
 (use-package company-quickhelp
   :ensure t
