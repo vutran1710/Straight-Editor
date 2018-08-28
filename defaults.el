@@ -14,6 +14,7 @@
 (delete-selection-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (electric-indent-mode t)
+(recentf-mode 1)
 
 (setq-default fringe-mode '(4 . 0)
               recentf-mode t
@@ -25,6 +26,7 @@
               tab-width 2
               indent-tabs-mode nil
               tab-always-indent t
+              recentf-max-menu-items 25
               tramp-default-method "ssh"
               linum-format "%3d  "
               visible-bell nil
