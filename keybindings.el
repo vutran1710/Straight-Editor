@@ -35,7 +35,6 @@
 (global-set-key (kbd "C-c p p") 'counsel-projectile-switch-project)
 (global-set-key (kbd "C-c p s") 'counsel-projectile-ag)
 (global-set-key (kbd "M-j") 'ivy-yank-word)
-
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c k") 'counsel-ag)
 (global-set-key (kbd "C-;") 'counsel-projectile-find-file)
@@ -45,3 +44,13 @@
 (key-chord-define-global "km" 'volatile-kill-buffer)
 (key-chord-define-global "fj" 'ivy-switch-buffer)
 (key-chord-define-global "vc" 'magit-branch-and-checkout)
+
+
+;; Smartparens
+(global-set-key (kbd "C-r") 'sp-rewrap-sexp)
+(global-set-key (kbd "C-u") 'sp-unwrap-sexp)
+(global-set-key (kbd "C-c C-.") 'sp-slurp-hybrid-sexp)
+
+
+;; Expand region
+(global-set-key (kbd "C-]") 'er/expand-region)
