@@ -17,9 +17,10 @@
                   (sequence "NEXT(n)" "ACTIVE(a)" "WAITING(w)" "LATER(l)" "|" "CANCELLED(c)"))
                 org-log-done 'time
                 org-src-fontify-natively t)
-  (add-hook 'org-mode-hook (lambda () (setq-local linum-format "  ")))
-  (add-hook 'org-mode-hook 'toc-org-enable)
-  (add-hook 'org-mode-hook 'yas-minor-mode-on)
+  (add-hook 'org-mode-hook (lambda ()
+                             (setq-local linum-format "  ")
+                             (toc-org-enable)
+                             (yas-minor-mode-on)))
   (add-to-list 'org-tag-alist '("TOC" . ?T)))
 
 (provide 'org-init.el)
