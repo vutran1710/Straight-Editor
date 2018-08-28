@@ -10,43 +10,44 @@
 
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-(mac-auto-operator-composition-mode)
-(fringe-mode '(4 . 0))
-(recentf-mode 1)
-(show-paren-mode 1)
-(electric-indent-mode -1)
-(delete-selection-mode 1)
-(blink-cursor-mode -1)
+(show-paren-mode t)
+(delete-selection-mode t)
+(fset 'yes-or-no-p 'y-or-n-p)
+(electric-indent-mode t)
+
+(setq-default fringe-mode '(4 . 0)
+              recentf-mode t
+              blink-cursor-mode nil
+              custom-safe-themes t
+              auto-save-default nil
+              make-backup-files nil
+              fringes-outside-margins t
+              tab-width 2
+              indent-tabs-mode nil
+              tab-always-indent t
+              tramp-default-method "ssh"
+              linum-format "%3d  "
+              visible-bell nil
+              ring-bell-function 'ignore
+              mac-use-title-bar t)
 
 (add-hook 'prog-mode-hook 'linum-mode)
-(add-hook 'text-mode-hook 'linum-mode)
-
-(setq custom-safe-themes t)
-(setq auto-save-default nil)
-(setq make-backup-files nil)
-(setq-default fringes-outside-margins t)
-
-(add-hook 'text-mode-hook '(lambda() (turn-on-auto-fill) (set-fill-column 120)))
 (add-hook 'prog-mode-hook 'visual-line-mode)
-
-(setq-default tab-width 2)
-(setq-default indent-tabs-mode nil)
-(setq tramp-default-method "ssh")
-(setq-default linum-format "%3d  ")
-(setq-default line-spacing 2)
-
-(setq visible-bell nil
-      ring-bell-function 'ignore)
+(add-hook 'text-mode-hook 'linum-mode)
+(add-hook 'text-mode-hook '(lambda()
+                             (turn-on-auto-fill)
+                             (set-fill-column 120)))
 
 (when (window-system)
   (set-frame-size (selected-frame) 150 80)
   (set-frame-position (selected-frame) 50 30))
-(setq-default mac-use-title-bar t)
-(fset 'yes-or-no-p 'y-or-n-p)
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
-(set-face-attribute 'default nil :font "Fira Code 12")
-(set-frame-font "Fira Code 12" nil t)
+
+(set-face-attribute 'default nil :font "Fira Code 14")
+(set-frame-font "Fira Code 14" nil t)
+(setq-default line-spacing 2)
+
 (setq custom-theme-directory "~/.emacs.d/themes")
 
 (provide 'default)

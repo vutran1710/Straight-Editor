@@ -18,3 +18,4 @@
 
 (setq custom-file (expand-file-name ".temp.el" user-emacs-directory))
 (load custom-file)
+(mac-auto-operator-composition-mode)
