@@ -43,6 +43,19 @@ Repeated invocations toggle between the two most recently open buffers."
         (delete-window))))
 
 
+(defun my-fancy-newline ()
+  "Add two newlines and put the cursor at the right indentation
+between them if a newline is attempted when the cursor is between
+two curly braces, otherwise do a regular newline and indent"
+  (interactive)
+  (if (and (equal (char-before) 123) ; {
+           (equal (char-after) 125)) ; }
+      (progn (newline-and-indent)
+             (split-line)
+             (indent-for-tab-command))
+    (newline-and-indent)))
+
+
 (defun lunaryorn-new-buffer-frame ()
   "Create a new frame with a new empty buffer."
   (interactive)

@@ -4,7 +4,7 @@
 
 
 ;; Fundamental
-(global-set-key (kbd "RET") 'electric-newline-and-maybe-indent)
+(global-set-key (kbd "RET") 'my-fancy-newline)
 (global-set-key (kbd "<f4>") 'split-window-horizontally)
 (global-set-key (kbd "<f5>") 'split-window-vertically)
 (global-set-key (kbd "<f6>") 'package-install)
