@@ -3,7 +3,7 @@
 (global-unset-key (kbd "M-;"))
 
 
-;; Set keys
+;; Fundamental
 (global-set-key (kbd "RET") 'electric-newline-and-maybe-indent)
 (global-set-key (kbd "<f4>") 'split-window-horizontally)
 (global-set-key (kbd "<f5>") 'split-window-vertically)
@@ -59,3 +59,7 @@
 ;; Yasnippet
 ;; Using tab to expand snippet by default
 ;; (global-set-key (kbd "<TAB>") 'yas-expand-snippet)
+
+
+;; Webmode
+(global-set-key (kbd "C-q") 'emmet-expand-yas)

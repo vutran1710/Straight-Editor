@@ -4,40 +4,30 @@
   (use-package company-tern :ensure t)
   (use-package company-web :ensure t)
   (use-package eslintd-fix :ensure t)
-  ;; (use-package prettier-js :ensure t)
   (use-package xref-js2 :ensure t)
-  (use-package emmet-mode
-    :ensure t
+  (use-package emmet-mode :ensure t
     :config (setq emmet-expand-jsx-className? t
                   emmet-self-closing-tag-style " /"
                   emmet-move-cursor-between-quotes t))
-  (use-package flycheck
-    :ensure t
-    :config
-    (global-flycheck-mode 1)
-    (with-eval-after-load 'flycheck
-      (dolist (checker '(javascript-eslint))
-        (flycheck-add-mode checker 'web-mode)))
-    (setq-default flycheck-disabled-checkers
-                  (append flycheck-disabled-checkers
-                          '(javascript-jshint)))
-    (setq-default flycheck-disabled-checkers
-                  (append flycheck-disabled-checkers
-                          '(json-jsonlist))))
-
   :config
+  (with-eval-after-load 'flycheck
+    (dolist (checker '(javascript-eslint))
+      (flycheck-add-mode checker 'web-mode)))
+
+  (setq-default flycheck-disabled-checkers
+                (append flycheck-disabled-checkers
+                        '(javascript-jshint json-jsonlist)))
+
   (add-hook 'flycheck-mode-hook #'use-eslint-from-node-modules)
 
+  ;; Auto-complete for webmode
   (defun company-web-mode-hook ()
     (set (make-local-variable 'company-backends)
-         '(company-dabbrev-code company-dabbrev company-css company-web company-tern company-semantic company-files
-                                (company-dabbrev-code company-gtags company-etags company-keywords company-tern)
-                                (company-dabbrev company-capf company-keywords))))
+         '(company-dabbrev company-tern company-css company-web company-files)))
 
   (add-hook 'web-mode-hook (lambda ()
                              (tern-mode)
                              (company-mode)
-                             ;; (prettier-js-mode)
                              (eslintd-fix-mode t)
                              (company-web-mode-hook)
                              (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
@@ -50,8 +40,7 @@
   (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.html.eex\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
 
   (setq web-mode-markup-indent-offset 2
         web-mode-code-indent-offset 2
@@ -64,10 +53,9 @@
     (if (equal web-mode-content-type "jsx")
         (let ((web-mode-enable-part-face nil))
           ad-do-it)
-      ad-do-it))
+      ad-do-it)))
 
-  (global-set-key (kbd "C-q") 'emmet-expand-yas))
-
+;; Make use of local Eslint over global
 (defun use-eslint-from-node-modules ()
   (let* ((root (locate-dominating-file
                 (or (buffer-file-name) default-directory)
