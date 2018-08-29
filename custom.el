@@ -40,7 +40,7 @@
 (load "~/.emacs.d/pkg/yaml-mode-init")
 (load "~/.emacs.d/pkg/elpy-init")
 (load "~/.emacs.d/pkg/webmode-init")
-;; (load "~/.emacs.d/pkg/tide-init")
+(load "~/.emacs.d/pkg/tide-init")
 ;; (load "~/.emacs.d/pkg/cider-init")
 ;; (load "~/.emacs.d/pkg/alchemist-init")
 ;; (load "~/.emacs.d/pkg/markdown-init")
