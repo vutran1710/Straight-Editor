@@ -15,9 +15,9 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (electric-indent-mode t)
 (recentf-mode 1)
+(fringe-mode '(5 . 0))
 
-(setq-default fringe-mode '(4 . 0)
-              recentf-mode t
+(setq-default recentf-mode t
               blink-cursor-mode nil
               custom-safe-themes t
               auto-save-default nil
@@ -46,8 +46,8 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Fira Code 14")
-(set-frame-font "Fira Code 14" nil t)
+(set-face-attribute 'default nil :font "Fira Code 12")
+(set-frame-font "Fira Code 12" nil t)
 (setq-default line-spacing 2)
 
 (setq custom-theme-directory "~/.emacs.d/themes")
