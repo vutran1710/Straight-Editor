@@ -10,7 +10,6 @@
 (load "~/.emacs.d/themes-init")
 ;; (load "~/.emacs.d/hlinum-init")
 ;; (load "~/.emacs.d/rainbow-delimiters-init")
-;; (load "~/.emacs.d/dashboard-init")
 ;; (load "~/.emacs.d/treemacs-init")
 
 ;; Must-have

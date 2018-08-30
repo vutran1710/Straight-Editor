@@ -1,18 +1,3 @@
-;; (load "~/.emacs.d/pkg/google-init")
-;; (load "~/.emacs.d/pkg/beacon-init")
-;; (load "~/.emacs.d/pkg/restart-emacs-init")
-;; (load "~/.emacs.d/pkg/magit-init")
-;; (load "~/.emacs.d/pkg/modeline-init")
-;; (load "~/.emacs.d/pkg/undo-tree-init")
-;; (load "~/.emacs.d/pkg/keychord-init")
-;; (load "~/.emacs.d/pkg/ace-window-init")
-;; (load "~/.emacs.d/pkg/anzu-init")
-;; (load "~/.emacs.d/pkg/avy-init")
-;; (load "~/.emacs.d/pkg/ag-init")
-;; (load "~/.emacs.d/pkg/aggressive-indent-init")
-;; (load "~/.emacs.d/pkg/expand-region-init")
-;; (load "~/.emacs.d/pkg/smartparens-init")
-
 (use-package restart-emacs
   :ensure t)
 
@@ -79,3 +64,15 @@
 (use-package smartparens-config
   :ensure smartparens
   :config (smartparens-global-mode t))
+
+(use-package dashboard
+  :ensure t
+  :init (use-package page-break-lines
+          :ensure t)
+  :config
+  (global-page-break-lines-mode)
+  (dashboard-setup-startup-hook)
+  (setq dashboard-items '((recents  . 8)
+                          (projects . 9)))
+  (setq dashboard-banner-logo-title "SORCERER")
+  (setq dashboard-startup-banner "~/.emacs.d/graphics/sorceress.png"))
