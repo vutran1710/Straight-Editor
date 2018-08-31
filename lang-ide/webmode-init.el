@@ -23,7 +23,7 @@
   ;; Auto-complete for webmode
   (defun company-web-mode-hook ()
     (set (make-local-variable 'company-backends)
-         '(company-dabbrev company-tern company-css company-web company-files)))
+         '(company-capf company-dabbrev company-tern company-css company-web company-files)))
 
   (add-hook 'web-mode-hook (lambda ()
                              (tern-mode)
