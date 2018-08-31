@@ -33,12 +33,18 @@
   :ensure t
   :bind ("M-[" . ace-window))
 
-(use-package anzu
+;; (use-package anzu
+;;   :ensure t
+;;   :hook (after-init . global-anzu-mode)
+;;   :bind (([remap query-replace] . anzu-query-replace)
+;;          ([remap query-replace-regexp] . anzu-query-replace-regexp)
+;;          ("M-r" . anzu-query-replace-at-cursor)))
+(use-package iedit
   :ensure t
-  :hook (after-init . global-anzu-mode)
-  :bind (([remap query-replace] . anzu-query-replace)
-         ([remap query-replace-regexp] . anzu-query-replace-regexp)
-         ("M-r" . anzu-query-replace-at-cursor)))
+  :bind ("M-r" . iedit-mode)
+  :config
+  (set-face-foreground 'iedit-occurrence "white")
+  (set-face-background 'iedit-occurrence "orange red"))
 
 (use-package avy
   :ensure t
