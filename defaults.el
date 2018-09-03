@@ -46,8 +46,8 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Fira Code 12")
-(set-frame-font "Fira Code 12" nil t)
+(set-face-attribute 'default nil :font "Fira Code Medium 12")
+(set-frame-font "Fira Code Medium 12" nil t)
 (setq-default line-spacing 2)
 
 (setq custom-theme-directory "~/.emacs.d/themes")

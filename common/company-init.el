@@ -13,9 +13,9 @@
                 company-echo-delay 0.1
                 company-dabbrev-downcase nil)
 
-  (setq company-frontends '(company-pseudo-tooltip-frontend company-echo-metadata-frontend))
-  (setq company-backends
-        '((company-capf company-dabbrev company-dabbrev-code company-files)))
+  (setq-default company-frontends '(company-pseudo-tooltip-frontend company-echo-metadata-frontend))
+  (setq-default company-backends
+                '((company-capf company-dabbrev company-dabbrev-code company-files)))
 
   (global-company-mode t)
   :hook (elisp-mode . (lambda ()

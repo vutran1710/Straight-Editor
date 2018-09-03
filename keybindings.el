@@ -47,6 +47,7 @@
 
 
 ;; Smartparens
+(global-set-key (kbd "C->") 'sp-slurp-hybrid-sexp)
 (global-set-key (kbd "C-r") 'sp-rewrap-sexp)
 (global-set-key (kbd "C-u") 'sp-unwrap-sexp)
 (global-set-key (kbd "C-c C-.") 'sp-slurp-hybrid-sexp)
