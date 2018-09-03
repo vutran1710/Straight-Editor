@@ -8,6 +8,11 @@
   :init
   (exec-path-from-shell-initialize))
 
+(setq mac-command-modifier 'meta)
+;;(setq mac-option-modifier 'meta)
+;; (setq mac-control-modifier 'control) ; make Control key do Control
+;; (setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
+
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (show-paren-mode t)

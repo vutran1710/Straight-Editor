@@ -58,7 +58,7 @@
   :init
   (use-package wgrep-ag :ensure t)
   (setq-default ag-highlight-search t)
-  :bind ("M-?" . ag-project))
+  :bind ("C-?" . ag-project))
 
 (use-package aggressive-indent
   :ensure t

@@ -1,7 +1,6 @@
 ;;; package -- summary
 ;;; Commentary:
 ;;; Code:
-(load "~/.emacs.d/mac-modifier")
 (load "~/.emacs.d/defaults")
 (load "~/.emacs.d/user-defined")
 
