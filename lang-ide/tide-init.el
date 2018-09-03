@@ -3,13 +3,27 @@
   :init (use-package web-mode :ensure t)
   :config
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+
   (add-hook 'web-mode-hook
             (lambda ()
               (when (string-equal "tsx" (file-name-extension buffer-file-name))
                 (setup-tide-mode))))
 
+  (defun company-tide-mode-hook ()
+    (set (make-local-variable 'company-backends)
+         '(company-capf company-dabbrev-code company-tide company-tern company-css company-files)))
+
   (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
+
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (company-tide-mode-hook)
+  (tide-hl-identifier-mode +1)
+  (setq typescript-indent-level '2)
+  (my/use-tslint-from-node-modules))
 
 (defun my/use-tslint-from-node-modules ()
   (let* ((root (locate-dominating-file
@@ -20,21 +34,3 @@
                                         root))))
     (when (and tslint (file-executable-p tslint))
       (setq-local flycheck-javascript-tslint-executable tslint))))
-
-(defun company-tide-mode-hook ()
-  (set (make-local-variable 'company-backends)
-       '(company-dabbrev-code company-dabbrev company-css company-web company-tern company-semantic company-files
-                              (company-dabbrev-code company-gtags company-etags company-keywords company-tern)
-                              (company-dabbrev company-capf company-keywords))))
-
-(defun setup-tide-mode ()
-  (interactive)
-  (tide-setup)
-  (flycheck-mode +1)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (company-tide-mode-hook)
-  (eldoc-mode +1)
-  (yas-reload-all)
-  (tide-hl-identifier-mode +1)
-  (setq typescript-indent-level '2)
-  (my/use-tslint-from-node-modules))
