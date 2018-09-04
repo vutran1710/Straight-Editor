@@ -33,12 +33,6 @@
   :ensure t
   :bind ("M-[" . ace-window))
 
-;; (use-package anzu
-;;   :ensure t
-;;   :hook (after-init . global-anzu-mode)
-;;   :bind (([remap query-replace] . anzu-query-replace)
-;;          ([remap query-replace-regexp] . anzu-query-replace-regexp)
-;;          ("M-r" . anzu-query-replace-at-cursor)))
 (use-package iedit
   :ensure t
   :bind ("M-r" . iedit-mode)
@@ -57,8 +51,7 @@
   :if (executable-find "ag")
   :init
   (use-package wgrep-ag :ensure t)
-  (setq-default ag-highlight-search t)
-  :bind ("C-?" . ag-project))
+  (setq-default ag-highlight-search t))
 
 (use-package aggressive-indent
   :ensure t

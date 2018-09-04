@@ -8,8 +8,15 @@
   :init
   (exec-path-from-shell-initialize))
 
-(setq mac-command-modifier 'meta)
-;;(setq mac-option-modifier 'meta)
+;; There are problems about key-conflict using Emacs with OSX
+;; This suggested setting is to avoid such conflict
+;; OSX setting:
+;; 1/ Capslock -> Control
+;; 2/ Command -> Option
+;; 3/ Option -> Command
+;; Then use the below setting of Emacs.
+(setq mac-option-modifier 'meta)
+;;(setq mac-command-modifier 'meta)
 ;; (setq mac-control-modifier 'control) ; make Control key do Control
 ;; (setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
 
