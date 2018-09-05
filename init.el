@@ -6,7 +6,13 @@
   (when (< emacs-major-version 24)
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
-(server-start)
+
+(defun td/ensure-server-running ()
+  (require 'server)
+  (unless (server-running-p)
+    (server-start)))
+
+(add-hook 'after-init-hook #'td/ensure-server-running)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
