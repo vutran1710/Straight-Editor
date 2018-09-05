@@ -42,16 +42,15 @@
 
 (use-package avy
   :ensure t
-  :bind (("C-." . avy-goto-char)
-         ("C-," . avy-goto-char-in-line)
+  :bind (("C-," . avy-goto-char-2)
+         ("C-o" . avy-goto-char-in-line)
          ("C-\'" . avy-goto-line)))
 
 (use-package ag
   :ensure t
   :if (executable-find "ag")
-  :init
-  (use-package wgrep-ag :ensure t)
-  (setq-default ag-highlight-search t))
+  :init (use-package wgrep-ag :ensure t)
+  :config (setq-default ag-highlight-search t))
 
 (use-package aggressive-indent
   :ensure t
@@ -71,7 +70,7 @@
   :config
   (global-page-break-lines-mode)
   (dashboard-setup-startup-hook)
-  (setq dashboard-items '((recents  . 8)
-                          (projects . 9)))
+  (setq dashboard-items '((recents  . 4)
+                          (projects . 4)))
   (setq dashboard-banner-logo-title "SORCERER")
   (setq dashboard-startup-banner "~/.emacs.d/graphics/sorceress.png"))
