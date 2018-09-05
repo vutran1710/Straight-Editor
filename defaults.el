@@ -16,8 +16,8 @@
 ;; 3/ Option -> Command
 ;; Then use the below setting of Emacs.
 (setq mac-option-modifier 'meta)
-;;(setq mac-command-modifier 'meta)
-;; (setq mac-control-modifier 'control) ; make Control key do Control
+;; (setq mac-command-modifier 'meta)
+(setq mac-control-modifier 'control)
 ;; (setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
 
 (scroll-bar-mode -1)
@@ -58,8 +58,8 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Fira Code Medium 12")
-(set-frame-font "Fira Code Medium 12" nil t)
+(set-face-attribute 'default nil :font "Fira Code Medium 14")
+(set-frame-font "Fira Code Medium 14" nil t)
 (setq-default line-spacing 2)
 
 (setq custom-theme-directory "~/.emacs.d/themes")
