@@ -16,8 +16,8 @@
 ;; 3/ Option -> Command
 ;; Then use the below setting of Emacs.
 (setq mac-option-modifier 'meta)
-;; (setq mac-command-modifier 'meta)
-(setq mac-control-modifier 'control)
+(setq mac-command-modifier 'control)
+;; (setq mac-control-modifier 'control)
 ;; (setq ns-function-modifier 'hyper)  ; make Fn key do Hyper
 
 (scroll-bar-mode -1)
