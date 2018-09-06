@@ -42,7 +42,7 @@
 
 (use-package avy
   :ensure t
-  :bind (("C-," . avy-goto-char-2)
+  :bind (("C-," . avy-goto-char)
          ("C-o" . avy-goto-char-in-line)
          ("C-\'" . avy-goto-line)))
 
@@ -61,7 +61,7 @@
 
 (use-package smartparens-config
   :ensure smartparens
-  :config (smartparens-global-mode t))
+  :config (smartparens-global-strict-mode t))
 
 (use-package dashboard
   :ensure t

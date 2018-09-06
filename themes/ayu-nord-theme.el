@@ -3,7 +3,7 @@
 
 (custom-theme-set-faces
  'ayu-nord
- '(default ((t (:family "Fira Code" :foundry "nil" :width normal :height 120 :weight light :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "#D8DEE9" :background "#252a33" :stipple nil :inherit nil))))
+ '(default ((t (:family "Fira Code" :foundry "nil" :width normal :height 120 :weight light :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "light gray" :background "#252a33" :stipple nil :inherit nil))))
  '(cursor ((t (:background "#D8DEE9"))))
  '(fixed-pitch ((t (:family "Monospace"))))
  '(variable-pitch ((((type w32)) (:foundry "outline" :family "Arial")) (t (:family "Sans Serif"))))
