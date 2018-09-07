@@ -41,8 +41,8 @@
 
 ;; Keychord
 (key-chord-define-global "km" 'volatile-kill-buffer)
-(key-chord-define-global "fj" 'ivy-switch-buffer)
-(key-chord-define-global "vc" 'magit-branch-and-checkout)
+(key-chord-define-global "KM" 'magit-branch-and-checkout)
+(key-chord-define-global "KO" 'magit-file-checkout)
 
 
 ;; Smartparens
