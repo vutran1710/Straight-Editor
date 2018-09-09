@@ -8,11 +8,9 @@
   :init
   (exec-path-from-shell-initialize))
 
-;; There are problems about key-conflict using Emacs with OSX
-;; This suggested setting is to avoid such conflict
 (setq mac-option-modifier 'meta)
-(setq mac-command-modifier 'control)
-;; (setq mac-control-modifier 'control)
+(setq mac-control-modifier 'control)
+;; (setq mac-command-modifier 'control)
 ;; (setq ns-function-modifier 'hyper)
 
 (scroll-bar-mode -1)
@@ -53,8 +51,8 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Fira Code Medium 14")
-(set-frame-font "Fira Code Medium 14" nil t)
+(set-face-attribute 'default nil :font "Fira Code Medium 12")
+(set-frame-font "Fira Code Medium 12" nil t)
 (setq-default line-spacing 2)
 
 (setq custom-theme-directory "~/.emacs.d/themes")

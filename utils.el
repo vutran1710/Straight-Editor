@@ -41,10 +41,7 @@
   (set-face-background 'iedit-occurrence "orange red"))
 
 (use-package avy
-  :ensure t
-  :bind (("C-," . avy-goto-char)
-         ("C-o" . avy-goto-char-in-line)
-         ("C-\'" . avy-goto-line)))
+  :ensure t)
 
 (use-package ag
   :ensure t
