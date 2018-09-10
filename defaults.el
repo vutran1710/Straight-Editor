@@ -14,6 +14,7 @@
 ;; (setq ns-function-modifier 'hyper)
 
 (scroll-bar-mode -1)
+(menu-bar-mode -1)
 (tool-bar-mode -1)
 (show-paren-mode t)
 (delete-selection-mode t)
@@ -23,6 +24,7 @@
 (fringe-mode '(5 . 0))
 
 (setq-default recentf-mode t
+              cursor-type 'box
               blink-cursor-mode nil
               custom-safe-themes t
               auto-save-default nil
