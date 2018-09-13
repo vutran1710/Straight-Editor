@@ -14,7 +14,6 @@
 ;; (setq ns-function-modifier 'hyper)
 
 (scroll-bar-mode -1)
-(menu-bar-mode -1)
 (tool-bar-mode -1)
 (show-paren-mode t)
 (delete-selection-mode t)
@@ -56,6 +55,9 @@
 (set-face-attribute 'default nil :font "Fira Code Medium 12")
 (set-frame-font "Fira Code Medium 12" nil t)
 (setq-default line-spacing 2)
+
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8)
 
 (setq custom-theme-directory "~/.emacs.d/themes")
 

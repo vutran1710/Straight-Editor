@@ -11,7 +11,7 @@
 (global-set-key (kbd "<f9>") 'eval-buffer)
 
 (global-set-key (kbd "C-c C-k") 'copy-line)
-(global-set-key (kbd "C-c C-l") 'kill-whole-line)
+(global-set-key (kbd "C-l") 'kill-whole-line)
 
 (global-set-key (kbd "C-v") 'delete-backward-char)
 
@@ -36,7 +36,7 @@
 (global-set-key (kbd "C-c p s") 'projectile-ag)
 (global-set-key (kbd "M-j") 'ivy-yank-word)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "C-c f") 'counsel-projectile-find-file)
+(global-set-key (kbd "C-;") 'counsel-projectile-find-file)
 
 
 ;; Keychord
@@ -66,5 +66,5 @@
 
 ;; Anzu
 (global-set-key (kbd "C-o") 'avy-goto-char-in-line)
-(global-set-key (kbd "C-l") 'avy-goto-char)
-(global-set-key (kbd "C-M-l") 'avy-goto-line)
+(global-set-key (kbd "M-o") 'avy-goto-char)
+(global-set-key (kbd "C-'") 'avy-goto-line)
