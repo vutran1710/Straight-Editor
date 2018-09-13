@@ -7,7 +7,6 @@
             (package-install package))))
  '(tango-plus-theme
    darktooth-theme
-   gruvbox-theme
    dracula-theme
    twilight-theme
    greymatters-theme
