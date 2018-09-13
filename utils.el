@@ -57,8 +57,7 @@
   :ensure t)
 
 (use-package smartparens-config
-  :ensure smartparens
-  :config (smartparens-global-strict-mode t))
+  :ensure smartparens)
 
 (use-package dashboard
   :ensure t
