@@ -49,6 +49,10 @@
   :init (use-package wgrep-ag :ensure t)
   :config (setq-default ag-highlight-search t))
 
+(use-package npm-mode
+  :ensure t
+  :config (npm-global-mode))
+
 (use-package aggressive-indent
   :ensure t
   :hook (after-init . global-aggressive-indent-mode))
