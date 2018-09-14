@@ -23,7 +23,11 @@
 (global-set-key (kbd "C-c h") 'recenter)
 
 (global-set-key (kbd "C-c b") 'switch-to-previous-buffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 (global-set-key (kbd "C-c n") 'lunaryorn-new-buffer-frame)
+
+(global-set-key (kbd "M-/") 'hippie-expand)
 
 
 ;; Counsel

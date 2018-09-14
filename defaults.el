@@ -20,9 +20,10 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (electric-indent-mode t)
 (fringe-mode '(5 . 0))
+(recentf-mode 1)
+(global-linum-mode t)
 
-(setq-default recentf-mode 1
-              cursor-type 'box
+(setq-default cursor-type 'box
               blink-cursor-mode nil
               custom-safe-themes t
               auto-save-default nil
@@ -39,11 +40,9 @@
               mac-use-title-bar t)
 
 (add-hook 'prog-mode-hook '(lambda ()
-                             (visual-line-mode)
-                             (linum-mode)))
+                             (visual-line-mode)))
 
 (add-hook 'text-mode-hook '(lambda()
-                             (linum-mode)
                              (turn-on-auto-fill)
                              (set-fill-column 120)))
 
@@ -53,9 +52,9 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Fira Code Medium 12")
-(set-frame-font "Fira Code Medium 12" nil t)
-(setq-default line-spacing 2)
+(set-face-attribute 'default nil :font "Fira Code 14" :weight 'normal)
+(set-frame-font "Fira Code 14" nil t)
+(setq-default line-spacing 3)
 
 (setq custom-theme-directory "~/.emacs.d/themes")
 
