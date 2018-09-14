@@ -49,6 +49,15 @@
   :init (use-package wgrep-ag :ensure t)
   :config (setq-default ag-highlight-search t))
 
+(use-package ibuffer-vc
+  :ensure t
+  :config
+  (add-hook 'ibuffer-hook
+            (lambda ()
+              (ibuffer-vc-set-filter-groups-by-vc-root)
+              (unless (eq ibuffer-sorting-mode 'alphabetic)
+                (ibuffer-do-sort-by-alphabetic)))))
+
 (use-package npm-mode
   :ensure t
   :config (npm-global-mode))
