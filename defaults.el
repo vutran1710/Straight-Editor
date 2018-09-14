@@ -19,10 +19,9 @@
 (delete-selection-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
 (electric-indent-mode t)
-(recentf-mode 1)
 (fringe-mode '(5 . 0))
 
-(setq-default recentf-mode t
+(setq-default recentf-mode 1
               cursor-type 'box
               blink-cursor-mode nil
               custom-safe-themes t
@@ -39,10 +38,12 @@
               ring-bell-function 'ignore
               mac-use-title-bar t)
 
-(add-hook 'prog-mode-hook 'linum-mode)
-(add-hook 'prog-mode-hook 'visual-line-mode)
-(add-hook 'text-mode-hook 'linum-mode)
+(add-hook 'prog-mode-hook '(lambda ()
+                             (visual-line-mode)
+                             (linum-mode)))
+
 (add-hook 'text-mode-hook '(lambda()
+                             (linum-mode)
                              (turn-on-auto-fill)
                              (set-fill-column 120)))
 
@@ -55,9 +56,6 @@
 (set-face-attribute 'default nil :font "Fira Code Medium 12")
 (set-frame-font "Fira Code Medium 12" nil t)
 (setq-default line-spacing 2)
-
-(set-language-environment "UTF-8")
-(set-default-coding-systems 'utf-8)
 
 (setq custom-theme-directory "~/.emacs.d/themes")
 
