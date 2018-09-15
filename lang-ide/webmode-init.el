@@ -47,13 +47,7 @@
         web-mode-css-indent-offset 2
         web-mode-enable-auto-pairing t
         web-mode-enable-css-colorization t
-        web-mode-enable-current-element-highlight t)
-
-  (defadvice web-mode-highlight-part (around tweak-jsx activate)
-    (if (equal web-mode-content-type "jsx")
-        (let ((web-mode-enable-part-face nil))
-          ad-do-it)
-      ad-do-it)))
+        web-mode-enable-current-element-highlight t))
 
 ;; Make use of local Eslint over global
 (defun use-eslint-from-node-modules ()
