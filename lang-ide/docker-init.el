@@ -1,5 +1,6 @@
 (use-package docker
   :ensure t
+  :bind ("C-c d" . docker)
   :defer t)
 
 (use-package dockerfile-mode
