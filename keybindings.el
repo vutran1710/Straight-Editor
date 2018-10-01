@@ -27,7 +27,7 @@
 
 (global-set-key (kbd "C-c n") 'lunaryorn-new-buffer-frame)
 
-(global-set-key (kbd "M-/") 'hippie-expand)
+(global-set-key (kbd "M-/") 'dabbrev-expand)
 
 
 ;; Counsel

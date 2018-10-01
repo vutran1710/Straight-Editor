@@ -30,6 +30,7 @@
               make-backup-files nil
               fringes-outside-margins t
               tab-width 2
+              js-indent-level 2
               indent-tabs-mode nil
               tab-always-indent t
               recentf-max-menu-items 25

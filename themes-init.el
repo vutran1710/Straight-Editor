@@ -7,11 +7,11 @@
             (package-install package))))
  '(tango-plus-theme
    darktooth-theme
-   dracula-theme
    twilight-theme
    greymatters-theme
    hemisu-theme
    tao-theme
+   doom-themes
    subatomic-theme))
 
 (provide 'themes-init)
