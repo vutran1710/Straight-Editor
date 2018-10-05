@@ -12,6 +12,7 @@
 ;; (load "~/.emacs.d/treemacs-init")
 
 ;; Must-have
+(load "~/.emacs.d/common/dumb-jump-init")
 (load "~/.emacs.d/common/projectile-init")
 (load "~/.emacs.d/common/counsel-init")
 (load "~/.emacs.d/common/company-init")
