@@ -71,4 +71,5 @@
 ;; Anzu
 (global-set-key (kbd "C-o") 'avy-goto-char-in-line)
 (global-set-key (kbd "M-o") 'avy-goto-char)
+(global-set-key (kbd "M-g o") 'avy-goto-char-2)
 (global-set-key (kbd "C-'") 'avy-goto-line)
