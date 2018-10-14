@@ -59,11 +59,6 @@
 (global-set-key (kbd "C-]") 'er/expand-region)
 
 
-;; Yasnippet
-;; Using tab to expand snippet by default
-;; (global-set-key (kbd "<TAB>") 'yas-expand-snippet)
-
-
 ;; Webmode
 (global-set-key (kbd "C-q") 'emmet-expand-yas)
 
@@ -71,5 +66,5 @@
 ;; Anzu
 (global-set-key (kbd "C-o") 'avy-goto-char-in-line)
 (global-set-key (kbd "M-o") 'avy-goto-char)
-(global-set-key (kbd "M-g o") 'avy-goto-char-2)
+(global-set-key (kbd "M-'") 'avy-goto-char-2)
 (global-set-key (kbd "C-'") 'avy-goto-line)

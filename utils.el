@@ -47,7 +47,9 @@
   :ensure t
   :if (executable-find "ag")
   :init (use-package wgrep-ag :ensure t)
-  :config (setq-default ag-highlight-search t))
+  :config
+  (setq-default ag-highlight-search t)
+  (setq wgrep-auto-save-buffer t))
 
 (use-package ibuffer-vc
   :ensure t
