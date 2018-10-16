@@ -38,7 +38,9 @@
   :bind ("M-r" . iedit-mode)
   :config
   (set-face-foreground 'iedit-occurrence "white")
-  (set-face-background 'iedit-occurrence "orange red"))
+  (set-face-background 'iedit-occurrence "orange red")
+  (define-key iedit-mode-keymap (kbd "M-n") 'iedit-expand-down-to-occurrence)
+  (define-key iedit-mode-keymap (kbd "M-p") 'iedit-expand-up-to-occurrence))
 
 (use-package avy
   :ensure t)
