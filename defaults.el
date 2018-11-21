@@ -55,7 +55,7 @@
 
 (set-face-attribute 'default nil :font "Fira Code 12")
 (set-frame-font "Fira Code 12" nil t)
-(setq-default line-spacing 3)
+(setq-default line-spacing 2)
 
 (setq custom-theme-directory "~/.emacs.d/themes")
 
