@@ -21,6 +21,7 @@
 (load "~/.emacs.d/common/restclient-init")
 (load "~/.emacs.d/common/org-init")
 (load "~/.emacs.d/common/flycheck-init")
+(load "~/.emacs.d/common/js-doc")
 
 ;; ;; Language IDE
 (load "~/.emacs.d/lang-ide/yaml-mode-init")
@@ -31,6 +32,8 @@
 (load "~/.emacs.d/lang-ide/cider-init")
 (load "~/.emacs.d/lang-ide/markdown-init")
 (load "~/.emacs.d/lang-ide/docker-init")
+(load "~/.emacs.d/lang-ide/go-init")
+(load "~/.emacs.d/lang-ide/solc-init")
 
 ;; Keybindings
 (load "~/.emacs.d/keybindings")
