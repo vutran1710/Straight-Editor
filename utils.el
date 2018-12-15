@@ -87,3 +87,14 @@
                           (projects . 4)))
   (setq dashboard-banner-logo-title "SORCERER")
   (setq dashboard-startup-banner "~/.emacs.d/graphics/sorceress.png"))
+
+
+(use-package editorconfig
+  :ensure t
+  :commands editorconfig-mode
+  :delight editorconfig-mode
+  :init (add-hook 'prog-mode-hook #'editorconfig-mode)
+  :config
+  (progn
+    (add-to-list 'editorconfig-indentation-alist
+                 '(swift-mode swift-indent-offset))))
