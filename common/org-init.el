@@ -21,7 +21,9 @@
                              (setq-local linum-format "  ")
                              (toc-org-enable)
                              (yas-minor-mode-on)))
-  (add-to-list 'org-tag-alist '("TOC" . ?T)))
+  (add-to-list 'org-tag-alist '("TOC" . ?T))
+  (setq org-hide-emphasis-markers t)
+  (setq org-cycle-include-plain-lists 'integrate))
 
 (provide 'org-init.el)
 ;;; org-init ends here
