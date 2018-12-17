@@ -26,6 +26,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (global-set-key (kbd "C-c n") 'lunaryorn-new-buffer-frame)
+(global-set-key (kbd "C-c C-n") 'duplicate-line-or-region)
 
 (global-set-key (kbd "M-/") 'dabbrev-expand)
 
@@ -36,7 +37,7 @@
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-c r") 'counsel-recentf)
 (global-set-key (kbd "C-c t") 'counsel-load-theme)
-(global-set-key (kbd "C-c p p") 'counsel-projectile-switch-project)
+(global-set-key (kbd "C-c C-p") 'counsel-projectile-switch-project)
 (global-set-key (kbd "C-c p s") 'projectile-ag)
 (global-set-key (kbd "M-j") 'ivy-yank-word)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
