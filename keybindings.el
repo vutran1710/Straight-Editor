@@ -37,10 +37,10 @@
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-c r") 'counsel-recentf)
 (global-set-key (kbd "C-c t") 'counsel-load-theme)
-(global-set-key (kbd "C-c C-p") 'counsel-projectile-switch-project)
 (global-set-key (kbd "C-c p s") 'projectile-ag)
 (global-set-key (kbd "M-j") 'ivy-yank-word)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-'") 'counsel-projectile-switch-project)
 (global-set-key (kbd "C-;") 'counsel-projectile-find-file)
 
 
@@ -68,4 +68,4 @@
 (global-set-key (kbd "C-o") 'avy-goto-char-in-line)
 (global-set-key (kbd "M-o") 'avy-goto-char)
 (global-set-key (kbd "M-'") 'avy-goto-char-2)
-(global-set-key (kbd "C-'") 'avy-goto-line)
+;; (global-set-key (kbd "C-'") 'avy-goto-line)

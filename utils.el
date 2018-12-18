@@ -1,10 +1,6 @@
 (use-package restart-emacs
   :ensure t)
 
-(use-package google-this
-  :ensure t
-  :config (google-this-mode 1))
-
 (use-package beacon
   :ensure t
   :init (beacon-mode 1))
