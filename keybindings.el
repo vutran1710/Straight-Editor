@@ -26,7 +26,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (global-set-key (kbd "C-c n") 'lunaryorn-new-buffer-frame)
-(global-set-key (kbd "C-c C-n") 'duplicate-line-or-region)
+(global-set-key (kbd "C-c c n") 'duplicate-line-or-region)
 
 (global-set-key (kbd "M-/") 'dabbrev-expand)
 

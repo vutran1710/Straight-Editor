@@ -1,0 +1,26 @@
+#+OPTIONS: ^:nil
+#+TITLE: EMACS SETUP & TUTORIAL
+#+DATE: <2018-07-31 Tue>
+#+AUTHOR: Vu Tran
+#+EMAIL: me@vutr.io`
+
+* Content                                                               :TOC:
+- [[#introduction][Introduction]]
+- [[#setup][Setup]]
+- [[#tutorial][Tutorial]]
+
+* Introduction
+Here is my setup guide & tutorial on how-to-use from basic to advance features of my EMACS - *The Freaking <3 of A Lifetime*
+This document as well as the whole emacs-setup is constantly under heavy development so it may change a lot over time.
+
+* Setup
+* Tutorial
+*** Refactoring: search & replace text accross the project
+- Use *iedit, counsel-ag, ivy-ocur*
+- Keybinding consequence:
+  1. *counsel-ag*: /C-c p s/
+  2. Type in the text to be replace
+  3. *ivy-ocur*: /C-c C-o/
+  4. *ivy-wgrep-change-to-wgrep-mode*: /C-x C-q/
+  5. pick text, then *iedit-mode*: /M-r/
+  6. when done, save with the usual /C-x C-s/ then *wgrep-finish-edit*: /C-c C-c/
