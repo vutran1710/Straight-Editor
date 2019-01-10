@@ -23,7 +23,14 @@
                              (yas-minor-mode-on)))
   (add-to-list 'org-tag-alist '("TOC" . ?T))
   (setq org-hide-emphasis-markers t)
-  (setq org-cycle-include-plain-lists 'integrate))
+  (setq org-cycle-include-plain-lists 'integrate)
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '(
+     (shell . t)
+     (python . t)
+     (dot . t)
+     )))
 
 (provide 'org-init.el)
 ;;; org-init ends here
