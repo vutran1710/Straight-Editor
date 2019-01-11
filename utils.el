@@ -87,3 +87,6 @@
   (progn
     (add-to-list 'editorconfig-indentation-alist
                  '(swift-mode swift-indent-offset))))
+
+(load "~/.emacs.d/common/todo")
+(require 'doom-todo-ivy)
