@@ -70,17 +70,6 @@
   :ensure smartparens
   :config (smartparens-global-mode 1))
 
-;; (use-package dashboard
-;;   :ensure t
-;;   :init (use-package page-break-lines :ensure t)
-;;   :config
-;;   (global-page-break-lines-mode)
-;;   (dashboard-setup-startup-hook)
-;;   (setq dashboard-items '((recents  . 4)
-;;                           (projects . 4)))
-;;   (setq dashboard-banner-logo-title "SORCERER")
-;;   (setq dashboard-startup-banner "~/.emacs.d/graphics/sorceress.png"))
-
 (use-package browse-kill-ring
   :ensure t
   :init (browse-kill-ring-default-keybindings))
