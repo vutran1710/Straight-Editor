@@ -23,7 +23,7 @@
 (defvar doom/ivy-task-tags
   '(("TODO"  . warning)
     ("FIXME" . error)
-    ("NOTE" . emergency))
+    ("NOTE" . highlight))
   "An list of tags for `doom/ivy-tasks' to search for.")
 
 
