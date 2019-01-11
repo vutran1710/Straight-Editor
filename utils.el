@@ -66,9 +66,6 @@
   :ensure t
   :hook (after-init . global-aggressive-indent-mode))
 
-(use-package expand-region
-  :ensure t)
-
 (use-package smartparens-config
   :ensure smartparens
   :config (smartparens-global-mode 1))
