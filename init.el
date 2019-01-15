@@ -27,4 +27,4 @@
 
 (condition-case nil
     (mac-auto-operator-composition-mode)
-  (error nil))
+  (error "unable to enable font-ligature"))
