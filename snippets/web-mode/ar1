@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: functional_react
+# key: ar1
+# --
+const ${1:Component} = (${2:props}) => (
+  $3
+)
+$0
