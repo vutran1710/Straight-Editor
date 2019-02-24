@@ -69,3 +69,7 @@
 (global-set-key (kbd "M-o") 'avy-goto-char)
 (global-set-key (kbd "M-'") 'avy-goto-char-2)
 (global-set-key (kbd "C-'") 'avy-goto-line)
+
+
+;; Ace-jump-buffer
+(global-set-key (kbd "C-t") 'ace-jump-buffer)

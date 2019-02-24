@@ -78,6 +78,9 @@
   :ensure t
   :init (global-set-key [remap kill-ring-save] 'easy-kill))
 
+(use-package ace-jump-buffer
+  :ensure t)
+
 (use-package editorconfig
   :ensure t
   :commands editorconfig-mode
