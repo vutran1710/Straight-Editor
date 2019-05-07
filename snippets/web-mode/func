@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
-# name: fun
-# key: fun
+# name: method-function
+# key: func
 # --
-${1:function}(${2:args}) {
-  ${3:body}$0
+${1:function} ($2) {
+  $0
 }

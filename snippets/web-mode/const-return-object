@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: const-return-object
+# key: constro
+# --
+const ${1:name} = $2 => ({
+  $0
+})

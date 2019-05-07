@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: import-default
-# key: ird
+# name: import default
+# key: idm
 # --
-import ${1:module} from '${2:module-path}'
+import ${1:module} from '${2:path}'
