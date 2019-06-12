@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: react_class
-# key: rcs
+# name: react-class
+# key: rcc
 # --
 ${1:export default }class ${2:Component} extends React.Component {
   state = {

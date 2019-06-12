@@ -10,8 +10,8 @@
 
 (setq mac-option-modifier 'meta)
 (setq mac-control-modifier 'control)
-;; (setq mac-command-modifier 'control)
-;; (setq ns-function-modifier 'hyper)
+(setq mac-command-modifier 'meta)
+(setq ns-function-modifier 'hyper)
 
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
@@ -53,9 +53,9 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Fira Code 12")
-(set-frame-font "Fira Code 12" nil t)
-(setq-default line-spacing 5)
+(set-face-attribute 'default nil :font "Overpass Mono 13")
+(set-frame-font "Overpass Mono 13" nil t)
+(setq-default line-spacing 0)
 
 (setq custom-theme-directory "~/.emacs.d/themes")
 

@@ -1,6 +1,5 @@
 (use-package yasnippet
   :ensure t
-  :after company
   :config (yas-global-mode))
 
 (use-package yasnippet-snippets

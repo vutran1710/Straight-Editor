@@ -1,13 +1,13 @@
+(use-package ivy :ensure t)
+(use-package swiper :ensure t)
+(use-package counsel-projectile :ensure t)
+(use-package smex
+  :ensure t
+  :hook (after-init . smex-initialize))
+
 (use-package counsel
   :ensure t
   :init
-  (use-package ivy :ensure t)
-  (use-package swiper :ensure t)
-  (use-package counsel-projectile :ensure t)
-  (use-package smex
-    :ensure t
-    :hook (after-init . smex-initialize))
-
   :config
   (ivy-mode 1)
   (counsel-projectile-mode)

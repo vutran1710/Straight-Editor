@@ -28,15 +28,19 @@
 (load "~/.emacs.d/lang-ide/elpy-init")
 (load "~/.emacs.d/lang-ide/webmode-init")
 (load "~/.emacs.d/lang-ide/tide-init")
-(load "~/.emacs.d/lang-ide/alchemist-init")
-(load "~/.emacs.d/lang-ide/cider-init")
+;; (load "~/.emacs.d/lang-ide/alchemist-init")
+;; (load "~/.emacs.d/lang-ide/cider-init")
 (load "~/.emacs.d/lang-ide/markdown-init")
 (load "~/.emacs.d/lang-ide/docker-init")
-(load "~/.emacs.d/lang-ide/go-init")
+;; (load "~/.emacs.d/lang-ide/go-init")
 (load "~/.emacs.d/lang-ide/solc-init")
 
 ;; Keybindings
 (load "~/.emacs.d/keybindings")
+
+;; Post install
+(load "~/.emacs.d/common/todo")
+(require 'doom-todo-ivy)
 
 (provide 'custom)
 ;;; custom.el ends here

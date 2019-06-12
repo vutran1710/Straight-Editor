@@ -1,14 +1,15 @@
+(use-package company-tern :ensure t)
+(use-package company-web :ensure t)
+(use-package eslintd-fix :ensure t)
+(use-package xref-js2 :ensure t)
+(use-package emmet-mode :ensure t
+  :config (setq emmet-expand-jsx-className? t
+                emmet-self-closing-tag-style " /"
+                emmet-move-cursor-between-quotes t))
+
 (use-package web-mode
   :ensure t
   :init
-  (use-package company-tern :ensure t)
-  (use-package company-web :ensure t)
-  (use-package eslintd-fix :ensure t)
-  (use-package xref-js2 :ensure t)
-  (use-package emmet-mode :ensure t
-    :config (setq emmet-expand-jsx-className? t
-                  emmet-self-closing-tag-style " /"
-                  emmet-move-cursor-between-quotes t))
   :config
   (with-eval-after-load 'flycheck
     (dolist (checker '(javascript-eslint))
@@ -28,7 +29,6 @@
   (add-hook 'web-mode-hook (lambda ()
                              (tern-mode)
                              (company-mode)
-                             (eslintd-fix-mode t)
                              (company-web-mode-hook)
                              (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
 
@@ -55,7 +55,7 @@
                 (or (buffer-file-name) default-directory)
                 "node_modules"))
          (eslint (and root
-                      (expand-file-name "node_modules/tslint/bin/tslint.js"
+                      (expand-file-name "node_modules/eslint/bin/eslint.js"
                                         root))))
     (when (and eslint (file-executable-p eslint))
       (setq-local flycheck-javascript-eslint-executable eslint))))
