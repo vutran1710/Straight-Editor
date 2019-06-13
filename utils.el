@@ -91,5 +91,23 @@
     (add-to-list 'editorconfig-indentation-alist
                  '(swift-mode swift-indent-offset))))
 
+(use-package all-the-icons)
+
+(use-package dashboard
+  :ensure t
+  :config
+  (global-page-break-lines-mode)
+  (dashboard-setup-startup-hook)
+  (setq dashboard-items '((recents  . 5)
+                          (projects . 5)
+                          (agenda . 5)))
+  (setq dashboard-set-heading-icons t)
+  (setq dashboard-set-file-icons t)
+  (setq dashboard-set-navigator t)
+  (setq dashboard-banner-logo-title "me@vutr.io")
+  (setq dashboard-center-content t)
+  (setq dashboard-show-shortcuts nil)
+  (setq dashboard-startup-banner "~/.emacs.d/graphics/sorceress.png"))
+
 (load "~/.emacs.d/common/todo")
 (require 'doom-todo-ivy)
