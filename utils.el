@@ -109,5 +109,10 @@
   (setq dashboard-show-shortcuts nil)
   (setq dashboard-startup-banner "~/.emacs.d/graphics/sorceress.png"))
 
+(use-package hlinum
+  :ensure t
+  :init
+  (hlinum-activate))
+
 (load "~/.emacs.d/common/todo")
 (require 'doom-todo-ivy)

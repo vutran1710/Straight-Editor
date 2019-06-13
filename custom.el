@@ -7,7 +7,6 @@
 ;; Effect-free
 (load "~/.emacs.d/utils")
 (load "~/.emacs.d/themes-init")
-;; (load "~/.emacs.d/hlinum-init")
 ;; (load "~/.emacs.d/rainbow-delimiters-init")
 ;; (load "~/.emacs.d/treemacs-init")
 
@@ -21,7 +20,7 @@
 (load "~/.emacs.d/common/restclient-init")
 (load "~/.emacs.d/common/org-init")
 (load "~/.emacs.d/common/flycheck-init")
-(load "~/.emacs.d/common/js-doc")
+;; (load "~/.emacs.d/common/js-doc")
 
 ;; ;; Language IDE
 (load "~/.emacs.d/lang-ide/yaml-mode-init")
