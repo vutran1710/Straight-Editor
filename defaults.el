@@ -11,7 +11,6 @@
 (setq mac-option-modifier 'meta)
 (setq mac-control-modifier 'control)
 (setq mac-command-modifier 'meta)
-(setq ns-function-modifier 'hyper)
 
 (scroll-bar-mode -1)
 (tool-bar-mode -1)

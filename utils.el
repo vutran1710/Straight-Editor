@@ -62,9 +62,9 @@
   :ensure t
   :config (npm-global-mode))
 
-(use-package aggressive-indent
-  :ensure t
-  :hook (after-init . global-aggressive-indent-mode))
+;; (use-package aggressive-indent
+;;   :ensure t
+;;   :hook (after-init . global-aggressive-indent-mode))
 
 (use-package smartparens-config
   :ensure smartparens
