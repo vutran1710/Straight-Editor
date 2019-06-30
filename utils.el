@@ -12,7 +12,7 @@
   :ensure t
   :defer t
   :hook (after-init . doom-modeline-mode)
-  :config (setq doom-modeline-height 21))
+  :config (setq doom-modeline-height 26))
 
 (use-package undo-tree
   :ensure t
@@ -61,10 +61,6 @@
 (use-package npm-mode
   :ensure t
   :config (npm-global-mode))
-
-;; (use-package aggressive-indent
-;;   :ensure t
-;;   :hook (after-init . global-aggressive-indent-mode))
 
 (use-package smartparens-config
   :ensure smartparens
@@ -129,11 +125,7 @@
 (use-package
   frog-jump-buffer
   :ensure t
-  :bind ("C-x b" . frog-jump-buffer)
-  :config
-  (dolist (regexp '("TAGS" "^\\*Compile-log" "-debug\\*$" "^\\:" "errors\\*$" "^\\*Backtrace" "-ls\\*$"
-                    "stderr\\*$" "^\\*Flymake" "^\\*vc" "^\\*Warnings" "^\\*eldoc" "\\^*Shell Command"))
-    (push regexp frog-jump-buffer-ignore-buffers)))
+  :bind ("C-x b" . frog-jump-buffer))
 
 (use-package diff-hl
   :ensure t

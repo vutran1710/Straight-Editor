@@ -12,6 +12,7 @@
 (setq mac-control-modifier 'control)
 (setq mac-command-modifier 'meta)
 
+(menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (show-paren-mode t)
@@ -52,9 +53,9 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Hasklig 12")
-(set-frame-font "Hasklig 12" nil t)
-(setq-default line-spacing 2)
+(set-face-attribute 'default nil :font "Fira Mono 12")
+(set-frame-font "Fira Mono 12" nil t)
+(setq-default line-spacing 3)
 
 (setq custom-theme-directory "~/.emacs.d/themes")
 
