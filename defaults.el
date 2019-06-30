@@ -52,9 +52,9 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Overpass Mono 13")
-(set-frame-font "Overpass Mono 13" nil t)
-(setq-default line-spacing 0)
+(set-face-attribute 'default nil :font "Hasklig 12")
+(set-frame-font "Hasklig 12" nil t)
+(setq-default line-spacing 2)
 
 (setq custom-theme-directory "~/.emacs.d/themes")
 

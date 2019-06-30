@@ -11,15 +11,10 @@
 ;; (load "~/.emacs.d/treemacs-init")
 
 ;; Must-have
-(load "~/.emacs.d/common/dumb-jump-init")
-(load "~/.emacs.d/common/projectile-init")
 (load "~/.emacs.d/common/counsel-init")
 (load "~/.emacs.d/common/company-init")
 (load "~/.emacs.d/common/yas-init")
-(load "~/.emacs.d/common/diff-hl-init")
-(load "~/.emacs.d/common/restclient-init")
 (load "~/.emacs.d/common/org-init")
-(load "~/.emacs.d/common/flycheck-init")
 ;; (load "~/.emacs.d/common/js-doc")
 
 ;; ;; Language IDE
@@ -39,6 +34,7 @@
 
 ;; Post install
 (load "~/.emacs.d/common/todo")
+
 (require 'doom-todo-ivy)
 
 (provide 'custom)

@@ -114,5 +114,47 @@
   :init
   (hlinum-activate))
 
+(use-package dumb-jump
+  :ensure t
+  :bind (("C-c j o" . dumb-jump-go-other-window)
+         ("C-c j j" . dumb-jump-go)
+         ("C-c j i" . dumb-jump-go-prompt))
+  :config (setq dumb-jump-selector 'ivy))
+
+(use-package projectile
+  :ensure t
+  :config (projectile-global-mode)
+  :bind ("C-c m" . projectile-vc))
+
+(use-package
+  frog-jump-buffer
+  :ensure t
+  :bind ("C-x b" . frog-jump-buffer)
+  :config
+  (dolist (regexp '("TAGS" "^\\*Compile-log" "-debug\\*$" "^\\:" "errors\\*$" "^\\*Backtrace" "-ls\\*$"
+                    "stderr\\*$" "^\\*Flymake" "^\\*vc" "^\\*Warnings" "^\\*eldoc" "\\^*Shell Command"))
+    (push regexp frog-jump-buffer-ignore-buffers)))
+
+(use-package diff-hl
+  :ensure t
+  :config
+  (global-diff-hl-mode)
+  (diff-hl-flydiff-mode)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh t))
+
+(use-package restclient
+  :ensure t
+  :init
+  (use-package know-your-http-well :ensure t)
+  (use-package company-restclient :ensure t)
+  :hook (restclient-mode . linum-mode)
+  :config
+  (add-to-list 'company-backends 'company-restclient)
+  (add-to-list 'auto-mode-alist '("\\.\\(http\\|api\\|rest\\)\\'" . restclient-mode)))
+
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
 (load "~/.emacs.d/common/todo")
 (require 'doom-todo-ivy)
