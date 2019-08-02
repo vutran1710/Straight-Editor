@@ -3,7 +3,7 @@
 
 (custom-theme-set-faces
  'ayu-heaven
- '(default ((t (:family "Overpass Mono" :foundry "nil" :width normal :height 120 :weight normal :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "gray47" :background "grey100" :stipple nil :inherit nil))))
+ '(default ((t (:family "Overpass Mono" :foundry "nil" :width normal :height 120 :weight normal :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "gray27" :background "#fcfffe" :stipple nil :inherit nil))))
  '(cursor ((t (:background "dark blue"))))
  '(fixed-pitch ((t (:family "Monospace"))))
  '(variable-pitch ((((type w32)) (:foundry "outline" :family "Arial")) (t (:family "Sans Serif"))))
@@ -25,9 +25,9 @@
  '(font-lock-preprocessor-face ((t (:foreground "OrangeRed1"))))
  '(font-lock-regexp-grouping-backslash ((t (:foreground "#FFA000"))))
  '(font-lock-regexp-grouping-construct ((t (:foreground "#4527A0"))))
- '(font-lock-string-face ((t (:foreground "#77b302"))))
+ '(font-lock-string-face ((t (:foreground "#589A20"))))
  '(font-lock-type-face ((t (:foreground "#2196f3"))))
- '(font-lock-variable-name-face ((t (:foreground "orange1"))))
+ '(font-lock-variable-name-face ((t (:foreground "#D58B00"))))
  '(font-lock-warning-face ((t (:weight bold :foreground "#B71C1C"))))
  '(button ((t (:inherit (link)))))
  '(link ((t (:underline (:color foreground-color :style line)))))

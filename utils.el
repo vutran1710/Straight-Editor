@@ -1,6 +1,13 @@
 (use-package restart-emacs
   :ensure t)
 
+(use-package kubernetes
+  :ensure t
+  :commands (kubernetes-overview))
+
+(use-package deadgrep
+  :ensure t)
+
 (use-package beacon
   :ensure t
   :init (beacon-mode 1))

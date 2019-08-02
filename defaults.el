@@ -2,12 +2,6 @@
 ;;; Commentary:
 ;; Some default settings for EMACS
 
-;;; Code:
-(use-package exec-path-from-shell
-  :ensure t
-  :init
-  (exec-path-from-shell-initialize))
-
 (setq mac-option-modifier 'meta)
 (setq mac-control-modifier 'control)
 (setq mac-command-modifier 'meta)
@@ -53,9 +47,14 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Fira Mono 12")
-(set-frame-font "Fira Mono 12" nil t)
+(set-face-attribute 'default nil :font "Fira Code 11")
+(set-frame-font "Fira Code 11" nil t)
 (setq-default line-spacing 3)
+
+(use-package exec-path-from-shell
+  :ensure t
+  :init
+  (exec-path-from-shell-initialize))
 
 (setq custom-theme-directory "~/.emacs.d/themes")
 
