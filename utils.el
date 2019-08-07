@@ -1,6 +1,10 @@
 (use-package restart-emacs
   :ensure t)
 
+(use-package dotenv-mode
+  :ensure t
+  :config (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
+
 (use-package kubernetes
   :ensure t
   :commands (kubernetes-overview))
