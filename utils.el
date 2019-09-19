@@ -1,6 +1,11 @@
 (use-package restart-emacs
   :ensure t)
 
+(use-package pipenv
+  :hook (python-mode . pipenv-mode)
+  :init
+  (setq pipenv-projectile-after-switch-function #'pipenv-projectile-after-switch-extended))
+
 (use-package dotenv-mode
   :ensure t
   :config (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
@@ -81,9 +86,18 @@
   :ensure t
   :init (browse-kill-ring-default-keybindings))
 
-(use-package easy-kill
-  :ensure t
-  :init (global-set-key [remap kill-ring-save] 'easy-kill))
+;; (use-package easy-kill
+;;   :ensure t
+;;   :init (global-set-key [remap kill-ring-save] 'easy-kill))
+
+(use-package expand-region
+  :ensure t)
+
+(use-package fix-word
+  :ensure t)
+
+(use-package crux
+  :ensure t)
 
 (use-package ace-jump-buffer
   :ensure t)
@@ -114,7 +128,7 @@
   (setq dashboard-banner-logo-title "me@vutr.io")
   (setq dashboard-center-content t)
   (setq dashboard-show-shortcuts nil)
-  (setq dashboard-startup-banner "~/.emacs.d/graphics/sorceress.png"))
+  (setq dashboard-startup-banner "~/.emacs.d/graphics/fs.png"))
 
 (use-package hlinum
   :ensure t
