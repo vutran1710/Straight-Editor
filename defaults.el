@@ -47,8 +47,8 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Fira Code 12")
-(set-frame-font "Fira Code 12" nil t)
+(set-face-attribute 'default nil :font "Andale Mono 12")
+(set-frame-font "Andale Mono 12" nil t)
 (setq-default line-spacing 3)
 
 (use-package exec-path-from-shell
