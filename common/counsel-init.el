@@ -18,6 +18,7 @@
   :ensure t
   :init
   :config
-  (counsel-projectile-mode))
+  (counsel-projectile-mode)
+  (setq ivy-initial-inputs-alist nil))
 
 (provide 'counsel-init)
