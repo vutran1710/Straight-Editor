@@ -9,26 +9,15 @@
   (define-key ivy-minibuffer-map (kbd "C-v") 'ivy-backward-delete-char)
   (define-key ivy-minibuffer-map (kbd "C-d") 'ivy-delete-char))
 
-;; (use-package swiper :ensure t)
-;; (use-package counsel-projectile :ensure t)
-;; (use-package smex
-;;   :ensure t
-;;   :hook (after-init . smex-initialize))
+(use-package swiper :ensure t)
 
-;; (use-package counsel
-;;   :ensure t
-;;   :init
-;;   :config
-;;   (ivy-mode 1)
-;;   (counsel-projectile-mode)
+(use-package counsel-projectile
+  :ensure t)
 
-;;   (setq ivy-use-virtual-buffers t
-;;         enable-recursive-minibuffers t
-;;         ivy-initial-inputs-alist nil)
+(use-package counsel
+  :ensure t
+  :init
+  :config
+  (counsel-projectile-mode))
 
-;;   (define-key ivy-minibuffer-map (kbd "M-v") 'ivy-backward-kill-word)
-;;   (define-key ivy-minibuffer-map (kbd "M-d") 'ivy-kill-word)
-;;   (define-key ivy-minibuffer-map (kbd "C-v") 'ivy-backward-delete-char)
-;;   (define-key ivy-minibuffer-map (kbd "C-d") 'ivy-delete-char))
-
-;; (provide 'counsel-init)
+(provide 'counsel-init)
