@@ -128,23 +128,23 @@
   (setq dashboard-banner-logo-title "me@vutr.io")
   (setq dashboard-center-content t)
   (setq dashboard-show-shortcuts nil)
-  (setq dashboard-startup-banner "~/.emacs.d/graphics/fs.png"))
+  (setq dashboard-startup-banner "~/.emacs.d/graphics/itachi.png"))
 
 (use-package hlinum
   :ensure t
   :init
   (hlinum-activate))
 
-(use-package dumb-jump
-  :ensure t
-  :bind (("C-c j o" . dumb-jump-go-other-window)
-         ("C-c j j" . dumb-jump-go)
-         ("C-c j i" . dumb-jump-go-prompt))
-  :config (setq dumb-jump-selector 'ivy))
+;; (use-package dumb-jump
+;;   :ensure t
+;;   :bind (("C-c j o" . dumb-jump-go-other-window)
+;;          ("C-c j j" . dumb-jump-go)
+;;          ("C-c j i" . dumb-jump-go-prompt))
+;;   :config (setq dumb-jump-selector 'ivy))
 
 (use-package projectile
   :ensure t
-  :config (projectile-global-mode)
+  :config (projectile-mode)
   :bind ("C-c m" . projectile-vc))
 
 (use-package
@@ -173,5 +173,5 @@
   :ensure t
   :init (global-flycheck-mode))
 
-(load "~/.emacs.d/common/todo")
-(require 'doom-todo-ivy)
+;; (load "~/.emacs.d/common/todo")
+;; (require 'doom-todo-ivy)
