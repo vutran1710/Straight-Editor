@@ -21,4 +21,8 @@
   (counsel-projectile-mode)
   (setq ivy-initial-inputs-alist nil))
 
+(use-package smex
+  :ensure t
+  :hook (after-init . smex-initialize))
+
 (provide 'counsel-init)
