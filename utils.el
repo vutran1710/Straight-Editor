@@ -1,11 +1,6 @@
 (use-package restart-emacs
   :ensure t)
 
-(use-package pipenv
-  :hook (python-mode . pipenv-mode)
-  :init
-  (setq pipenv-projectile-after-switch-function #'pipenv-projectile-after-switch-extended))
-
 (use-package dotenv-mode
   :ensure t
   :config (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
@@ -128,7 +123,7 @@
   (setq dashboard-banner-logo-title "me@vutr.io")
   (setq dashboard-center-content t)
   (setq dashboard-show-shortcuts nil)
-  (setq dashboard-startup-banner "~/.emacs.d/graphics/itachi.png"))
+  (setq dashboard-startup-banner "~/.emacs.d/graphics/sorceress.png"))
 
 (use-package hlinum
   :ensure t
