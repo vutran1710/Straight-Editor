@@ -123,7 +123,7 @@
   (setq dashboard-banner-logo-title "me@vutr.io")
   (setq dashboard-center-content t)
   (setq dashboard-show-shortcuts nil)
-  (setq dashboard-startup-banner "~/.emacs.d/graphics/sorceress.png"))
+  (setq dashboard-startup-banner "~/.emacs.d/graphics/cloud.png"))
 
 (use-package hlinum
   :ensure t
