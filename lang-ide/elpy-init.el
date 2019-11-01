@@ -1,15 +1,14 @@
-(use-package pipenv
-  :hook (python-mode . pipenv-mode)
-  :init
-  (setq
-   pipenv-projectile-after-switch-function
-   #'pipenv-projectile-after-switch-extended))
-
 (use-package py-autopep8
   :ensure t)
 
+(use-package yapfify
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook 'yapf-mode))
+
 (use-package elpy
   :ensure t
+  :init (setenv "WORKON_HOME" "/Users/vumacbook/.local/share/virtualenvs/")
   :config
   (elpy-enable)
   (setq elpy-rpc-virtualenv-path 'current)
