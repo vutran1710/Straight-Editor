@@ -140,6 +140,9 @@
 (use-package projectile
   :ensure t
   :config (projectile-mode)
+  :init
+  (load "~/.emacs.d/common/todo")
+  (require 'doom-todo-ivy)
   :bind ("C-c m" . projectile-vc))
 
 (use-package
@@ -167,6 +170,3 @@
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
-
-;; (load "~/.emacs.d/common/todo")
-;; (require 'doom-todo-ivy)

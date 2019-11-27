@@ -20,19 +20,25 @@
   (add-hook 'org-mode-hook (lambda ()
                              (setq-local linum-format "  ")
                              (toc-org-enable)
-                             (yas-minor-mode-on)
-                             ;; Special key bindings
-                             (global-set-key (kbd "C-c c c") 'org-capture)))
+                             (yas-minor-mode-on)))
   (add-to-list 'org-tag-alist '("TOC" . ?T))
   (setq org-hide-emphasis-markers t)
   (setq org-cycle-include-plain-lists 'integrate)
+  (global-set-key (kbd "C-c c c") 'org-capture)
   (org-babel-do-load-languages
    'org-babel-load-languages
    '(
      (shell . t)
      (python . t)
      (dot . t)
-     )))
+     ))
+
+  (setq org-capture-templates
+        '(
+          ("d" "Draft" entry (file+datetree "~/Documents/draft.org")
+           "* %? %^G\nEntered on %U\n")
+          ))
+  )
 
 (provide 'org-init.el)
 ;;; org-init ends here
