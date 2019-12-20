@@ -13,7 +13,7 @@
 
   (defun company-tide-mode-hook ()
     (set (make-local-variable 'company-backends)
-         '(company-capf company-dabbrev-code company-tide company-tern company-css company-files)))
+         '(company-capf company-tide company-dabbrev-code company-tern company-css company-files)))
 
   (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide-mode))

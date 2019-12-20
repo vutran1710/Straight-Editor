@@ -1,11 +1,11 @@
 (use-package company
   :ensure t
   :config
-  (setq-default company-idle-delay 0.1
+  (setq-default company-idle-delay 0
                 company-dabbrev-other-buffers 'all
                 company-dabbrev-code-other-buffers 'all
                 company-dabbrev-code-everywhere t
-                company-minimum-prefix-length 3
+                company-minimum-prefix-length 1
                 company-show-numbers nil
                 company-tooltip-limit 10
                 company-tooltip-align-annotations t
