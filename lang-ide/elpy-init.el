@@ -14,7 +14,9 @@
   (setq elpy-rpc-virtualenv-path 'current)
   (add-hook 'elpy-mode-hook
             (lambda ()
-              (highlight-indentation-mode -1)))
+              (highlight-indentation-mode -1)
+              (elpy-company-backend)))
+
   (setq python-shell-interpreter "python"
         python-shell-interpreter-args "-i")
   (add-hook 'inferior-python-mode-hook
