@@ -19,3 +19,8 @@
         python-shell-interpreter-args "-i")
   (add-hook 'inferior-python-mode-hook
             (lambda () (setq-local tab-width '4))))
+
+(use-package poetry
+  :ensure t
+  :config
+  (poetry-tracking-mode))
