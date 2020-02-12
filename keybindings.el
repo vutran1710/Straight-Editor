@@ -75,5 +75,8 @@
 (global-set-key (kbd "C-'") 'avy-goto-line)
 
 
+;; Org
+(global-set-key (kbd "C-c c c") 'org-capture)
+
 ;; Ace-jump-buffer
 (global-set-key (kbd "C-t") 'ace-jump-buffer)

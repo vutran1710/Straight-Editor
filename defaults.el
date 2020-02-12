@@ -17,9 +17,7 @@
 (recentf-mode 1)
 (global-linum-mode t)
 
-(setq-default cursor-type 'box
-              blink-cursor-mode nil
-              custom-safe-themes t
+(setq-default custom-safe-themes t
               auto-save-default nil
               make-backup-files nil
               fringes-outside-margins t

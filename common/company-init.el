@@ -1,7 +1,7 @@
 (use-package company
   :ensure t
   :config
-  (setq-default company-idle-delay 0
+  (setq-default company-idle-delay .2
                 company-dabbrev-other-buffers 'all
                 company-dabbrev-code-other-buffers 'all
                 company-dabbrev-code-everywhere t
@@ -13,9 +13,15 @@
                 company-echo-delay 0.1
                 company-dabbrev-downcase nil)
 
-  (setq-default company-frontends '(company-pseudo-tooltip-frontend company-echo-metadata-frontend))
+  (setq-default company-frontends
+                '(company-pseudo-tooltip-frontend
+                  company-echo-metadata-frontend))
+
   (setq-default company-backends
-                '((company-capf company-dabbrev company-dabbrev-code company-files)))
+                '((company-capf
+                   company-dabbrev
+                   company-dabbrev-code
+                   company-files)))
 
   (global-company-mode t)
   :hook (elisp-mode . (lambda ()
