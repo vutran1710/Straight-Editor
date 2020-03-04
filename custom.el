@@ -35,7 +35,6 @@
 
 ;; Post install
 (load "~/.emacs.d/common/todo")
-(load "~/.emacs.d/common/speed-type")
 
 (require 'doom-todo-ivy)
 

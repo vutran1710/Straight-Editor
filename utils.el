@@ -1,6 +1,9 @@
 (use-package restart-emacs
   :ensure t)
 
+(use-package speed-type
+  :ensure t)
+
 (use-package dotenv-mode
   :ensure t
   :config (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
@@ -9,7 +12,7 @@
   :ensure t
   :commands (kubernetes-overview))
 
-(use-package deadgrep
+(use-package origami
   :ensure t)
 
 (use-package beacon

@@ -41,7 +41,7 @@
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-c r") 'counsel-recentf)
 (global-set-key (kbd "C-c t") 'counsel-load-theme)
-(global-set-key (kbd "C-c p s") 'deadgrep)
+(global-set-key (kbd "C-c p s") 'counsel-ag)
 (global-set-key (kbd "M-j") 'ivy-yank-word)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c p p") 'counsel-projectile-switch-project)
