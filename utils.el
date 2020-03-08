@@ -63,15 +63,6 @@
   (setq-default ag-highlight-search t)
   (setq wgrep-auto-save-buffer t))
 
-;; (use-package ibuffer-vc
-;;   :ensure t
-;;   :config
-;;   (add-hook 'ibuffer-hook
-;;             (lambda ()
-;;               (ibuffer-vc-set-filter-groups-by-vc-root)
-;;               (unless (eq ibuffer-sorting-mode 'alphabetic)
-;;                 (ibuffer-do-sort-by-alphabetic)))))
-
 (use-package npm-mode
   :ensure t
   :config (npm-global-mode))
@@ -83,10 +74,6 @@
 (use-package browse-kill-ring
   :ensure t
   :init (browse-kill-ring-default-keybindings))
-
-;; (use-package easy-kill
-;;   :ensure t
-;;   :init (global-set-key [remap kill-ring-save] 'easy-kill))
 
 (use-package expand-region
   :ensure t)
@@ -130,13 +117,6 @@
   :init
   (hlinum-activate))
 
-;; (use-package dumb-jump
-;;   :ensure t
-;;   :bind (("C-c j o" . dumb-jump-go-other-window)
-;;          ("C-c j j" . dumb-jump-go)
-;;          ("C-c j i" . dumb-jump-go-prompt))
-;;   :config (setq dumb-jump-selector 'ivy))
-
 (use-package projectile
   :ensure t
   :config (projectile-mode)
@@ -168,3 +148,6 @@
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
+
+(provide 'utils)
+;;; utils ends here
