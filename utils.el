@@ -63,14 +63,14 @@
   (setq-default ag-highlight-search t)
   (setq wgrep-auto-save-buffer t))
 
-(use-package ibuffer-vc
-  :ensure t
-  :config
-  (add-hook 'ibuffer-hook
-            (lambda ()
-              (ibuffer-vc-set-filter-groups-by-vc-root)
-              (unless (eq ibuffer-sorting-mode 'alphabetic)
-                (ibuffer-do-sort-by-alphabetic)))))
+;; (use-package ibuffer-vc
+;;   :ensure t
+;;   :config
+;;   (add-hook 'ibuffer-hook
+;;             (lambda ()
+;;               (ibuffer-vc-set-filter-groups-by-vc-root)
+;;               (unless (eq ibuffer-sorting-mode 'alphabetic)
+;;                 (ibuffer-do-sort-by-alphabetic)))))
 
 (use-package npm-mode
   :ensure t
@@ -95,9 +95,6 @@
   :ensure t)
 
 (use-package crux
-  :ensure t)
-
-(use-package ace-jump-buffer
   :ensure t)
 
 (use-package editorconfig
@@ -148,10 +145,8 @@
   (require 'doom-todo-ivy)
   :bind ("C-c m" . projectile-vc))
 
-(use-package
-  frog-jump-buffer
-  :ensure t
-  :bind ("C-x b" . frog-jump-buffer))
+(use-package frog-jump-buffer
+  :ensure t)
 
 (use-package diff-hl
   :ensure t

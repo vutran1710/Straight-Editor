@@ -78,5 +78,8 @@
 ;; Org
 (global-set-key (kbd "C-c c c") 'org-capture)
 
-;; Ace-jump-buffer
-(global-set-key (kbd "C-t") 'ace-jump-buffer)
+;; Frog-jump-buffer
+(global-set-key (kbd "C-t") 'frog-jump-buffer)
+
+(provide 'keybindings)
+;;; keybindings ends here
