@@ -8,15 +8,16 @@
 
 (use-package elpy
   :ensure t
-  :init (setenv "WORKON_HOME" "/Users/vumacbook/.local/share/virtualenvs/")
+  :init (setenv "WORKON_HOME" "/Users/vumacbook/.local/share/virtualenvs/")(elpy-enable)
   :config
-  (elpy-enable)
   (setq elpy-rpc-virtualenv-path 'current)
   (add-hook 'elpy-mode-hook
             (lambda ()
               (highlight-indentation-mode -1)
               (yapf-mode)
-              (elpy-company-backend)))
+              (elpy-company-backend)
+              (add-hook 'before-save-hook
+                                      'elpy-format-code nil t)))
 
   (setq python-shell-interpreter "python"
         python-shell-interpreter-args "-i")

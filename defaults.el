@@ -45,9 +45,9 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Overpass Mono 13")
-(set-frame-font "Overpass Mono 13" nil t)
-(setq-default line-spacing 0)
+(set-face-attribute 'default nil :font "Andale Mono 13")
+(set-frame-font "Andale Mono 13" nil t)
+(setq-default line-spacing 2)
 
 (use-package exec-path-from-shell
   :ensure t
