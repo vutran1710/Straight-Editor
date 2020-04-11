@@ -12,6 +12,9 @@
   - [[#refactoring-search--replace-text-accross-the-project][Refactoring: search & replace text accross the project]]
 
 * Introduction
+#+ATTR_HTML: :style margin-left: auto; margin-right: auto; :width 500
+[[./graphics/explain/screenshot.png]]
+
 Here is my setup guide & tutorial on how-to-use from basic to advance features of my Emacs.
 
 * Setup
