@@ -6,14 +6,17 @@
 
 (use-package flycheck-clojure
   :defer t
-  :commands (flycheck-clojure-setup)               ;; autoload
+  ;; :commands (flycheck-clojure-setup)               ;; autoload
   :config
   (eval-after-load 'flycheck
-    '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
-  (add-hook 'after-init-hook #'global-flycheck-mode))
+    '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 
 (use-package flycheck-pos-tip :ensure t
   :after flycheck)
+
+(defun clj-mode-before-save-hook ()
+  (when (eq major-mode 'clojure-mode)
+    (cider-format-buffer)))
 
 (use-package cider
   :ensure t
@@ -23,8 +26,8 @@
                     (yas-minor-mode)
                     ;; (aggressive-indent-mode)
                     (eldoc-mode)
-                    (aggressive-indent-mode)))
-  (before-save . cider-format-buffer)
+                    (aggressive-indent-mode)
+                    (add-hook 'before-save-hook #'clj-mode-before-save-hook)))
   :config
   (setq clojure-indent-style 'align-arguments)
   (setq clojure-align-forms-automatically t)

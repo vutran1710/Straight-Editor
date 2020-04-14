@@ -24,7 +24,7 @@
 (load "~/.emacs.d/lang-ide/tide-init")
 ;; (load "~/.emacs.d/lang-ide/alchemist-init")
 (load "~/.emacs.d/lang-ide/rust-init")
-;; (load "~/.emacs.d/lang-ide/cider-init")
+(load "~/.emacs.d/lang-ide/cider-init")
 (load "~/.emacs.d/lang-ide/markdown-init")
 (load "~/.emacs.d/lang-ide/docker-init")
 ;; (load "~/.emacs.d/lang-ide/go-init")
