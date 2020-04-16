@@ -58,6 +58,9 @@
 ;; Smartparens
 (global-set-key (kbd "C-r") 'sp-rewrap-sexp)
 (global-set-key (kbd "C-u") 'sp-unwrap-sexp)
+(global-set-key (kbd "M-z") 'zap-up-to-char)
+(global-set-key (kbd "C-M-n") 'sp-end-of-sexp)
+(global-set-key (kbd "C-M-p") 'sp-beginning-of-sexp)
 
 
 ;; Expand region

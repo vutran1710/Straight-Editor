@@ -35,6 +35,7 @@
 
 ;; Post install
 (load "~/.emacs.d/common/todo")
+(load "~/.emacs.d/common/zop-to-char")
 
 (require 'doom-todo-ivy)
 
