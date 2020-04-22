@@ -1,8 +1,8 @@
-(deftheme ayu-abyss
-  "Created 2018-05-06.")
+(deftheme ayu-dark
+  "Created 2018-05-06. An emacs-port of the dark verions of the amazing Ayu-theme")
 
 (custom-theme-set-faces
- 'ayu-abyss
+ 'ayu-dark
  '(default ((t (:family "Fira Code" :foundry "nil" :width normal :height 120 :weight light :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "#c3c0bb" :background "#000919" :stipple nil :inherit nil))))
  '(cursor ((t (:background "DarkOrange1"))))
  '(fixed-pitch ((t (:family "Monospace"))))
@@ -49,4 +49,4 @@
  '(linum-highlight-face ((t (:foreground "gray70"))))
  '(linum ((t (:foreground "gray30")))))
 
-(provide-theme 'ayu-abyss)
+(provide-theme 'ayu-dark)

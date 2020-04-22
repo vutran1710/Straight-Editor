@@ -1,8 +1,8 @@
-(deftheme ayu-heaven
-  "Crafted by vutr@io, as a emacs-port for the amazing ayu")
+(deftheme ayu-light
+  "Crafted by vutr.io, as a emacs-port version of the amazing Ayu theme")
 
 (custom-theme-set-faces
- 'ayu-heaven
+ 'ayu-light
  '(default ((t (:family "Overpass Mono" :foundry "nil" :width normal :height 120 :weight normal :slant normal :underline nil :overline nil :strike-through nil :box nil :inverse-video nil :foreground "gray27" :background "#fbfaf8" :stipple nil :inherit nil))))
  '(cursor ((t (:background "dark blue"))))
  '(fixed-pitch ((t (:family "Monospace"))))
@@ -49,4 +49,4 @@
  '(linum ((t (:foreground "gray70"))))
  '(linum-highlight-face ((t (:foreground "tomato1")))))
 
-(provide-theme 'ayu-heaven)
+(provide-theme 'ayu-light)
