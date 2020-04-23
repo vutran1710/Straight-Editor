@@ -18,7 +18,7 @@
  '(font-lock-comment-delimiter-face ((t (:foreground "gray60"))))
  '(font-lock-comment-face ((t (:foreground "gray70"))))
  '(font-lock-constant-face ((t (:foreground "#2196f3"))))
- '(font-lock-doc-face ((t (:slant italic :foreground "DarkOliveGreen3"))))
+ '(font-lock-doc-face ((t (:foreground "DarkOliveGreen3"))))
  '(font-lock-function-name-face ((t (:foreground "DarkOrange2"))))
  '(font-lock-keyword-face ((t (:foreground "OrangeRed2"))))
  '(font-lock-negation-char-face ((t (:foreground "#2196f3"))))
