@@ -5,6 +5,7 @@
   :ensure t)
 
 (use-package flycheck-clojure
+  :after flycheck
   :defer t
   ;; :commands (flycheck-clojure-setup)               ;; autoload
   :config
@@ -24,7 +25,6 @@
   (clojure-mode . (lambda()
                     (yas-reload-all)
                     (yas-minor-mode)
-                    ;; (aggressive-indent-mode)
                     (eldoc-mode)
                     (aggressive-indent-mode)
                     (add-hook 'before-save-hook #'clj-mode-before-save-hook)))
@@ -34,8 +34,7 @@
   (setq cider-repl-pop-to-buffer-on-connect nil)
   (setq
    cider-repl-history-file ".cider-repl-history"  ;; not squiggly-related, but I like it
-   nrepl-log-messages t)                          ;; not necessary, but useful for trouble-shooting
-  (flycheck-clojure-setup))
+   nrepl-log-messages t))
 
 (use-package clj-refactor
   :ensure t
