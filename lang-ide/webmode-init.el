@@ -1,4 +1,4 @@
-(use-package company-tern :ensure t)
+;; (use-package company-tern :ensure t)
 (use-package company-web :ensure t)
 (use-package eslintd-fix :ensure t)
 (use-package xref-js2 :ensure t)
@@ -24,10 +24,10 @@
   ;; Auto-complete for webmode
   (defun company-web-mode-hook ()
     (set (make-local-variable 'company-backends)
-         '(company-capf company-dabbrev company-tern company-css company-web company-files)))
+         '(company-capf company-dabbrev company-css company-web company-files)))
 
   (add-hook 'web-mode-hook (lambda ()
-                             (tern-mode)
+                             ;; (tern-mode)
                              (company-mode)
                              (company-web-mode-hook)
                              (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))

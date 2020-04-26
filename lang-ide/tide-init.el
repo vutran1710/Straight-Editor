@@ -2,7 +2,7 @@
   :ensure t
   :init
   (use-package web-mode :ensure t)
-  (setq tern-command (append tern-command '("--no-port-file")))
+  ;; (setq tern-command (append tern-command '("--no-port-file")))
   :config
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 
@@ -13,7 +13,7 @@
 
   (defun company-tide-mode-hook ()
     (set (make-local-variable 'company-backends)
-         '(company-capf company-tide company-dabbrev-code company-tern company-css company-files)))
+         '(company-capf company-tide company-dabbrev-code company-css company-files)))
 
   (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
