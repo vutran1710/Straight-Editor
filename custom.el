@@ -27,6 +27,7 @@
 (load "~/.emacs.d/lang-ide/cider-init")
 (load "~/.emacs.d/lang-ide/markdown-init")
 (load "~/.emacs.d/lang-ide/docker-init")
+(load "~/.emacs.d/lang-ide/fsharp-init")
 ;; (load "~/.emacs.d/lang-ide/go-init")
 ;; (load "~/.emacs.d/lang-ide/solc-init")
 
