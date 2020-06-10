@@ -30,6 +30,7 @@
                              ;; (tern-mode)
                              (company-mode)
                              (company-web-mode-hook)
+                             (eslintd-fix-mode)
                              (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
 
   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
