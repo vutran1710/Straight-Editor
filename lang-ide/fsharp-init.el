@@ -1,7 +1,26 @@
+(defun my-csharp-mode-setup ()
+  (omnisharp-mode)
+  (company-mode)
+  (flycheck-mode)
+
+  (setq indent-tabs-mode nil)
+  (setq truncate-lines t)
+  (setq tab-width 4)
+  (setq evil-shift-width 4)
+
+  ;csharp-mode README.md recommends this too
+  ;(electric-pair-mode 1)       ;; Emacs 24
+  ;(electric-pair-local-mode 1) ;; Emacs 25
+
+  (local-set-key (kbd "C-c r r") 'omnisharp-run-code-action-refactoring)
+  (local-set-key (kbd "C-c C-c") 'recompile))
+
+(use-package omnisharp :ensure t)
 (use-package fsharp-mode :ensure t
   :config
   (add-hook 'fsharp-mode-hook
             (lambda ()
+              (my-csharp-mode-setup)
               (fsharp-enable-prettify-symbols))))
 
 (use-package ob-fsharp :ensure t)

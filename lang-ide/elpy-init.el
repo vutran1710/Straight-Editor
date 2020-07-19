@@ -1,10 +1,9 @@
 (use-package py-autopep8
   :ensure t)
 
-(use-package yapfify
-  :ensure t
-  :config
-  (add-hook 'python-mode-hook 'yapf-mode))
+(use-package python-black
+  :demand t
+  :after python)
 
 (use-package elpy
   :ensure t
@@ -14,8 +13,8 @@
   (add-hook 'elpy-mode-hook
             (lambda ()
               (highlight-indentation-mode -1)
-              (yapf-mode)
-              (elpy-company-backend)
+              (elpy-company-backend t)
+              (python-black-on-save-mode t)
               (add-hook 'before-save-hook
                                       'elpy-format-code nil t)))
 

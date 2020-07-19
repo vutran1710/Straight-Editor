@@ -1,7 +1,7 @@
 (use-package restart-emacs
   :ensure t)
 
-(use-package speed-type
+(use-package docker-tramp
   :ensure t)
 
 (use-package dotenv-mode
@@ -26,7 +26,7 @@
   :ensure t
   :defer t
   :hook (after-init . doom-modeline-mode)
-  :config (setq doom-modeline-height 26))
+  :config (setq doom-modeline-height 20))
 
 (use-package undo-tree
   :ensure t
