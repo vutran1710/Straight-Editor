@@ -149,5 +149,10 @@
   :ensure t
   :init (global-flycheck-mode))
 
+(use-package makefile-executor
+  :ensure t
+  :config
+  (add-hook 'makefile-mode-hook 'makefile-executor-mode))
+
 (provide 'utils)
 ;;; utils ends here
