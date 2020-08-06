@@ -154,5 +154,9 @@
   :config
   (add-hook 'makefile-mode-hook 'makefile-executor-mode))
 
+(use-package haml-mode
+  ;Required for sass-mode"
+  :ensure t)
+
 (provide 'utils)
 ;;; utils ends here
