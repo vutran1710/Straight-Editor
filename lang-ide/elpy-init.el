@@ -2,6 +2,7 @@
   :ensure t)
 
 (use-package python-black
+  :ensure t
   :demand t
   :after python)
 
