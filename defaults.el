@@ -17,6 +17,8 @@
 (recentf-mode 1)
 (global-linum-mode t)
 
+(setq default-directory "/Users/vumacbook/Works/")
+
 (setq-default custom-safe-themes t
               auto-save-default nil
               make-backup-files nil
