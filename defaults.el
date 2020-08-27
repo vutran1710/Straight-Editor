@@ -47,9 +47,9 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Monaco 14")
-(set-frame-font "Monaco 14" nil t)
-(setq-default line-spacing 1)
+(set-face-attribute 'default nil :font "Monaco 12")
+(set-frame-font "Monaco 12" nil t)
+(setq-default line-spacing 4)
 
 (use-package exec-path-from-shell
   :ensure t

@@ -158,5 +158,9 @@
   ;Required for sass-mode"
   :ensure t)
 
+(use-package auto-dim-other-buffers
+  :ensure t
+  :init (auto-dim-other-buffers-mode))
+
 (provide 'utils)
 ;;; utils ends here

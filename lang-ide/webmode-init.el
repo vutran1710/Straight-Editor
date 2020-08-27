@@ -34,7 +34,8 @@
                              (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
 
   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
+  ;; Emacs 27 already support jsx
+  ;; (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
   ;; (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
