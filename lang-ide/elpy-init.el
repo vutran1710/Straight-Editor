@@ -21,6 +21,7 @@
 
   (setq python-shell-interpreter "python"
         python-shell-interpreter-args "-i")
+  (add-to-list 'auto-mode-alist '("\\Pipfile\\'" . conf-unix-mode))
   (add-hook 'inferior-python-mode-hook
             (lambda () (setq-local tab-width '4))))
 
