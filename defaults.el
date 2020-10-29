@@ -17,6 +17,7 @@
 (recentf-mode 1)
 (global-linum-mode t)
 
+(setq next-line-add-newlines t)
 (setq default-directory "/Users/vumacbook/Works/")
 
 (setq-default custom-safe-themes t
