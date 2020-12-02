@@ -12,9 +12,6 @@
 ;;   :ensure t
 ;;   :commands (kubernetes-overview))
 
-(use-package origami
-  :ensure t)
-
 (use-package beacon
   :ensure t
   :init (beacon-mode 1))
@@ -43,17 +40,9 @@
   :ensure t
   :bind ("M-[" . ace-window))
 
-(use-package iedit
+(use-package anzu
   :ensure t
-  :bind ("M-r" . iedit-mode)
-  :config
-  (set-face-foreground 'iedit-occurrence "white")
-  (set-face-background 'iedit-occurrence "orange red")
-  (define-key iedit-mode-keymap (kbd "M-n") 'iedit-expand-down-to-occurrence)
-  (define-key iedit-mode-keymap (kbd "M-p") 'iedit-expand-up-to-occurrence))
-
-(use-package avy
-  :ensure t)
+  :config (global-anzu-mode +1))
 
 (use-package ag
   :ensure t
@@ -62,10 +51,6 @@
   :config
   (setq-default ag-highlight-search t)
   (setq wgrep-auto-save-buffer t))
-
-(use-package npm-mode
-  :ensure t
-  :config (npm-global-mode))
 
 (use-package smartparens-config
   :ensure smartparens
@@ -95,22 +80,6 @@
                  '(swift-mode swift-indent-offset))))
 
 (use-package all-the-icons)
-
-(use-package dashboard
-  :ensure t
-  :config
-  (global-page-break-lines-mode)
-  (dashboard-setup-startup-hook)
-  (setq dashboard-items '((recents  . 5)
-                          (projects . 5)
-                          (agenda . 5)))
-  (setq dashboard-set-heading-icons t)
-  (setq dashboard-set-file-icons t)
-  (setq dashboard-set-navigator t)
-  (setq dashboard-banner-logo-title "me@vutr.io")
-  (setq dashboard-center-content t)
-  (setq dashboard-show-shortcuts nil)
-  (setq dashboard-startup-banner "~/.emacs.d/graphics/cloud.png"))
 
 (use-package hlinum
   :ensure t
@@ -148,11 +117,6 @@
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
-
-(use-package makefile-executor
-  :ensure t
-  :config
-  (add-hook 'makefile-mode-hook 'makefile-executor-mode))
 
 (use-package haml-mode
   ;Required for sass-mode"

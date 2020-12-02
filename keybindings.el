@@ -36,7 +36,7 @@
 
 
 ;; Counsel
-(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "M-m") 'counsel-M-x)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-c r") 'counsel-recentf)
@@ -73,8 +73,7 @@
 
 ;; Anzu
 (global-set-key (kbd "C-o") 'avy-goto-char-in-line)
-(global-set-key (kbd "M-o") 'avy-goto-char)
-(global-set-key (kbd "M-'") 'avy-goto-char-2)
+(global-set-key (kbd "M-o") 'avy-goto-char-2)
 (global-set-key (kbd "C-'") 'avy-goto-line)
 
 

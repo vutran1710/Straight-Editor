@@ -1,7 +1,6 @@
 ;;; package -- summary
 ;;; Commentary:
 ;; Some default settings for EMACS
-
 (setq mac-option-modifier 'meta)
 (setq mac-control-modifier 'control)
 (setq mac-command-modifier 'meta)
@@ -24,8 +23,6 @@
               auto-save-default nil
               make-backup-files nil
               fringes-outside-margins t
-              tab-width 2
-              js-indent-level 2
               indent-tabs-mode nil
               tab-always-indent t
               recentf-max-menu-items 25
@@ -33,7 +30,7 @@
               linum-format "%3d  "
               visible-bell nil
               ring-bell-function 'ignore
-              mac-use-title-bar t)
+              mac-use-title-bar nil)
 
 (add-hook 'prog-mode-hook '(lambda ()
                              (visual-line-mode)))
@@ -48,9 +45,9 @@
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(set-face-attribute 'default nil :font "Monaco 12")
-(set-frame-font "Monaco 12" nil t)
-(setq-default line-spacing 4)
+(set-face-attribute 'default nil :font "Overpass Mono 12")
+(set-frame-font "Overpass Mono 12" nil t)
+(setq-default line-spacing 0)
 
 (use-package exec-path-from-shell
   :ensure t
