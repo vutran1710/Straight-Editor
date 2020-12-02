@@ -4,5 +4,6 @@
 (global-set-key (kbd "C-;" ) 'projectile-find-file)
 
 (global-set-key (kbd "C-t") 'frog-jump-buffer)
+(global-set-key (kbd "C-c r") 'recentf-open-files)
 
 (provide 'keybindings)

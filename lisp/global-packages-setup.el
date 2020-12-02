@@ -32,8 +32,9 @@
   :ensure t
   :config
   (setq sp-show-pair-from-inside nil)
-  (setq smartparens-global-strict-mode t)
   (require 'smartparens-config)
+  (smartparens-global-mode t)
+  (smartparens-strict-mode t)
   :diminish smartparens-mode)
 
 (use-package browse-kill-ring

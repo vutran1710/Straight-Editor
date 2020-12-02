@@ -27,6 +27,7 @@
 	      auto-save-default nil
 	      make-backup-files nil
 	      recentf-max-menu-items 25
+	      recentf-max-saved-items 25
 	      tramp-default-method "ssh"
 	      visible-bell nil
 	      ring-bell-function 'ignore)
@@ -36,6 +37,8 @@
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (setq next-line-add-newlines t)
 (show-paren-mode 1)
+(delete-selection-mode t)
+(recentf-mode 1)
 
 (provide 'base-settings)
 ;;; base-settings ends here
