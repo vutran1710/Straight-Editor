@@ -21,8 +21,10 @@
 
 (use-package avy
   :ensure t
-  :config
-  (avy-setup-default))
+  :config (avy-setup-default) (setq avy-background t)
+  :custom-face
+  (avy-lead-face ((t(:weight bold))))
+  (avy-lead-face-0 ((t(:weight bold)))))
 
 (use-package doom-modeline
   :ensure t

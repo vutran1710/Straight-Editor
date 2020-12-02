@@ -15,6 +15,7 @@
 (fringe-mode '(5 . 0))
 (recentf-mode 1)
 (global-linum-mode t)
+(setq inhibit-startup-screen t)
 
 (setq next-line-add-newlines t)
 (setq default-directory "/Users/vumacbook/Works/")
