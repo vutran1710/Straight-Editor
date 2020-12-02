@@ -19,6 +19,11 @@
 (use-package magit
   :ensure t)
 
+(use-package avy
+  :ensure t
+  :config
+  (avy-setup-default))
+
 (use-package doom-modeline
   :ensure t
   :defer t
