@@ -6,7 +6,7 @@
 
 ;; Effect-free
 (load "~/.emacs.d/utils")
-(load "~/.emacs.d/themes-init")
+;; (load "~/.emacs.d/themes-init")
 ;; (load "~/.emacs.d/rainbow-delimiters-init")
 ;; (load "~/.emacs.d/treemacs-init")
 
@@ -28,7 +28,7 @@
 ;; (load "~/.emacs.d/lang-ide/rust-init")
 ;; (load "~/.emacs.d/lang-ide/cider-init")
 (load "~/.emacs.d/lang-ide/markdown-init")
-(load "~/.emacs.d/lang-ide/docker-init")
+;; (load "~/.emacs.d/lang-ide/docker-init")
 ;; (load "~/.emacs.d/lang-ide/fsharp-init")
 ;; (load "~/.emacs.d/lang-ide/go-init")
 ;; (load "~/.emacs.d/lang-ide/solc-init")
@@ -38,7 +38,7 @@
 
 ;; Post install
 (load "~/.emacs.d/common/todo")
-(load "~/.emacs.d/common/zop-to-char")
+;; (load "~/.emacs.d/common/zop-to-char")
 
 (require 'doom-todo-ivy)
 

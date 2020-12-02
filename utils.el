@@ -23,8 +23,8 @@
   :ensure t
   :config (avy-setup-default) (setq avy-background t)
   :custom-face
-  (avy-lead-face ((t(:weight bold))))
-  (avy-lead-face-0 ((t(:weight bold)))))
+  (avy-lead-face ((t(:weight bold :foreground "IndianRed1"))))
+  (avy-lead-face-0 ((t(:weight bold :foreground "burlywood2")))))
 
 (use-package doom-modeline
   :ensure t
