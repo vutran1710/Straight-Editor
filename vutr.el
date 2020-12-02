@@ -3,3 +3,4 @@
 
 (require 'base-settings)
 (require 'global-packages-setup)
+(require 'keybindings)

@@ -48,15 +48,10 @@
 
 (use-package projectile
   :ensure t
-  :config (projectile-mode)
-  :bind
-  ("C-c m" . projectile-vc)
-  ("C-c p p" . projectile-switch-project)
-  ("C-;" . projectile-find-file))
+  :config (projectile-mode))
 
 (use-package frog-jump-buffer
-  :ensure t
-  :bind ("C-t" . frog-jump-buffer))
+  :ensure t)
 
 (use-package diff-hl
   :ensure t
