@@ -18,9 +18,8 @@
 (global-set-key (kbd "C-'") 'avy-goto-char-2)
 (global-set-key (kbd "C-]") 'er/expand-region)
 
-(global-set-key (kbd "C-c a c") 'anzu-replace-at-cursor-thing)
-(global-set-key (kbd "C-c a r") 'anzu-query-replace-regexp)
-(global-set-key (kbd "C-c a i") 'anzu-isearch-query-replace)
+(global-set-key (kbd "C-c i e") 'iedit-mode)
+(global-set-key (kbd "C-c i r") 'iedit-restrict-function)
 
 (provide 'keybindings)
 ;;; keybindings ends here

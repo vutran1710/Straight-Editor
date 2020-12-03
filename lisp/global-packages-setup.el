@@ -84,9 +84,9 @@
 (use-package doom-themes
   :ensure t)
 
-(use-package anzu
+(use-package iedit
   :ensure t
-  :init (global-anzu-mode +1))
+  :diminish iedit-mode)
 
 (use-package ag
   :ensure t

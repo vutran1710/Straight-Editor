@@ -19,14 +19,14 @@
 
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "Monaco 12")
-(set-frame-font "Monaco 12" nil t)
-(setq-default line-spacing 2)
+(set-face-attribute 'default nil :font "Fira Code 13")
+(set-frame-font "Fira Code 13" nil t)
+(setq-default line-spacing 3)
 
 
 ;; Opening-window-size
 (when (window-system)
-  (set-frame-size (selected-frame) 150 80)
+  (set-frame-size (selected-frame) 120 60)
   (set-frame-position (selected-frame) 50 30))
 
 
