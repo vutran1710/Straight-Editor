@@ -82,5 +82,9 @@
   :config (sml/setup)
   (setq sml/theme 'respectful))
 
+(use-package anzu
+  :ensure t
+  :init (global-anzu-mode +1))
+
 (provide 'global-packages-setup)
 ;;; global-packages-setup ends here
