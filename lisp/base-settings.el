@@ -8,6 +8,7 @@
 (setq mac-control-modifier 'control)
 (setq mac-command-modifier 'meta)
 
+
 ;; Look & feels
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
@@ -16,15 +17,18 @@
 (global-display-line-numbers-mode t)
 (setq inhibit-startup-screen t)
 
+
 ;; Font & faces
 (set-face-attribute 'default nil :font "Monaco 12")
 (set-frame-font "Monaco 12" nil t)
 (setq-default line-spacing 2)
 
+
 ;; Opening-window-size
 (when (window-system)
   (set-frame-size (selected-frame) 150 80)
   (set-frame-position (selected-frame) 50 30))
+
 
 ;; Calibrate emacs default settings
 (setq default-directory "/Users/vumacbook/Works/")
