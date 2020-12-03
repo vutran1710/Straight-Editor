@@ -32,8 +32,7 @@
 
 ;; Calibrate emacs default settings
 (setq default-directory "/Users/vumacbook/Works/")
-(setq-default custom-safe-themes t
-	      auto-save-default nil
+(setq-default auto-save-default nil
 	      make-backup-files nil
 	      recentf-max-menu-items 25
 	      recentf-max-saved-items 25

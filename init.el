@@ -22,6 +22,7 @@
   (package-install 'use-package))
 
 (require 'use-package)
+(setq-default custom-safe-themes t)
 
 ;; Move all temp variables & setting to a seprate file
 (setq custom-file (expand-file-name ".temp.el" user-emacs-directory))
