@@ -49,7 +49,7 @@
 (show-paren-mode 1)
 (delete-selection-mode t)
 (recentf-mode 1)
-
+(setq-default require-final-newline t)
 
 (provide 'base-settings)
 ;;; base-settings ends here

@@ -3,6 +3,9 @@
 ;;; python setup
 ;;; Code:
 
+(use-package py-autopep8
+  :ensure t)
+
 (use-package python-black
   :ensure t
   :demand t
@@ -18,10 +21,11 @@
   (setq python-shell-interpreter "python" python-shell-interpreter-args "-i")
   (add-to-list 'auto-mode-alist '("\\Pipfile\\'" . conf-unix-mode))
   :hook
-  (elpy-mode . (lambda ()
+  ((elpy-mode . (lambda ()
 	      (highlight-indentation-mode -1)
 	      (elpy-company-backend t)
-	      (python-black-on-save-mode t))))
+	      (python-black-on-save-mode t)))
+   before-save-hook 'elpy-format-code nil t))
 
 (use-package poetry
   :ensure t

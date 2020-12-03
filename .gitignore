@@ -22,3 +22,4 @@ rpc-venv
 speed-type/
 .last-package-update-day
 var/
+.temp.el~
