@@ -6,6 +6,7 @@
 (global-set-key (kbd "C-t") 'frog-jump-buffer)
 (global-set-key (kbd "C-c r") 'recentf-open-files)
 
-(global-set-key (kbd "M-s a") 'avy-goto-char-2)
+(global-set-key (kbd "C-'") 'avy-goto-char-2)
+(global-set-key (kbd "C-]") 'er/expand-region)
 
 (provide 'keybindings)

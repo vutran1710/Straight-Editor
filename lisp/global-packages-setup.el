@@ -1,5 +1,7 @@
-;;; package --- Summary: installing global packages
-;;; Commentary: updated Dec 3 2020
+;;; package --- Summary:
+;;; Commentary:
+;;; installing global packages
+;;; updated Dec 3 2020
 ;;; Code:
 
 (use-package exec-path-from-shell
@@ -74,6 +76,11 @@
   :init
   (selectrum-prescient-mode +1)
   (prescient-persist-mode +1))
+
+(use-package smart-mode-line
+  :ensure t
+  :config (sml/setup)
+  (setq sml/theme 'respectful))
 
 (provide 'global-packages-setup)
 ;;; global-packages-setup ends here
