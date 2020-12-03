@@ -41,6 +41,7 @@
 	      visible-bell nil
 	      ring-bell-function 'ignore)
 
+
 ;; Misc
 (fset 'yes-or-no-p 'y-or-n-p)
 (add-hook 'before-save-hook 'whitespace-cleanup)
@@ -48,6 +49,7 @@
 (show-paren-mode 1)
 (delete-selection-mode t)
 (recentf-mode 1)
+
 
 (provide 'base-settings)
 ;;; base-settings ends here

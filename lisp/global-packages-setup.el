@@ -77,10 +77,12 @@
   (selectrum-prescient-mode +1)
   (prescient-persist-mode +1))
 
-(use-package smart-mode-line
+(use-package doom-modeline
   :ensure t
-  :config (sml/setup)
-  (setq sml/theme 'respectful))
+  :init (doom-modeline-mode 1))
+
+(use-package doom-themes
+  :ensure t)
 
 (use-package anzu
   :ensure t
