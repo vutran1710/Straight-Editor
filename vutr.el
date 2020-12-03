@@ -1,3 +1,8 @@
+;;; package -- Summary
+;;; Commentary:
+;;; Emacs config entry-point
+;;; Code:
+
 ;; Add paths
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
@@ -11,3 +16,4 @@
 ;; setup: post
 (require 'user-defined)
 (require 'keybindings)
+;;; vutr ends here

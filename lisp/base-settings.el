@@ -1,3 +1,8 @@
+;;; package --- Summary:
+;;; Commentary:
+;;; Emacs base-setting calibration
+;;; Code:
+
 ;; Custom keys with osx
 (setq mac-option-modifier 'meta)
 (setq mac-control-modifier 'control)
