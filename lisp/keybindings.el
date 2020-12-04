@@ -21,5 +21,7 @@
 (global-set-key (kbd "C-c i e") 'iedit-mode)
 (global-set-key (kbd "C-c i r") 'iedit-restrict-function)
 
+(global-set-key (kbd "C-l") 'kill-whole-line)
+
 (provide 'keybindings)
 ;;; keybindings ends here
