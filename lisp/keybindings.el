@@ -23,5 +23,7 @@
 
 (global-set-key (kbd "C-l") 'kill-whole-line)
 
+(global-set-key (kbd "C-c d") 'docker)
+
 (provide 'keybindings)
 ;;; keybindings ends here
