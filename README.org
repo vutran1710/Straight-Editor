@@ -1,66 +1,13 @@
 #+OPTIONS: ^:nil
-#+TITLE: EMACS SETUP & TUTORIAL
+#+TITLE: Editor
 #+DATE: <2018-07-31 Tue>
 #+AUTHOR: Vu Tran
 #+EMAIL: me@vutr.io`
 
-* Content                                                               :TOC:
-- [[#introduction][Introduction]]
-- [[#setup][Setup]]
-- [[#how-to-use][How to use]]
-  - [[#keybindings][Keybindings]]
-  - [[#refactoring-search--replace-text-accross-the-project][Refactoring: search & replace text accross the project]]
+* Supported programming in:
+- Python
+- Javascript/Typescript
+- Clojure
+- Julia
 
-* Introduction
-#+ATTR_HTML: :style margin-left: auto; margin-right: auto; :width 500
-[[./graphics/explain/screenshot.png]]
-
-Here is my setup guide & tutorial on how-to-use from basic to advance features of my Emacs.
-
-* Setup
-- Download Emacs from https://emacsformacosx.com/
-- Clone the repo
-#+begin_src shell
-$ mkdir ~/.emacs.d
-$ git clone https://github.com/vutran1710/NinjaEmacs.git ~/.emacs.d
-#+end_src
-- Go to Launchpad and hit Emacs
-- Wait for it to finish installing
-
-* How to use
-** Keybindings
-It is advised to re-map *Modifier Keys*.
-#+ATTR_HTML: :style margin-left: auto; margin-right: auto; :width 500
-[[./graphics/explain/modifier-keys.png]]
-
-The general keybindings for navigation are similar to default Emacs' keybindings,
-with some extras.
-
-This emacs setup comes with Ivy/Counsel, Dashboard, some IDE-setup scripts based on languages. There are some
-custom keybindings too. The most important are
-
-*** Navigation
-- ~C-f~ for cursor forward, ~C-b~ backward, ~C-n~ & ~C-p~ for cursor moving up & down by single line
-- ~M-f~ & ~M-b~ for cursor forward/backward by word, ~M-n~ & ~M-p~ for cursor moving up/down by Paragraph
-- ~M-d~ & ~M-v~ for delete forward/backward by word
-- ~C-d~ & ~C-v~ for delete forward/backward by char
-
-*** Working in Project(s)
-Using ~Projectile~ we have some general keybindings as following:
-- ~C-;~ find file in project
-- ~C-c p p~ switch to project
-- ~C-t~ fast-jump to any buffer (like opened-tabs in other editor)
-- ~C-c p s~ search any text within project (can use regex)
-
-*** Install/Disable IDE setup
-Go to `custom.el`, find /Language IDE/ section and comment/uncomment ides for language to your needs
-
-** Refactoring: search & replace text accross the project
-- Use *iedit, counsel-ag, ivy-ocur*
-- Keybinding consequence:
-  1. *counsel-ag*: /C-c p s/
-  2. Type in the text to be replace
-  3. *ivy-ocur*: /C-c C-o/
-  4. *ivy-wgrep-change-to-wgrep-mode*: /C-x C-q/
-  5. pick text, then *iedit-mode*: /M-r/
-  6. when done, save with the usual /C-x C-s/ then *wgrep-finish-edit*: /C-c C-c/
+* Tricks

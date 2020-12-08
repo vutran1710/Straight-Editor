@@ -19,8 +19,8 @@
 
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "Fira Code 13")
-(set-frame-font "Fira Code 13" nil t)
+(set-face-attribute 'default nil :font "Fira Code 12")
+(set-frame-font "Fira Code 12" nil t)
 (setq-default line-spacing 3)
 
 
