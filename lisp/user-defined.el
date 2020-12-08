@@ -17,5 +17,22 @@
   "Sort dired listings with directories first before adding mark."
   (mydired-sort))
 
+
+(defun my-fancy-newline ()
+  "Add two newlines and put the cursor at the right indentation."
+  (interactive)
+  (if (or
+       (and (equal (char-before) 123) ; {}
+	    (equal (char-after) 125))
+       (and (equal (char-before) 40) ; ()
+	    (equal (char-after) 41))
+       (and (equal (char-before) 91) ; []
+	    (equal (char-after) 93)))
+      (progn (newline-and-indent)
+	     (split-line)
+	     (indent-for-tab-command))
+    (newline-and-indent)))
+
+
 (provide 'user-defined)
 ;;; user-defined ends here

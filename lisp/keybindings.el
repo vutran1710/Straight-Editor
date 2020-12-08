@@ -25,5 +25,7 @@
 
 (global-set-key (kbd "C-c d") 'docker)
 
+(global-set-key (kbd "C-j") 'my-fancy-newline)
+
 (provide 'keybindings)
 ;;; keybindings ends here

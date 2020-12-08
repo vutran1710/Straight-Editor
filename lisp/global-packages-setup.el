@@ -42,11 +42,10 @@
 (use-package smartparens
   :ensure t
   :config
-  (setq sp-show-pair-from-inside nil)
+  (setq sp-show-pair-from-inside t)
   (require 'smartparens-config)
-  (smartparens-global-mode t)
-  (smartparens-strict-mode t)
-  :diminish smartparens-mode)
+  :diminish smartparens-mode
+  :hook ((prog-mode . smartparens-strict-mode)))
 
 (use-package browse-kill-ring
   :ensure t
