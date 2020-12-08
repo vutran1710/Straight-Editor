@@ -21,7 +21,7 @@
 (global-set-key (kbd "C-c i e") 'iedit-mode)
 (global-set-key (kbd "C-c i r") 'iedit-restrict-function)
 
-(global-set-key (kbd "C-l") 'kill-whole-line)
+(global-set-key (kbd "C-l") 'smart-kill-whole-line)
 
 (global-set-key (kbd "C-c d") 'docker)
 

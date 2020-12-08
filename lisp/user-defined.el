@@ -34,5 +34,11 @@
     (newline-and-indent)))
 
 
+(defun smart-kill-whole-line (&optional arg)
+  "Kill-whole-line that respects indentation."
+  (interactive "P")
+  (kill-whole-line arg)
+  (back-to-indentation))
+
 (provide 'user-defined)
 ;;; user-defined ends here
