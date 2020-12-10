@@ -33,4 +33,4 @@
   (poetry-tracking-mode))
 
 (provide 'vutr-python)
-;;; python ends here
+;;; vutr-python ends here
