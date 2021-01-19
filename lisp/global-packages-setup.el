@@ -12,6 +12,9 @@
 (use-package restart-emacs
   :ensure t)
 
+(use-package swiper
+  :ensure t)
+
 (use-package beacon
   :ensure t
   :init (beacon-mode 1))
