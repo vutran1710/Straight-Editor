@@ -25,7 +25,7 @@
 
 (global-set-key (kbd "C-c d") 'docker)
 
-(global-set-key (kbd "C-j") 'my-fancy-newline)
+(global-set-key (kbd "RET") 'my-fancy-newline)
 (global-set-key (kbd "M-z") 'zop-to-char)
 
 (provide 'keybindings)
