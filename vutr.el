@@ -15,6 +15,8 @@
 ;; programming load
 (require 'vutr-python)
 (require 'vutr-tide)
+(require 'vutr-clojure)
+(require 'vutr-julia)
 
 ;; setup: post
 (require 'user-defined)

@@ -60,6 +60,10 @@
 (use-package fix-word
   :ensure t)
 
+(use-package aggressive-indent
+  :ensure t
+  :config (global-aggressive-indent-mode 1))
+
 (use-package projectile
   :ensure t
   :config (projectile-mode))
