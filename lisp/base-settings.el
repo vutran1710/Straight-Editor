@@ -38,7 +38,8 @@
 	      recentf-max-saved-items 25
 	      tramp-default-method "ssh"
 	      visible-bell nil
-	      ring-bell-function 'ignore)
+	      ring-bell-function 'ignore
+	      js-indent-level 2)
 
 
 ;; Misc

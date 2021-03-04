@@ -28,5 +28,8 @@
 (global-set-key (kbd "RET") 'my-fancy-newline)
 (global-set-key (kbd "M-z") 'zop-to-char)
 
+(global-set-key (kbd "C-c s r") 'sp-rewrap-sexp)
+(global-set-key (kbd "C-c s u") 'sp-unwrap-sexp)
+
 (provide 'keybindings)
 ;;; keybindings ends here

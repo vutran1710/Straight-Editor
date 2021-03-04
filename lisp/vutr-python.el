@@ -30,7 +30,7 @@
 (use-package poetry
   :ensure t
   :config
-  (poetry-tracking-mode))
+  (poetry-tracking-mode nil))
 
 (provide 'vutr-python)
 ;;; vutr-python ends here

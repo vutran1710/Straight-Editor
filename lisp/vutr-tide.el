@@ -14,11 +14,13 @@
   :diminish "🌎"
   :mode
   (("\\.phtml\\'" . web-mode)
-  ("\\.erb\\'" . web-mode)
-  ("\\.mustache\\'" . web-mode)
-  ("\\.djhtml\\'" . web-mode)
-  ("\\.jst.ejs\\'" . web-mode)
-  ("\\.html?\\'" . web-mode))
+   ("\\.erb\\'" . web-mode)
+   ("\\.mustache\\'" . web-mode)
+   ("\\.djhtml\\'" . web-mode)
+   ("\\.jst.ejs\\'" . web-mode)
+   ("\\.tsx\\'" . web-mode)
+   ("\\.s?css\\'" . web-mode)
+   ("\\.html?\\'" . web-mode))
   :init
   (setq web-mode-enable-block-face t)
   (setq web-mode-enable-comment-keywords t)
@@ -50,23 +52,14 @@
 	 '(company-capf company-dabbrev company-css company-web company-files)))
 
   (add-hook 'web-mode-hook (lambda ()
-			     ;; (tern-mode)
+			     (tern-mode)
 			     (company-mode)
 			     (company-web-mode-hook)
 			     (eslintd-fix-mode)
 			     (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
 
-  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
   ;; Emacs 27 already support jsx
-  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.html.eex\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
-  (setq web-mode-engines-alist '(("django" . "\\.html\\'")))
+  ;; (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
   (setq web-mode-markup-indent-offset 2
 	web-mode-code-indent-offset 2
 	web-mode-css-indent-offset 2
