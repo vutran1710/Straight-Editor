@@ -13,10 +13,13 @@
 (require 'zop-to-char)
 
 ;; programming load
+(require 'vutr-org)
+(require 'vutr-web)
 (require 'vutr-python)
 (require 'vutr-tide)
 (require 'vutr-clojure)
 (require 'vutr-julia)
+(require 'vutr-sass)
 
 ;; setup: post
 (require 'user-defined)

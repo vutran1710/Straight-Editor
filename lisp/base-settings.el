@@ -21,12 +21,12 @@
 ;; Font & faces
 (set-face-attribute 'default nil :font "Cascadia Code 13")
 (set-frame-font "Cascadia Code 13" nil t)
-(setq-default line-spacing 4)
+(setq-default line-spacing 2)
 
 
 ;; Opening-window-size
 (when (window-system)
-  (set-frame-size (selected-frame) 120 60)
+  (set-frame-size (selected-frame) 130 60)
   (set-frame-position (selected-frame) 50 30))
 
 

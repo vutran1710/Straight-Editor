@@ -30,6 +30,9 @@
 
 (global-set-key (kbd "C-c s r") 'sp-rewrap-sexp)
 (global-set-key (kbd "C-c s u") 'sp-unwrap-sexp)
+(global-set-key (kbd "C-c s t") 'smartparens-strict-mode)
+
+(global-set-key (kbd "C-c q") 'emmet-expand-yas)
 
 (provide 'keybindings)
 ;;; keybindings ends here
