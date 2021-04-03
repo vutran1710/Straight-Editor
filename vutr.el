@@ -18,8 +18,6 @@
 (require 'vutr-python)
 (require 'vutr-tide)
 (require 'vutr-clojure)
-(require 'vutr-julia)
-(require 'vutr-sass)
 
 ;; setup: post
 (require 'user-defined)

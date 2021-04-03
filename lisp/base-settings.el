@@ -19,9 +19,9 @@
 
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "Cascadia Code 13")
-(set-frame-font "Cascadia Code 13" nil t)
-(setq-default line-spacing 2)
+(set-face-attribute 'default nil :font "Monaco 12")
+;(set-frame-font "Monaco Code 12" nil t)
+(setq-default line-spacing 1)
 
 
 ;; Opening-window-size
