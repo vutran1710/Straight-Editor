@@ -3,34 +3,46 @@
 ;;; python setup
 ;;; Code:
 
-(use-package py-autopep8
-  :ensure t)
-
-(use-package python-black
-  :ensure t
-  :demand t
-  :after python)
-
-(use-package elpy
-  :ensure t
-  :init
-  (setenv "WORKON_HOME" "/Users/vumacbook/.local/share/virtualenvs/")
-  (elpy-enable)
-  :config
-  (setq elpy-rpc-virtualenv-path 'current)
-  (setq python-shell-interpreter "python" python-shell-interpreter-args "-i")
-  (add-to-list 'auto-mode-alist '("\\Pipfile\\'" . conf-unix-mode))
-  :hook
-  ((elpy-mode . (lambda ()
-	      (highlight-indentation-mode -1)
-	      (elpy-company-backend t)
-	      (python-black-on-save-mode t)))
-   before-save-hook 'elpy-format-code nil t))
-
 (use-package poetry
   :ensure t
   :config
   (poetry-tracking-mode nil))
+
+(use-package pyvenv
+  :ensure t
+  :diminish
+  :config
+  (pyvenv-mode +1)
+  (setenv "WORKON_HOME" "/Users/vumacbook/.local/share/virtualenvs/"))
+
+(use-package py-autopep8
+  :ensure t
+  :hook ((python-mode . py-autopep8-enable-on-save)))
+
+(use-package blacken
+  :ensure t
+  :hook ((python-mode . blacken-mode)))
+
+(use-package lsp-python-ms
+  :ensure t
+  :init (setq lsp-python-ms-auto-install-server t)
+  :hook ((python-mode . (lambda ()
+			  (require 'lsp-python-ms)
+			  (lsp-deferred)))
+	 (flycheck-mode . (lambda ()
+			    (flycheck-add-next-checker 'lsp 'python-flake8)
+			    (flycheck-add-next-checker 'python-flake8 'python-mypy)
+			    (message "Added flycheck checkers."))))
+  :config
+  (setq pyvenv-post-activate-hooks
+	(lambda()
+	  (message "activated...")
+	  (setq lsp-python-ms-extra-paths
+		(vector
+		 (concat pyvenv-virtual-env "lib/python3.7/site-packages/")
+		 (concat pyvenv-virtual-env "lib/python3.8/site-packages/")
+		 (concat pyvenv-virtual-env "lib/python3.9/site-packages/"))))))
+
 
 (provide 'vutr-python)
 ;;; vutr-python ends here

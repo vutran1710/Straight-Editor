@@ -24,3 +24,4 @@ speed-type/
 var/
 .temp.el~
 bookmarks
+*lsp-session*

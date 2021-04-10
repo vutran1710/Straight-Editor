@@ -13,6 +13,7 @@
 (require 'zop-to-char)
 
 ;; programming load
+(require 'vutr-lsp)
 (require 'vutr-org)
 (require 'vutr-web)
 (require 'vutr-python)
