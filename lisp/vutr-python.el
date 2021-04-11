@@ -28,11 +28,7 @@
   :init (setq lsp-python-ms-auto-install-server t)
   :hook ((python-mode . (lambda ()
 			  (require 'lsp-python-ms)
-			  (lsp-deferred)))
-	 (flycheck-mode . (lambda ()
-			    (flycheck-add-next-checker 'lsp 'python-flake8)
-			    (flycheck-add-next-checker 'python-flake8 'python-mypy)
-			    (message "Added flycheck checkers."))))
+			  (lsp-deferred))))
   :config
   (setq pyvenv-post-activate-hooks
 	(lambda()

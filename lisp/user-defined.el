@@ -40,5 +40,14 @@
   (kill-whole-line arg)
   (back-to-indentation))
 
+(defun shell-command-on-buffer (command)
+  "Running shell-command on the whole buffer, eg: $ python main.py"
+  (interactive "sShell command on buffer: ")
+  (shell-command-on-region
+   (point-min)
+   (point-max)
+   command
+   nil))
+
 (provide 'user-defined)
 ;;; user-defined ends here
