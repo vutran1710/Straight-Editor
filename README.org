@@ -4,10 +4,7 @@
 #+AUTHOR: Vu Tran
 #+EMAIL: me@vutr.io`
 
-* Supported programming in:
+* Support programming in:
 - Python
-- Javascript/Typescript
+- Javascript/Typescript/Html/Css
 - Clojure
-- Julia
-
-* Tricks
