@@ -7,8 +7,8 @@
   :ensure t
   :init
   (setq lsp-keymap-prefix "C-c l")
-  :hook ((python-mode . lsp-deferred))
-  :commands lsp)
+  :hook (python-mode . lsp-deferred)
+  :commands (lsp lsp-deferred))
 
 (use-package lsp-ui
   :ensure t

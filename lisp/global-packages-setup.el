@@ -47,6 +47,7 @@
   :config
   (setq sp-show-pair-from-inside t)
   (require 'smartparens-config)
+  (smartparens-global-mode +1)
   :diminish smartparens-mode)
 
 (use-package browse-kill-ring
