@@ -3,17 +3,22 @@
 ;;; for web editing
 ;;; Code:
 
-(use-package company-web :ensure t)
-(use-package eslintd-fix :ensure t)
-(use-package emmet-mode :ensure t
+(use-package company-web
+  :ensure t)
+
+(use-package eslintd-fix
+  :ensure t)
+
+(use-package emmet-mode
+  :ensure t
   :config (setq emmet-expand-jsx-className? t
 		emmet-self-closing-tag-style " /"
 		emmet-move-cursor-between-quotes t))
 
 (use-package web-mode
   :ensure t
-  :init
   :config
+
   (with-eval-after-load 'flycheck
     (dolist (checker '(javascript-eslint))
       (flycheck-add-mode checker 'web-mode)))
@@ -22,37 +27,28 @@
 		(append flycheck-disabled-checkers
 			'(javascript-jshint json-jsonlist)))
 
-  (add-hook 'flycheck-mode-hook #'use-eslint-from-node-modules)
-
-  ;; Auto-complete for webmode
-  (defun company-web-mode-hook ()
-    (set (make-local-variable 'company-backends)
-	 '(company-capf company-dabbrev company-css company-web company-files)))
-
-  (add-hook 'web-mode-hook (lambda ()
-			     ;; (tern-mode)
-			     (company-mode)
-			     (company-web-mode-hook)
-			     (eslintd-fix-mode)
-			     (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
-
-  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-  ;; Emacs 27 already support jsx
   (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.html.eex\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
-  (setq web-mode-engines-alist '(("django" . "\\.html\\'")))
-  (setq web-mode-markup-indent-offset 2
+
+  (setq web-mode-engines-alist '(("django" . "\\.html\\'"))
+	web-mode-markup-indent-offset 2
 	web-mode-code-indent-offset 2
 	web-mode-css-indent-offset 2
 	web-mode-enable-auto-pairing t
 	web-mode-enable-css-colorization t
-	web-mode-enable-current-element-highlight t))
+	web-mode-enable-current-element-highlight t)
+  :hook
+  (flycheck-mode . use-eslint-from-node-modules)
+  (web-mode . (lambda()
+		(company-mode)
+		(eslintd-fix-mode)
+		(set (make-local-variable 'company-backends)
+		     '(company-capf company-dabbrev company-css company-web company-files))
+		)))
 
 ;; Make use of local Eslint over global
 (defun use-eslint-from-node-modules ()
