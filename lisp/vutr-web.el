@@ -6,6 +6,9 @@
 (use-package company-web
   :ensure t)
 
+(use-package xref-js2
+  :ensure t)
+
 (use-package eslintd-fix
   :ensure t)
 
@@ -44,11 +47,10 @@
   :hook
   (flycheck-mode . use-eslint-from-node-modules)
   (web-mode . (lambda()
-		(company-mode)
 		(eslintd-fix-mode)
 		(set (make-local-variable 'company-backends)
-		     '(company-capf company-dabbrev company-css company-web company-files))
-		)))
+		     '(company-web-html company-css company-capf company-dabbrev company-files))
+		(add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t))))
 
 ;; Make use of local Eslint over global
 (defun use-eslint-from-node-modules ()

@@ -117,7 +117,7 @@
   :init (global-company-mode)
   :diminish company-mode
   :config
-  (setq-default company-idle-delay .2
+  (setq-default company-idle-delay .1
 		company-dabbrev-other-buffers 'all
 		company-dabbrev-code-other-buffers 'all
 		company-dabbrev-code-everywhere t
