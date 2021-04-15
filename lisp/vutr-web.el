@@ -18,7 +18,6 @@
 (use-package web-mode
   :ensure t
   :config
-
   (with-eval-after-load 'flycheck
     (dolist (checker '(javascript-eslint))
       (flycheck-add-mode checker 'web-mode)))
@@ -41,6 +40,7 @@
 	web-mode-enable-auto-pairing t
 	web-mode-enable-css-colorization t
 	web-mode-enable-current-element-highlight t)
+
   :hook
   (flycheck-mode . use-eslint-from-node-modules)
   (web-mode . (lambda()
