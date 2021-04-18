@@ -31,6 +31,11 @@
 (use-package dockerfile-mode
   :ensure t)
 
+(use-package which-key
+  :ensure t
+  :init
+  (which-key-mode))
+
 (use-package avy
   :ensure t
   :config (avy-setup-default) (setq avy-background t)
