@@ -133,7 +133,7 @@
 		company-dabbrev-code-everywhere t
 		company-minimum-prefix-length 1
 		company-show-numbers t
-		company-tooltip-limit 10
+		company-tooltip-limit 7
 		company-tooltip-align-annotations t
 		company-require-match nil
 		company-echo-delay 0.1
