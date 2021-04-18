@@ -24,6 +24,7 @@
   :ensure t
   :init
   (setq lsp-python-ms-auto-install-server t)
+  (add-to-list 'auto-mode-alist '("\\Pipfile\\'" . conf-unix-mode))
   (setq pyvenv-post-activate-hooks
 	(lambda()
 	  (message "activated...")

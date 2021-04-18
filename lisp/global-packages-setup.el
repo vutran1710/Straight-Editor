@@ -31,6 +31,10 @@
 (use-package dockerfile-mode
   :ensure t)
 
+(use-package dotenv-mode
+  :ensure t
+  :config (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
+
 (use-package which-key
   :ensure t
   :init
@@ -53,6 +57,7 @@
   (setq sp-show-pair-from-inside t)
   (require 'smartparens-config)
   (smartparens-global-mode +1)
+  (smartparens-global-strict-mode +1)
   :diminish smartparens-mode)
 
 (use-package browse-kill-ring
