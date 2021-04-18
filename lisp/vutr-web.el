@@ -49,7 +49,7 @@
   (web-mode . (lambda()
 		(eslintd-fix-mode)
 		(set (make-local-variable 'company-backends)
-		     '(company-web-html company-css company-capf company-dabbrev company-files))
+		     '(company-tide company-web-html company-css company-capf company-dabbrev company-files))
 		(add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t))))
 
 ;; Make use of local Eslint over global
