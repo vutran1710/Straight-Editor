@@ -18,7 +18,7 @@
 (global-set-key (kbd "C-t") 'frog-jump-buffer)
 (global-set-key (kbd "C-c r") 'recentf-open-files)
 
-(global-set-key (kbd "C-c a j") 'avy-goto-line)
+(global-set-key (kbd "C-c a j") 'avy-goto-char)
 (global-set-key (kbd "C-c a k") 'avy-goto-char-2)
 (global-set-key (kbd "C-c a l") 'avy-goto-line)
 
