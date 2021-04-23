@@ -30,7 +30,9 @@
 
 ;;; Install packages
 (use-package clojure-mode
-  :ensure t)
+  :ensure t
+  :config
+  (require 'flycheck-clj-kondo))
 
 (use-package flycheck-clojure
   :ensure t
@@ -40,6 +42,9 @@
   :config
   (eval-after-load 'flycheck
     '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+
+(use-package flycheck-clj-kondo
+  :ensure t)
 
 (use-package flycheck-pos-tip
   :ensure t
