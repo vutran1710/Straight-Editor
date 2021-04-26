@@ -164,5 +164,23 @@
 	 ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
+(use-package know-your-http-well
+  :ensure t)
+
+(use-package company-restclient
+  :ensure t)
+
+(use-package restclient
+  :ensure t
+  :hook
+  (restclient-mode . (lambda ()
+		       (set (make-local-variable 'company-backends)
+			    '(company-restclient company-yasnippet company-capf))))
+  :config
+  (add-to-list 'auto-mode-alist '("\\.\\(http\\|api\\)\\'" . restclient-mode)))
+
+(use-package json-navigator
+  :ensure t)
+
 (provide 'global-packages-setup)
 ;;; global-packages-setup ends here
