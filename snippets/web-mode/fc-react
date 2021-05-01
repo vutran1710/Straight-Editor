@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: Functional Component
+# key: fc
+# --
+
+import { FC } from 'react'
+
+type Props = {
+  // foo: bar
+}
+
+export const ${1:Component}: FC<Props> = () => (
+   $2
+)

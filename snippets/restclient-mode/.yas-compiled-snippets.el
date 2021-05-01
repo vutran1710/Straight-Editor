@@ -8,4 +8,4 @@
 		       ("be" "Authorization: Bearer-${1:token}\n$0" "Authorization with Bearer" nil nil nil "/Users/vumacbook/.emacs.d/snippets/restclient-mode/aux" nil nil)))
 
 
-;;; Do not edit! File generated at Mon Apr 26 19:07:58 2021
+;;; Do not edit! File generated at Sun May  2 03:37:27 2021

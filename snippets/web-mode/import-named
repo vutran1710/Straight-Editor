@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: import-part-module
-# key: irm
+# key: imn
 # --
 import { ${1:module} } from '${2:module-path}'
