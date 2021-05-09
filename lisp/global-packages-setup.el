@@ -182,5 +182,10 @@
 (use-package json-navigator
   :ensure t)
 
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
 (provide 'global-packages-setup)
 ;;; global-packages-setup ends here

@@ -42,7 +42,9 @@
 	web-mode-css-indent-offset 2
 	web-mode-enable-auto-pairing t
 	web-mode-enable-css-colorization t
-	web-mode-enable-current-element-highlight t)
+	web-mode-enable-current-element-highlight t
+	js-indent-level 2
+	indent-tabs-mode nil)
 
   :hook
   (flycheck-mode . use-eslint-from-node-modules)

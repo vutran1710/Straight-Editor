@@ -19,9 +19,9 @@
 
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "Monaco 12")
+(set-face-attribute 'default nil :font "Menlo 13")
 ;(set-frame-font "Monaco Code 12" nil t)
-(setq-default line-spacing 1)
+(setq-default line-spacing 4)
 
 
 ;; Opening-window-size
@@ -31,7 +31,7 @@
 
 
 ;; Calibrate emacs default settings
-(setq default-directory "/Users/vumacbook/Works/")
+(setq default-directory "/Users/vutran/Works/")
 (setq-default auto-save-default nil
 	      make-backup-files nil
 	      recentf-max-menu-items 25
@@ -45,7 +45,6 @@
 ;; Misc
 (fset 'yes-or-no-p 'y-or-n-p)
 (add-hook 'before-save-hook 'whitespace-cleanup)
-(setq next-line-add-newlines t)
 (show-paren-mode 1)
 (delete-selection-mode t)
 (recentf-mode 1)

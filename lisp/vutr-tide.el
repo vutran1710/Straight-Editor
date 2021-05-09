@@ -14,9 +14,6 @@
 
 (use-package tide
   :ensure t
-  :init
-  (use-package web-mode :ensure t)
-  ;; (setq tern-command (append tern-command '("--no-port-file")))
   :config
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 

@@ -14,7 +14,7 @@
   :config
   (pyvenv-mode +1)
   (pyvenv-tracking-mode +1)
-  (setenv "WORKON_HOME" "/Users/vumacbook/.local/share/virtualenvs/"))
+  (setenv "WORKON_HOME" "/Users/vutran/.local/share/virtualenvs/"))
 
 (use-package blacken
   :ensure t
