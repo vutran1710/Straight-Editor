@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: arrow-function-1
-# key: ar1
-# --
-
-const ${1:fun} = (${2:...args}) => {
-  $3
-}
-$0
