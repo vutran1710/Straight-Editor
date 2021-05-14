@@ -33,13 +33,14 @@
 ;; Calibrate emacs default settings
 (setq default-directory "/Users/vutran/Works/")
 (setq-default auto-save-default nil
-	      make-backup-files nil
-	      recentf-max-menu-items 25
-	      recentf-max-saved-items 25
-	      tramp-default-method "ssh"
-	      visible-bell nil
-	      ring-bell-function 'ignore
-	      js-indent-level 2)
+              indent-tabs-mode nil
+              make-backup-files nil
+              recentf-max-menu-items 25
+              recentf-max-saved-items 25
+              tramp-default-method "ssh"
+              visible-bell nil
+              ring-bell-function 'ignore
+              js-indent-level 2)
 
 
 ;; Misc
@@ -49,6 +50,8 @@
 (delete-selection-mode t)
 (recentf-mode 1)
 (setq-default require-final-newline t)
+
+(setq custom-theme-directory "~/.emacs.d/lisp/extras/themes")
 
 (provide 'base-settings)
 ;;; base-settings ends here

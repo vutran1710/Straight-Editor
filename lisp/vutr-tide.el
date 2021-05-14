@@ -14,6 +14,7 @@
 (use-package tide
   :ensure t
   :config
+  (setq typescript-indent-level '2)
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
   (add-hook 'web-mode-hook
 	    (lambda ()
