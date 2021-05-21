@@ -19,7 +19,7 @@
 
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "Menlo 13")
+(set-face-attribute 'default nil :font "Roboto Mono 14")
 ;(set-frame-font "Monaco Code 12" nil t)
 (setq-default line-spacing 4)
 

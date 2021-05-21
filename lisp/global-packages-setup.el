@@ -127,26 +127,26 @@
   :diminish company-mode
   :config
   (setq-default company-idle-delay .1
-		company-dabbrev-other-buffers 'all
-		company-dabbrev-code-other-buffers 'all
-		company-dabbrev-code-everywhere t
-		company-minimum-prefix-length 1
-		company-show-numbers t
-		company-tooltip-limit 7
-		company-tooltip-align-annotations t
-		company-require-match nil
-		company-echo-delay 0.1
-		company-dabbrev-downcase nil)
+                company-dabbrev-other-buffers 'all
+                company-dabbrev-code-other-buffers 'all
+                company-dabbrev-code-everywhere t
+                company-minimum-prefix-length 1
+                company-show-numbers t
+                company-tooltip-limit 7
+                company-tooltip-align-annotations t
+                company-require-match nil
+                company-echo-delay 0.1
+                company-dabbrev-downcase nil)
 
   (setq company-frontends
-	'(company-pseudo-tooltip-frontend
-	  company-echo-metadata-frontend))
+        '(company-pseudo-tooltip-frontend
+          company-echo-metadata-frontend))
 
   (setq company-backends
-	'((company-capf
-	   company-dabbrev
-	   company-dabbrev-code
-	   company-files))))
+        '((company-capf
+           company-dabbrev
+           company-dabbrev-code
+           company-files))))
 
 (use-package yasnippet
   :ensure t
@@ -159,8 +159,8 @@
 (use-package markdown-mode
   :ensure t
   :mode (("README\\.md\\'" . gfm-mode)
-	 ("\\.md\\'" . markdown-mode)
-	 ("\\.markdown\\'" . markdown-mode))
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
 (use-package know-your-http-well
@@ -173,8 +173,8 @@
   :ensure t
   :hook
   (restclient-mode . (lambda ()
-		       (set (make-local-variable 'company-backends)
-			    '(company-restclient company-yasnippet company-capf))))
+                       (set (make-local-variable 'company-backends)
+                            '(company-restclient company-yasnippet company-capf))))
   :config
   (add-to-list 'auto-mode-alist '("\\.\\(http\\|api\\)\\'" . restclient-mode)))
 
@@ -185,6 +185,13 @@
   :ensure t
   :config
   (editorconfig-mode 1))
+
+(use-package fountain-mode
+  :ensure t
+  :hook
+  ((fountain-mode . (lambda()
+                      (setq fill-column 80)
+                      (auto-fill-mode)))))
 
 (provide 'global-packages-setup)
 ;;; global-packages-setup ends here
