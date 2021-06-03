@@ -19,15 +19,14 @@
 
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "Roboto Mono 14")
-;(set-frame-font "Monaco Code 12" nil t)
+(set-face-attribute 'default nil :font "Roboto Mono 13")
 (setq-default line-spacing 4)
 
 
 ;; Opening-window-size
 (when (window-system)
   (set-frame-size (selected-frame) 130 60)
-  (set-frame-position (selected-frame) 50 30))
+  (set-frame-position (selected-frame) 50 30))0
 
 
 ;; Calibrate emacs default settings

@@ -161,7 +161,11 @@
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
-  :init (setq markdown-command "multimarkdown"))
+  :init (setq markdown-command "multimarkdown")
+  :hook (markdown-mode . (lambda()
+                           (auto-fill-mode)
+                           (setq-local fill-column 80
+                                       left-fringe-width 5))))
 
 (use-package know-your-http-well
   :ensure t)
@@ -190,7 +194,7 @@
   :ensure t
   :hook
   ((fountain-mode . (lambda()
-                      (setq fill-column 80)
+                      (setq-local fill-column 80)
                       (auto-fill-mode)))))
 
 (provide 'global-packages-setup)
