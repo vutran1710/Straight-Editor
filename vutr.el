@@ -21,7 +21,6 @@
 (require 'vutr-python)
 (require 'vutr-tide)
 (require 'vutr-clojure)
-(require 'vutr-svelte)
 
 ;; setup: post
 (require 'user-defined)

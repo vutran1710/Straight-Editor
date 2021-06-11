@@ -19,8 +19,8 @@
 
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "Roboto Mono 13")
-(setq-default line-spacing 4)
+(set-face-attribute 'default nil :font "Fira Code 13")
+(setq-default line-spacing 3)
 
 
 ;; Opening-window-size
