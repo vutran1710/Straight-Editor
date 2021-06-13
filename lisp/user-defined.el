@@ -23,14 +23,14 @@
   (interactive)
   (if (or
        (and (equal (char-before) 123) ; {}
-	    (equal (char-after) 125))
+            (equal (char-after) 125))
        (and (equal (char-before) 40) ; ()
-	    (equal (char-after) 41))
+            (equal (char-after) 41))
        (and (equal (char-before) 91) ; []
-	    (equal (char-after) 93)))
+            (equal (char-after) 93)))
       (progn (newline-and-indent)
-	     (split-line)
-	     (indent-for-tab-command))
+             (split-line)
+             (indent-for-tab-command))
     (newline-and-indent)))
 
 
@@ -41,13 +41,20 @@
   (back-to-indentation))
 
 (defun shell-command-on-buffer (command)
-  "Running shell-command on the whole buffer, eg: $ python main.py"
+  "Running shell-command on the whole buffer, eg: $ python main.py."
   (interactive "sShell command on buffer: ")
   (shell-command-on-region
    (point-min)
    (point-max)
    command
    nil))
+
+(defun toggle-comment-on-line ()
+  "Comment or uncomment current line."
+  (interactive)
+  (comment-or-uncomment-region
+   (line-beginning-position)
+   (line-end-position)))
 
 (provide 'user-defined)
 ;;; user-defined ends here
