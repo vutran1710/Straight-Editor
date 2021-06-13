@@ -4,7 +4,7 @@
 ;;; Code:
 
 (global-set-key (kbd "M-m") 'execute-extended-command)
-(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "C-s") 'swiper-isearch)
 (global-set-key (kbd "C-c m") 'projectile-vc)
 
 (global-set-key (kbd "C-c p p") 'projectile-switch-project)
