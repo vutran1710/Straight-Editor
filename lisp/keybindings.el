@@ -5,7 +5,6 @@
 
 (global-set-key (kbd "M-m") 'execute-extended-command)
 (global-set-key (kbd "C-c m") 'projectile-vc)
-(global-set-key (kbd "M-;") 'toggle-comment-on-line)
 
 (global-set-key (kbd "C-c p p") 'projectile-switch-project)
 

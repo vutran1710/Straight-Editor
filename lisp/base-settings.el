@@ -50,7 +50,5 @@
 (recentf-mode 1)
 (setq-default require-final-newline t)
 
-(setq custom-theme-directory "~/.emacs.d/lisp/extras/themes")
-
 (provide 'base-settings)
 ;;; base-settings ends here

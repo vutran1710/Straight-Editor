@@ -49,12 +49,5 @@
    command
    nil))
 
-(defun toggle-comment-on-line ()
-  "Comment or uncomment current line."
-  (interactive)
-  (comment-or-uncomment-region
-   (line-beginning-position)
-   (line-end-position)))
-
 (provide 'user-defined)
 ;;; user-defined ends here

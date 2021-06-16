@@ -19,7 +19,6 @@
 (require 'vutr-org)
 (require 'vutr-web)
 (require 'vutr-python)
-(require 'vutr-tide)
 (require 'vutr-clojure)
 
 ;; setup: post
