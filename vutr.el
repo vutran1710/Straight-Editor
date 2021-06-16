@@ -6,7 +6,7 @@
 ;; Add paths
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
-;; setup: pre
+;; pre-setup
 (require 'base-settings)
 (require 'global-packages-setup)
 
@@ -17,7 +17,7 @@
 (require 'vutr-python)
 (require 'vutr-clojure)
 
-;; setup: post
+;; post-setup
 (require 'user-defined)
 (require 'keybindings)
 ;;; vutr ends here

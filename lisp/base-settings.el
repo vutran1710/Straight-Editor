@@ -1,13 +1,13 @@
 ;;; package --- Summary:
 ;;; Commentary:
-;;; Emacs base-setting calibration
+;;; basic settings for Emacs
+;;; updated June 17 2021
 ;;; Code:
 
 ;; Custom keys with osx
 (setq mac-option-modifier 'meta)
 (setq mac-control-modifier 'control)
 (setq mac-command-modifier 'meta)
-
 
 ;; Look & feels
 (menu-bar-mode -1)
@@ -17,17 +17,14 @@
 (global-display-line-numbers-mode t)
 (setq inhibit-startup-screen t)
 
-
 ;; Font & faces
 (set-face-attribute 'default nil :font "Fira Code 13")
 (setq-default line-spacing 3)
 
-
 ;; Opening-window-size
 (when (window-system)
   (set-frame-size (selected-frame) 130 60)
-  (set-frame-position (selected-frame) 50 30))0
-
+  (set-frame-position (selected-frame) 50 30))
 
 ;; Calibrate emacs default settings
 (setq default-directory "/Users/vutran/Works/")
@@ -40,7 +37,6 @@
               visible-bell nil
               ring-bell-function 'ignore
               js-indent-level 2)
-
 
 ;; Misc
 (fset 'yes-or-no-p 'y-or-n-p)
