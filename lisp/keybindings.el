@@ -29,7 +29,8 @@
 (global-set-key (kbd "C-c d") 'docker)
 
 (global-set-key (kbd "RET") 'my-fancy-newline)
-(global-set-key [remap zap-to-char] 'zop-to-char)
+(global-set-key (kbd "M-z") 'zop-up-to-char)
+(global-set-key (kbd "M-Z") 'zop-to-char)
 (global-set-key (kbd "C-c h") 'recenter)
 
 (global-set-key (kbd "C-c s r") 'sp-rewrap-sexp)
