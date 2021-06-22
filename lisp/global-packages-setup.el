@@ -66,10 +66,6 @@
 (use-package fix-word
   :ensure t)
 
-(use-package aggressive-indent
-  :ensure t
-  :config (global-aggressive-indent-mode 1))
-
 (use-package projectile
   :ensure t
   :config (projectile-mode))
@@ -98,24 +94,12 @@
   (selectrum-prescient-mode +1)
   (prescient-persist-mode +1))
 
-(use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1))
-
-(use-package doom-themes
-  :ensure t)
-
 (use-package iedit
   :ensure t
   :diminish iedit-mode)
 
-(use-package ag
-  :ensure t
-  :if (executable-find "ag")
-  :init (use-package wgrep-ag :ensure t)
-  :config
-  (setq-default ag-highlight-search t)
-  (setq wgrep-auto-save-buffer t))
+(use-package ripgrep
+  :ensure t)
 
 (use-package company
   :ensure t
@@ -187,12 +171,12 @@
   :config
   (editorconfig-mode 1))
 
-(use-package fountain-mode
-  :ensure t
-  :hook
-  ((fountain-mode . (lambda()
-                      (setq-local fill-column 80)
-                      (auto-fill-mode)))))
+(use-package tango-plus-theme
+  :ensure t)
+
+(use-package darktooth-theme
+  :ensure t)
+
 
 (provide 'global-packages-setup)
 ;;; global-packages-setup ends here

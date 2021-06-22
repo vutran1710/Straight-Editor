@@ -1,7 +1,7 @@
 ;; setup package-repositories: Elpa & Melpa
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-		    (not (gnutls-available-p))))
+                    (not (gnutls-available-p))))
        (proto (if no-ssl "http" "https")))
   (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t))
 (package-initialize)
@@ -28,3 +28,4 @@
 
 ;; Load
 (load-file "~/.emacs.d/vutr.el")
+(put 'set-goal-column 'disabled nil)

@@ -9,7 +9,7 @@
 (global-set-key (kbd "C-c p p") 'projectile-switch-project)
 
 (global-set-key (kbd "C-;" ) 'projectile-find-file)
-(global-set-key (kbd "C-c p s" ) 'ag-project)
+(global-set-key (kbd "C-c p s" ) 'projectile-ripgrep)
 (global-set-key (kbd "C-c C-e") 'wgrep-change-to-wgrep-mode)
 
 (global-set-key (kbd "C-t") 'frog-jump-buffer)
