@@ -1,5 +1,5 @@
 #+OPTIONS: ^:nil
-#+TITLE: Editor
+#+TITLE: Straight Editor
 #+DATE: <2018-07-31 Tue>
 #+AUTHOR: Vu Tran
 #+EMAIL: me@vutr.io`
