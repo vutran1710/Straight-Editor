@@ -4,7 +4,27 @@
 #+AUTHOR: Vu Tran
 #+EMAIL: me@vutr.io`
 
-* Support programming in:
+* Target
+- Minimal
+- Efficient
+
+  Achieved by using...
+  - Avy
+  - Frog-jump-buffer
+  - ripgrep
+  - undo-tree
+  - beacon
+  - json-navigator
+  - smartparentheses
+  - fix-word
+  - expand-region
+  - which-key
+
+   Plus some custom functions...
+
+* Major Modes:
 - Python
-- Javascript/Typescript/Html/Css
+- Javascript/Typescript/Html/Css/React/Svelt
 - Clojure
+- Docker
+- Markdown/Github-Markdown

@@ -1,7 +1,7 @@
 ;;; package --- Summary:
 ;;; Commentary:
 ;;; installing global packages
-;;; updated Dec 3 2020
+;;; updated June 23 2021
 ;;; Code:
 
 (use-package exec-path-from-shell
@@ -140,13 +140,8 @@
 (use-package markdown-mode
   :ensure t
   :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode))
-  :init (setq markdown-command "multimarkdown")
-  :hook (markdown-mode . (lambda()
-                           (auto-fill-mode)
-                           (setq-local fill-column 80
-                                       left-fringe-width 5))))
+         ("\\.md\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
 
 (use-package know-your-http-well
   :ensure t)
@@ -173,6 +168,10 @@
 
 (use-package zop-to-char
   :ensure t)
+
+(use-package minions
+  :ensure t
+  :config (minions-mode 1))
 
 (use-package tango-plus-theme
   :ensure t)
