@@ -171,6 +171,9 @@
   :config
   (editorconfig-mode 1))
 
+(use-package zop-to-char
+  :ensure t)
+
 (use-package tango-plus-theme
   :ensure t)
 

@@ -47,5 +47,7 @@
 
 (global-set-key (kbd "C-c q") 'emmet-expand-yas)
 
+(global-set-key (kbd "C-c b") 'er-switch-to-previous-buffer)
+
 (provide 'keybindings)
 ;;; keybindings ends here
