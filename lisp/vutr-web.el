@@ -21,7 +21,7 @@
 
 (defun config-company ()
   "Setup company-backends."
-  (set (make-local-variable 'company-backends)
+  (setq-local company-backends
        '(company-tide
          company-web-html
          company-css
@@ -75,9 +75,10 @@
         web-mode-enable-css-colorization t
         web-mode-enable-current-element-highlight t
         indent-tabs-mode nil)
-
-  (config-company)
-  (config-flycheck))
+  :hook
+  (web-mode . (lambda()
+                (config-company)
+                (config-flycheck))))
 
 
 (provide 'vutr-web)
