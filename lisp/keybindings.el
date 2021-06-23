@@ -3,6 +3,8 @@
 ;;; my own key-bindings
 ;;; Code:
 
+(global-set-key (kbd "C-c C-n") 'duplicate-line-or-region)
+
 (global-set-key (kbd "M-m") 'execute-extended-command)
 (global-set-key (kbd "C-c m") 'projectile-vc)
 
