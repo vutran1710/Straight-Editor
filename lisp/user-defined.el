@@ -37,15 +37,6 @@
   (kill-whole-line arg)
   (back-to-indentation))
 
-(defun shell-command-on-buffer (command)
-  "Running shell-command on the whole buffer, eg: $ python main.py."
-  (interactive "sShell command on buffer: ")
-  (shell-command-on-region
-   (point-min)
-   (point-max)
-   command
-   nil))
-
 (defun instant-switch-to-previous-buffer ()
   "Switch to previously open buffer.
 Repeated invocations toggle between the two most recently open buffers."

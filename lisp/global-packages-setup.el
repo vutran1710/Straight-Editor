@@ -100,6 +100,9 @@
   :ensure t
   :diminish iedit-mode)
 
+(use-package wgrep
+  :ensure t)
+
 (use-package ripgrep
   :ensure t)
 
@@ -165,6 +168,9 @@
 (use-package json-navigator
   :ensure t)
 
+(use-package quickrun
+  :ensure t)
+
 (use-package editorconfig
   :ensure t
   :config
@@ -180,9 +186,6 @@
 (use-package tango-plus-theme
   :ensure t)
 
-(use-package github-modern-theme
-  :ensure t)
-
 (use-package darktooth-theme
   :ensure t)
 
@@ -192,7 +195,7 @@
 (use-package cycle-themes
   :ensure t
   :init (setq cycle-themes-theme-list
-          '(zenburn tango-plus darktooth github-modern))
+          '(zenburn tango-plus darktooth))
   :config (cycle-themes-mode))
 
 (provide 'global-packages-setup)
