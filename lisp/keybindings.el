@@ -5,6 +5,8 @@
 
 (global-set-key (kbd "C-c C-n") 'duplicate-line-or-region)
 
+(global-set-key (kbd "<f8>") 'cycle-themes)
+
 (global-set-key (kbd "M-m") 'execute-extended-command)
 (global-set-key (kbd "C-c m") 'projectile-vc)
 
@@ -49,7 +51,7 @@
 
 (global-set-key (kbd "C-c q") 'emmet-expand-yas)
 
-(global-set-key (kbd "C-c b") 'er-switch-to-previous-buffer)
+(global-set-key (kbd "C-c b") 'instant-switch-to-previous-buffer)
 
 (provide 'keybindings)
 ;;; keybindings ends here

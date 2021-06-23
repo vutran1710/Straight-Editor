@@ -11,12 +11,10 @@
       (sort-regexp-fields t "^.*$" "[ ]*." (point) (point-max)))
     (set-buffer-modified-p nil)))
 
-
 (defadvice dired-readin
     (after dired-after-updating-hook first () activate)
   "Sort dired listings with directories first before adding mark."
   (mydired-sort))
-
 
 (defun my-fancy-newline ()
   "Add two newlines and put the cursor at the right indentation."
@@ -33,7 +31,6 @@
              (indent-for-tab-command))
     (newline-and-indent)))
 
-
 (defun smart-kill-whole-line (&optional arg)
   "Kill-whole-line that respects indentation."
   (interactive "P")
@@ -49,7 +46,7 @@
    command
    nil))
 
-(defun er-switch-to-previous-buffer ()
+(defun instant-switch-to-previous-buffer ()
   "Switch to previously open buffer.
 Repeated invocations toggle between the two most recently open buffers."
   (interactive)
@@ -76,19 +73,6 @@ With negative N, comment out original line and use the absolute value."
             (comment-region (line-beginning-position) (line-end-position)))
         (forward-line 1)
         (forward-char pos)))))
-
-(defun mydired-sort ()
-  "Sort dired listings with directories first."
-  (save-excursion
-    (let (buffer-read-only)
-      (forward-line 2) ;; beyond dir. header
-      (sort-regexp-fields t "^.*$" "[ ]*." (point) (point-max)))
-    (set-buffer-modified-p nil)))
-
-(defadvice dired-readin
-    (after dired-after-updating-hook first () activate)
-  "Sort dired listings with directories first before adding marks."
-  (mydired-sort))
 
 (provide 'user-defined)
 ;;; user-defined ends here

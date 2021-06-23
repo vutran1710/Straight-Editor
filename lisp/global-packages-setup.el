@@ -180,9 +180,20 @@
 (use-package tango-plus-theme
   :ensure t)
 
+(use-package github-modern-theme
+  :ensure t)
+
 (use-package darktooth-theme
   :ensure t)
 
+(use-package zenburn-theme
+  :ensure t)
+
+(use-package cycle-themes
+  :ensure t
+  :init (setq cycle-themes-theme-list
+          '(zenburn tango-plus darktooth github-modern))
+  :config (cycle-themes-mode))
 
 (provide 'global-packages-setup)
 ;;; global-packages-setup ends here
