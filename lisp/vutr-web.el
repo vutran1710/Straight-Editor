@@ -14,9 +14,13 @@
 
 (use-package emmet-mode
   :ensure t
-  :config (setq emmet-expand-jsx-className? t
-                emmet-self-closing-tag-style " /"
-                emmet-move-cursor-between-quotes t))
+  :config (setq emmet-self-closing-tag-style " /"
+                emmet-move-cursor-between-quotes t)
+  :hook
+  ((web-mode . (lambda ()
+                 (when (member (file-name-extension buffer-file-name) '("tsx" "jsx"))
+                   (setq-local emmet-expand-jsx-className? t)
+                   )))))
 
 
 (defun config-company ()
