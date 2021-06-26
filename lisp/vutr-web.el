@@ -22,6 +22,8 @@
                    (setq-local emmet-expand-jsx-className? t)
                    )))))
 
+(use-package sass-mode
+  :ensure t)
 
 (defun config-company ()
   "Setup company-backends."

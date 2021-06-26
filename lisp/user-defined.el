@@ -65,5 +65,18 @@ With negative N, comment out original line and use the absolute value."
         (forward-line 1)
         (forward-char pos)))))
 
+(defun smarter-move-beginning-of-line (arg)
+  "Move point back to indentation of beginning of line."
+  (interactive "^p")
+  (setq arg (or arg 1))
+  (when (/= arg 1)
+    (let ((line-move-visual nil))
+      (forward-line (1- arg))))
+
+  (let ((orig-point (point)))
+    (back-to-indentation)
+    (when (= orig-point (point))
+      (move-beginning-of-line 1))))
+
 (provide 'user-defined)
 ;;; user-defined ends here

@@ -53,5 +53,7 @@
 
 (global-set-key (kbd "C-c b") 'instant-switch-to-previous-buffer)
 
+(global-set-key (kbd "C-a") 'smarter-move-beginning-of-line)
+
 (provide 'keybindings)
 ;;; keybindings ends here
