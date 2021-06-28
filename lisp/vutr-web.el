@@ -10,7 +10,8 @@
   :ensure t)
 
 (use-package eslintd-fix
-  :ensure t)
+  :ensure t
+  :hook (web-mode . eslintd-fix-mode))
 
 (use-package emmet-mode
   :ensure t
@@ -86,6 +87,11 @@
                 (config-company)
                 (config-flycheck))))
 
+(use-package prettier
+  :ensure t
+  :after (web-mode)
+  :init
+  (global-prettier-mode))
 
 (provide 'vutr-web)
 ;;; vutr-web.el ends here

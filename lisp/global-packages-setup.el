@@ -16,6 +16,9 @@
   :ensure t
   :init (beacon-mode 1))
 
+(use-package swiper
+  :ensure t)
+
 (use-package magit
   :ensure t)
 
@@ -27,6 +30,15 @@
 
 (use-package dockerfile-mode
   :ensure t)
+
+(use-package aggressive-indent
+  :ensure t
+  :hook
+  ((emacs-lisp-mode . aggressive-indent-mode)
+   (web-mode . aggressive-indent-mode)
+   (json-mode . aggressive-indent-mode)
+   (typescript-mode . aggressive-indent-mode)
+   (clojure-mode . aggressive-indent-mode)))
 
 (use-package dotenv-mode
   :ensure t
@@ -96,9 +108,10 @@
   (selectrum-prescient-mode +1)
   (prescient-persist-mode +1))
 
-(use-package iedit
+(use-package anzu
   :ensure t
-  :diminish iedit-mode)
+  :diminish
+  :config (global-anzu-mode +1))
 
 (use-package wgrep
   :ensure t)

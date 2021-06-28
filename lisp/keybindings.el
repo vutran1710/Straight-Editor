@@ -3,7 +3,10 @@
 ;;; my own key-bindings
 ;;; Code:
 
-(global-set-key (kbd "C-c C-n") 'duplicate-line-or-region)
+(global-set-key (kbd "C-s") 'swiper-isearch)
+
+(global-set-key (kbd "C-c n") 'duplicate-line-or-region)
+(global-set-key (kbd "C-c k") 'copy-line)
 
 (global-set-key (kbd "<f8>") 'cycle-themes)
 
@@ -25,8 +28,9 @@
 
 (global-set-key (kbd "C-]") 'er/expand-region)
 
-(global-set-key (kbd "C-c i e") 'iedit-mode)
-(global-set-key (kbd "C-c i r") 'iedit-restrict-function)
+(global-set-key (kbd "C-c z j") 'anzu-query-replace)
+(global-set-key (kbd "C-c z k") 'anzu-query-replace-regexp)
+(global-set-key (kbd "C-c z l") 'anzu-query-replace-at-cursor)
 
 (global-set-key (kbd "C-l") 'smart-kill-whole-line)
 
