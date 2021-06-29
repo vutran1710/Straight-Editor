@@ -1,7 +1,6 @@
-;;; package --- Summary:
+;;; package --- Summary
 ;;; Commentary:
-;;; basic settings for Emacs
-;;; updated June 17 2021
+;;; basic settings for Emacs June 17 2021
 ;;; Code:
 
 ;; Custom keys with osx
