@@ -100,10 +100,12 @@
 
 (use-package selectrum
   :ensure t
+  :commands selectrum-mode
   :init (selectrum-mode +1))
 
 (use-package selectrum-prescient
   :ensure t
+  :commands (selectrum-prescient-mode prescient-persist-mode)
   :init
   (selectrum-prescient-mode +1)
   (prescient-persist-mode +1))
