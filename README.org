@@ -9,8 +9,11 @@
 - Efficient
 
   Achieved by using...
+  - swiper
   - Avy
+  - Anzu
   - Frog-jump-buffer
+  - aggressive-indent
   - ripgrep
   - undo-tree
   - beacon
@@ -19,6 +22,9 @@
   - fix-word
   - expand-region
   - which-key
+  - expand-region
+  - quickrun
+  - minions
 
    Plus some custom functions...
 
