@@ -90,8 +90,8 @@
 (use-package prettier
   :ensure t
   :after (web-mode)
-  :init
-  (global-prettier-mode))
+  :hook
+  (web-mode . prettier-mode))
 
 (provide 'vutr-web)
 ;;; vutr-web.el ends here
