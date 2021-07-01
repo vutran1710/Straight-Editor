@@ -11,7 +11,7 @@
   Achieved by using...
   - swiper
   - Avy
-  - Anzu
+  - Iedit
   - Frog-jump-buffer
   - aggressive-indent
   - ripgrep
@@ -28,9 +28,13 @@
 
    Plus some custom functions...
 
-* Major Modes:
+* Major modes:
 - Python
-- Javascript/Typescript/Html/Css/React/Svelt
+- Web-mode (Support Javascript/Typescript/Html/Css/React/Svelt)
 - Clojure
 - Docker
 - Markdown/Github-Markdown
+
+* Setup notes
+#+caption: Modifier Keys setup for MacOS
+[[file:docs/modifier-keys.png]]
