@@ -23,6 +23,8 @@
  '(font-lock-variable-name-face ((t (:foreground "#219f84" ))))
  '(minibuffer-prompt ((t (:foreground "#dd7421" :bold t ))))
  '(font-lock-warning-face ((t (:foreground "red" :bold t ))))
+ '(line-number ((t (:foreground "#bdbdbd" ))))
+ '(line-number-current-line ((t (:foreground "#ec3c00" ))))
  )
 
 ;;;###autoload

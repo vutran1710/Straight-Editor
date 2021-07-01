@@ -209,7 +209,7 @@
 (use-package cycle-themes
   :ensure t
   :init (setq cycle-themes-theme-list
-          '(zenburn tango-plus darktooth))
+              '(zenburn tango-plus darktooth))
   :config (cycle-themes-mode))
 
 (provide 'global-packages-setup)
