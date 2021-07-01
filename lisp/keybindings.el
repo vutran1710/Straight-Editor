@@ -28,9 +28,7 @@
 
 (global-set-key (kbd "C-]") 'er/expand-region)
 
-(global-set-key (kbd "C-c z j") 'anzu-query-replace)
-(global-set-key (kbd "C-c z k") 'anzu-query-replace-regexp)
-(global-set-key (kbd "C-c z l") 'anzu-query-replace-at-cursor)
+(global-set-key (kbd "C-c i i") 'iedit-mode)
 
 (global-set-key (kbd "C-l") 'smart-kill-whole-line)
 

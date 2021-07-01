@@ -110,10 +110,9 @@
   (selectrum-prescient-mode +1)
   (prescient-persist-mode +1))
 
-(use-package anzu
+(use-package iedit
   :ensure t
-  :diminish
-  :config (global-anzu-mode +1))
+  :diminish iedit-mode)
 
 (use-package wgrep
   :ensure t)
