@@ -25,6 +25,7 @@
  '(font-lock-warning-face ((t (:foreground "red" :bold t ))))
  '(line-number ((t (:foreground "#3f4c65" ))))
  '(line-number-current-line ((t (:foreground "#ff9374" ))))
+ '(web-mode-html-tag-face ((t (:foreground "#87c321" ))))
  )
 
 ;;;###autoload
