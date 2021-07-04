@@ -35,6 +35,16 @@
 - Docker
 - Markdown/Github-Markdown
 
+
+* Tutorials
+** Replace strings in the project
+This is one of the trickiest features I find myself constantly forget how to do
+1. `M-x project-ripgrep` (C-c p s)
+2. Enter the string that needs to be replaced
+3. Go to `wgrep-mode` by `C-c C-e`
+4. Go to the string and activate `Iedit-mode` with `C-c i i`
+5. Save the edit with `C-x C-s` then `C-c C-k`
+
 * Setup notes
 #+caption: Modifier Keys setup for MacOS
 [[file:docs/modifier-keys.png]]
