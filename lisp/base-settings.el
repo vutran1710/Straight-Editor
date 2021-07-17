@@ -17,8 +17,8 @@
 (setq inhibit-startup-screen t)
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "Fira Code 12")
-(setq-default line-spacing 2)
+(set-face-attribute 'default nil :font "Fira Code 13")
+(setq-default line-spacing 4)
 
 ;; Opening-window-size
 (when (window-system)
