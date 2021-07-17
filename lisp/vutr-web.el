@@ -91,7 +91,9 @@
   :ensure t
   :after (web-mode)
   :hook
-  (web-mode . prettier-mode))
+  (web-mode . (lambda ()
+                (when (member (file-name-extension buffer-file-name) '("tsx" "jsx" "ts" "js"))
+                  (prettier-mode)))))
 
 (provide 'vutr-web)
 ;;; vutr-web.el ends here
