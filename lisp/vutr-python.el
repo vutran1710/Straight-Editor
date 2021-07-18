@@ -18,7 +18,9 @@
   (let ((venv-path (concat (projectile-project-root) ".venv")))
     (if (f-exists? venv-path)
         (progn
-          (setup-checkers (concat venv-path "/bin/python3"))))))
+          (setup-checkers (concat venv-path "/bin/python3"))
+          (setq python-isort-command (concat venv-path "/bin/isort"))
+          (setq blacken-executable (concat venv-path "/bin/black"))))))
 
 
 ;; Install stuffs
@@ -40,6 +42,10 @@
 
 (use-package blacken
   :ensure t)
+
+(use-package python-isort
+  :ensure t
+  :hook (python-mode . python-isort-on-save-mode))
 
 (use-package lsp-python-ms
   :ensure t
