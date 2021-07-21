@@ -206,10 +206,13 @@
 (use-package zenburn-theme
   :ensure t)
 
+(use-package nord-theme
+  :ensure t)
+
 (use-package cycle-themes
   :ensure t
   :init (setq cycle-themes-theme-list
-              '(zenburn tango-plus darktooth))
+              '(zenburn tango-plus darktooth nord))
   :config (cycle-themes-mode))
 
 (provide 'global-packages-setup)
