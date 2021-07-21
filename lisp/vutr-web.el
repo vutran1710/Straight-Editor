@@ -18,10 +18,10 @@
   :config (setq emmet-self-closing-tag-style " /"
                 emmet-move-cursor-between-quotes t)
   :hook
-  ((web-mode . (lambda ()
-                 (when (member (file-name-extension buffer-file-name) '("tsx" "jsx"))
-                   (setq-local emmet-expand-jsx-className? t)
-                   )))))
+  (web-mode . (lambda ()
+                (when (member (file-name-extension buffer-file-name) '("tsx" "jsx"))
+                  (setq-local emmet-expand-jsx-className? t)
+                  ))))
 
 (use-package sass-mode
   :ensure t)
@@ -70,7 +70,7 @@
   :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.svelte\\'" . web-mode))
