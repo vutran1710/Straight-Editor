@@ -172,7 +172,8 @@
   :ensure t
   :hook
   (restclient-mode . (lambda ()
-                       (setq-local company-backends
+                       (setq-local tab-width 4
+                                   company-backends
                                    '(company-restclient
                                      company-yasnippet
                                      company-capf))))
