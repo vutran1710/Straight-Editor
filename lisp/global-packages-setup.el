@@ -207,13 +207,13 @@
 (use-package zenburn-theme
   :ensure t)
 
-(use-package nord-theme
+(use-package monokai-theme
   :ensure t)
 
 (use-package cycle-themes
   :ensure t
   :init (setq cycle-themes-theme-list
-              '(zenburn tango-plus darktooth nord))
+              '(zenburn tango-plus darktooth monokai))
   :config (cycle-themes-mode))
 
 (provide 'global-packages-setup)
