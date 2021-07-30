@@ -16,9 +16,6 @@
   :ensure t
   :init (beacon-mode 1))
 
-(use-package swiper
-  :ensure t)
-
 (use-package magit
   :ensure t)
 
