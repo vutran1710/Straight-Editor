@@ -120,7 +120,7 @@
 (use-package wgrep
   :ensure t)
 
-(use-package ripgrep
+(use-package rg
   :ensure t)
 
 (use-package company
