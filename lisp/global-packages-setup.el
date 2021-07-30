@@ -12,6 +12,16 @@
 (use-package restart-emacs
   :ensure t)
 
+(use-package marginalia
+  :ensure t
+  :init
+  (marginalia-mode)
+  :bind (:map minibuffer-local-map
+              ("M-A" . marginalia-cycle)))
+
+(use-package consult
+  :ensure t)
+
 (use-package beacon
   :ensure t
   :init (beacon-mode 1))
@@ -66,10 +76,6 @@
   (require 'smartparens-config)
   (smartparens-global-mode +1)
   :diminish smartparens-mode)
-
-(use-package browse-kill-ring
-  :ensure t
-  :init (browse-kill-ring-default-keybindings))
 
 (use-package expand-region
   :ensure t)

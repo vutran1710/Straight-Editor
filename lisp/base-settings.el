@@ -30,8 +30,8 @@
 (setq-default auto-save-default nil
               indent-tabs-mode nil
               make-backup-files nil
-              recentf-max-menu-items 25
-              recentf-max-saved-items 25
+              recentf-max-menu-items 15
+              recentf-max-saved-items 15
               tramp-default-method "ssh"
               visible-bell nil
               ring-bell-function 'ignore

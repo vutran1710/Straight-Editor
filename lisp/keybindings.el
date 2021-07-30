@@ -3,7 +3,11 @@
 ;;; my own key-bindings
 ;;; Code:
 
-(global-set-key (kbd "C-s") 'swiper-isearch)
+(global-set-key (kbd "C-s") 'consult-line)
+(global-set-key (kbd "C-c M-s") 'consult-ripgrep)
+(global-set-key (kbd "M-g M-g") 'consult-goto-line)
+(global-set-key (kbd "C-c C-o") 'consult-outline)
+(global-set-key (kbd "M-y") 'consult-yank-from-kill-ring)
 
 (global-set-key (kbd "C-c n") 'duplicate-line-or-region)
 (global-set-key (kbd "C-c k") 'copy-line)
@@ -22,9 +26,9 @@
 (global-set-key (kbd "C-t") 'frog-jump-buffer)
 (global-set-key (kbd "C-c r") 'recentf-open-files)
 
-(global-set-key (kbd "C-c a j") 'avy-goto-char)
-(global-set-key (kbd "C-c a k") 'avy-goto-char-2)
-(global-set-key (kbd "C-c a l") 'avy-goto-line)
+(global-set-key (kbd "C-v") 'avy-goto-char-in-line)
+(global-set-key (kbd "C-c 1") 'avy-goto-char)
+(global-set-key (kbd "C-c 2") 'avy-goto-char-2)
 
 (global-set-key (kbd "C-]") 'er/expand-region)
 
