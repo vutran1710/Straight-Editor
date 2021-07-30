@@ -9,12 +9,12 @@
 - Efficient
 
   Achieved by using...
-  - swiper
+  - consult + marginalia
   - Avy
   - Iedit
   - Frog-jump-buffer
   - aggressive-indent
-  - ripgrep
+  - rg
   - undo-tree
   - beacon
   - json-navigator
