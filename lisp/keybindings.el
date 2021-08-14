@@ -3,16 +3,11 @@
 ;;; my own key-bindings
 ;;; Code:
 
-(global-set-key (kbd "C-s") 'consult-line)
-(global-set-key (kbd "C-c M-s") 'consult-ripgrep)
-(global-set-key (kbd "M-g M-g") 'consult-goto-line)
-(global-set-key (kbd "C-c C-o") 'consult-outline)
-(global-set-key (kbd "M-y") 'consult-yank-from-kill-ring)
+(global-set-key (kbd "C-s") 'ctrlf-forward-default)
+(global-set-key (kbd "C-r") 'ctrlf-backward-default)
 
 (global-set-key (kbd "C-c n") 'duplicate-line-or-region)
 (global-set-key (kbd "C-c k") 'copy-line)
-
-(global-set-key (kbd "<f8>") 'cycle-themes)
 
 (global-set-key (kbd "M-m") 'execute-extended-command)
 (global-set-key (kbd "C-c m") 'projectile-vc)

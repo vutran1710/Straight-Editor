@@ -9,7 +9,8 @@
 - Efficient
 
   Achieved by using...
-  - consult + marginalia
+  - ctrlf
+  - marginalia
   - Avy
   - Iedit
   - Frog-jump-buffer

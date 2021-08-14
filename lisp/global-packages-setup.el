@@ -19,8 +19,10 @@
   :bind (:map minibuffer-local-map
               ("M-A" . marginalia-cycle)))
 
-(use-package consult
-  :ensure t)
+(use-package ctrlf
+  :ensure t
+  :init
+  (ctrlf-mode +1))
 
 (use-package beacon
   :ensure t
@@ -201,23 +203,8 @@
   :ensure t
   :config (minions-mode 1))
 
-(use-package tango-plus-theme
+(use-package kaolin-themes
   :ensure t)
-
-(use-package darktooth-theme
-  :ensure t)
-
-(use-package zenburn-theme
-  :ensure t)
-
-(use-package monokai-theme
-  :ensure t)
-
-(use-package cycle-themes
-  :ensure t
-  :init (setq cycle-themes-theme-list
-              '(zenburn tango-plus darktooth monokai))
-  :config (cycle-themes-mode))
 
 (provide 'global-packages-setup)
 ;;; global-packages-setup ends here
