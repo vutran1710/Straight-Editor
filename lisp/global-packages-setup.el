@@ -120,7 +120,9 @@
   :diminish iedit-mode)
 
 (use-package wgrep
-  :ensure t)
+  :ensure t
+  :config
+  (setq wgrep-auto-save-buffer t))
 
 (use-package rg
   :ensure t)
