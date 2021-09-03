@@ -4,40 +4,7 @@
 ;;; updated June 23 2021
 ;;; Code:
 
-(use-package exec-path-from-shell
-  :ensure t
-  :init
-  (exec-path-from-shell-initialize))
-
-(use-package restart-emacs
-  :ensure t)
-
-(use-package marginalia
-  :ensure t
-  :init
-  (marginalia-mode)
-  :bind (:map minibuffer-local-map
-              ("M-A" . marginalia-cycle)))
-
-(use-package ctrlf
-  :ensure t
-  :init
-  (ctrlf-mode +1))
-
-(use-package beacon
-  :ensure t
-  :init (beacon-mode 1))
-
-(use-package magit
-  :ensure t)
-
-(use-package docker
-  :ensure t)
-
-(use-package docker-compose-mode
-  :ensure t)
-
-(use-package dockerfile-mode
+(use-package all-the-icons
   :ensure t)
 
 (use-package aggressive-indent
@@ -49,17 +16,6 @@
    (typescript-mode . aggressive-indent-mode)
    (clojure-mode . aggressive-indent-mode)))
 
-(use-package dotenv-mode
-  :ensure t
-  :config (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
-
-(use-package which-key
-  :ensure t
-  :init (which-key-mode)
-  :config
-  (setq which-key-idle-delay 1)
-  (setq which-key-idle-secondary-delay 0.05))
-
 (use-package avy
   :ensure t
   :config (avy-setup-default) (setq avy-background t)
@@ -67,65 +23,13 @@
   (avy-lead-face ((t(:weight bold :foreground "IndianRed1"))))
   (avy-lead-face-0 ((t(:weight bold :foreground "burlywood2")))))
 
-(use-package undo-tree
+(use-package beacon
   :ensure t
-  :config (global-undo-tree-mode))
+  :init (beacon-mode 1))
 
-(use-package smartparens
+(use-package browse-kill-ring
   :ensure t
-  :config
-  (setq sp-show-pair-from-inside t)
-  (require 'smartparens-config)
-  (smartparens-global-mode +1)
-  :diminish smartparens-mode)
-
-(use-package expand-region
-  :ensure t)
-
-(use-package fix-word
-  :ensure t)
-
-(use-package projectile
-  :ensure t
-  :config (projectile-mode))
-
-(use-package frog-jump-buffer
-  :ensure t)
-
-(use-package diff-hl
-  :ensure t
-  :config
-  (global-diff-hl-mode)
-  (diff-hl-flydiff-mode)
-  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh t))
-
-(use-package flycheck
-  :ensure t
-  :init (global-flycheck-mode))
-
-(use-package selectrum
-  :ensure t
-  :commands selectrum-mode
-  :init (selectrum-mode +1))
-
-(use-package selectrum-prescient
-  :ensure t
-  :commands (selectrum-prescient-mode prescient-persist-mode)
-  :init
-  (selectrum-prescient-mode +1)
-  (prescient-persist-mode +1))
-
-(use-package iedit
-  :ensure t
-  :diminish iedit-mode)
-
-(use-package wgrep
-  :ensure t
-  :config
-  (setq wgrep-auto-save-buffer t))
-
-(use-package rg
-  :ensure t)
+  :init (browse-kill-ring-default-keybindings))
 
 (use-package company
   :ensure t
@@ -155,6 +59,124 @@
           company-dabbrev-code
           company-files)))
 
+(use-package company-restclient
+  :ensure t)
+
+(use-package ctrlf
+  :ensure t
+  :init
+  (ctrlf-mode +1))
+
+(use-package diff-hl
+  :ensure t
+  :config
+  (global-diff-hl-mode)
+  (diff-hl-flydiff-mode)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh t))
+
+(use-package docker
+  :ensure t)
+
+(use-package docker-compose-mode
+  :ensure t)
+
+(use-package dockerfile-mode
+  :ensure t)
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
+
+(use-package doom-themes
+  :ensure t)
+
+(use-package dotenv-mode
+  :ensure t
+  :config (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
+
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
+(use-package exec-path-from-shell
+  :ensure t
+  :init
+  (exec-path-from-shell-initialize))
+
+(use-package expand-region
+  :ensure t)
+
+(use-package restart-emacs
+  :ensure t)
+
+(use-package fix-word
+  :ensure t)
+
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
+(use-package marginalia
+  :ensure t
+  :init
+  (marginalia-mode)
+  :bind (:map minibuffer-local-map
+              ("M-A" . marginalia-cycle)))
+
+(use-package magit
+  :ensure t)
+
+(use-package which-key
+  :ensure t
+  :init (which-key-mode)
+  :config
+  (setq which-key-idle-delay 1)
+  (setq which-key-idle-secondary-delay 0.05))
+
+(use-package undo-tree
+  :ensure t
+  :config (global-undo-tree-mode))
+
+(use-package smartparens
+  :ensure t
+  :config
+  (setq sp-show-pair-from-inside t)
+  (require 'smartparens-config)
+  (smartparens-global-mode +1)
+  :diminish smartparens-mode)
+
+(use-package projectile
+  :ensure t
+  :config (projectile-mode))
+
+(use-package frog-jump-buffer
+  :ensure t)
+
+(use-package selectrum
+  :ensure t
+  :commands selectrum-mode
+  :init (selectrum-mode +1))
+
+(use-package selectrum-prescient
+  :ensure t
+  :commands (selectrum-prescient-mode prescient-persist-mode)
+  :init
+  (selectrum-prescient-mode +1)
+  (prescient-persist-mode +1))
+
+(use-package iedit
+  :ensure t
+  :diminish iedit-mode)
+
+(use-package wgrep
+  :ensure t
+  :config
+  (setq wgrep-auto-save-buffer t))
+
+(use-package rg
+  :ensure t)
+
 (use-package yasnippet
   :ensure t
   :config (yas-global-mode))
@@ -170,9 +192,6 @@
   :init (setq markdown-command "multimarkdown"))
 
 (use-package know-your-http-well
-  :ensure t)
-
-(use-package company-restclient
   :ensure t)
 
 (use-package restclient
@@ -193,19 +212,7 @@
 (use-package quickrun
   :ensure t)
 
-(use-package editorconfig
-  :ensure t
-  :config
-  (editorconfig-mode 1))
-
 (use-package zop-to-char
-  :ensure t)
-
-(use-package minions
-  :ensure t
-  :config (minions-mode 1))
-
-(use-package kaolin-themes
   :ensure t)
 
 (provide 'global-packages-setup)

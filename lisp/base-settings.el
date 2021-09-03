@@ -18,7 +18,7 @@
 
 ;; Font & faces
 (set-face-attribute 'default nil :font "Input Mono Narrow 13")
-(setq-default line-spacing 5)
+(setq-default line-spacing 6)
 
 ;; Opening-window-size
 (when (window-system)
