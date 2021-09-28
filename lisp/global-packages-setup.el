@@ -4,6 +4,9 @@
 ;;; updated June 23 2021
 ;;; Code:
 
+(use-package ace-window
+  :ensure t)
+
 (use-package all-the-icons
   :ensure t)
 
