@@ -123,10 +123,6 @@
 (use-package magit
   :ensure t)
 
-(use-package minions
-  :ensure t
-  :config (minions-mode 1))
-
 (use-package which-key
   :ensure t
   :init (which-key-mode)
@@ -228,13 +224,13 @@
 (use-package nord-theme
   :ensure t)
 
-(use-package immaterial-theme
+(use-package solo-jazz-theme
   :ensure t)
 
 (use-package cycle-themes
   :ensure t
   :init (setq cycle-themes-theme-list
-              '(zenburn tango-plus darktooth nord immaterial-light))
+              '(zenburn tango-plus darktooth nord solo-jazz))
   :config (cycle-themes-mode))
 
 (provide 'global-packages-setup)
