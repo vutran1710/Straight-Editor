@@ -18,6 +18,8 @@
   (interactive)
   (setq-local flycheck-javascript-eslint-executable
               (expand-file-name "eslint/bin/eslint.js" node-dir))
+  (setq-local prettier-js-command
+              (expand-file-name "prettier/bin-prettier.js" node-dir))
   (setq-local eslintd-fix-executable
               (expand-file-name "eslint_d/bin/eslint_d.js" node-dir)))
 
