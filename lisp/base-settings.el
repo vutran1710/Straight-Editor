@@ -17,7 +17,7 @@
 (setq inhibit-startup-screen t)
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "Input Mono Narrow 13")
+(set-face-attribute 'default nil :font "Menlo 13")
 (setq-default line-spacing 6)
 
 ;; Opening-window-size

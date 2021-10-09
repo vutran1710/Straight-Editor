@@ -86,13 +86,6 @@
 (use-package dockerfile-mode
   :ensure t)
 
-(use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1))
-
-(use-package doom-themes
-  :ensure t)
-
 (use-package dotenv-mode
   :ensure t
   :config (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
@@ -129,6 +122,10 @@
 
 (use-package magit
   :ensure t)
+
+(use-package minions
+  :ensure t
+  :config (minions-mode 1))
 
 (use-package which-key
   :ensure t
@@ -217,6 +214,28 @@
 
 (use-package zop-to-char
   :ensure t)
+
+;; Themes
+(use-package tango-plus-theme
+  :ensure t)
+
+(use-package darktooth-theme
+  :ensure t)
+
+(use-package zenburn-theme
+  :ensure t)
+
+(use-package nord-theme
+  :ensure t)
+
+(use-package immaterial-theme
+  :ensure t)
+
+(use-package cycle-themes
+  :ensure t
+  :init (setq cycle-themes-theme-list
+              '(zenburn tango-plus darktooth nord immaterial-light))
+  :config (cycle-themes-mode))
 
 (provide 'global-packages-setup)
 ;;; global-packages-setup ends here

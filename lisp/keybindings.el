@@ -3,6 +3,8 @@
 ;;; my own key-bindings
 ;;; Code:
 
+(global-set-key (kbd "M-o") 'ace-window)
+
 (global-set-key (kbd "C-s") 'ctrlf-forward-default)
 (global-set-key (kbd "C-r") 'ctrlf-backward-default)
 
@@ -55,6 +57,10 @@
 (global-set-key (kbd "C-c b") 'instant-switch-to-previous-buffer)
 
 (global-set-key (kbd "C-a") 'smarter-move-beginning-of-line)
+
+(global-set-key (kbd "<f10>") 'restart-emacs)
+(global-set-key (kbd "<f8>") 'cycle-themes)
+
 
 (provide 'keybindings)
 ;;; keybindings ends here
