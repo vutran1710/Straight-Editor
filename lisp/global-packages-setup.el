@@ -4,6 +4,10 @@
 ;;; updated June 23 2021
 ;;; Code:
 
+
+(use-package auto-package-update
+  :ensure t)
+
 (use-package ace-window
   :ensure t)
 
