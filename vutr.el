@@ -17,6 +17,7 @@
 (require 'vutr-python)
 (require 'vutr-clojure)
 (require 'vutr-sol)
+(require 'vutr-rust)
 
 ;; post-setup
 (require 'user-defined)
