@@ -55,6 +55,7 @@
   :config
   (setq emmet-self-closing-tag-style " /"
         emmet-move-cursor-between-quotes t)
+  (add-to-list 'emmet-jsx-major-modes 'web-mode)
   :hook
   (web-mode . (lambda ()
                 (when (member (file-name-extension buffer-file-name) '("tsx" "jsx"))
