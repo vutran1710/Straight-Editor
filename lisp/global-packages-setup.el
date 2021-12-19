@@ -71,8 +71,7 @@
 
 (use-package ctrlf
   :ensure t
-  :init
-  (ctrlf-mode +1))
+  :init (ctrlf-mode +1))
 
 (use-package diff-hl
   :ensure t
@@ -90,19 +89,22 @@
 (use-package dockerfile-mode
   :ensure t)
 
+(use-package doom-modeline
+  :ensure t
+  :config (setq doom-modeline-height 20)
+  :init (doom-modeline-mode 1))
+
 (use-package dotenv-mode
   :ensure t
   :config (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
 
 (use-package editorconfig
   :ensure t
-  :config
-  (editorconfig-mode 1))
+  :config (editorconfig-mode 1))
 
 (use-package exec-path-from-shell
   :ensure t
-  :init
-  (exec-path-from-shell-initialize))
+  :init (exec-path-from-shell-initialize))
 
 (use-package expand-region
   :ensure t)
@@ -119,8 +121,7 @@
 
 (use-package marginalia
   :ensure t
-  :init
-  (marginalia-mode)
+  :init (marginalia-mode)
   :bind (:map minibuffer-local-map
               ("M-A" . marginalia-cycle)))
 
