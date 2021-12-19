@@ -46,6 +46,7 @@
 (setq-default require-final-newline t)
 (require 'mood-line)
 (mood-line-mode)
+(mouse-wheel-mode -1)
 
 
 (provide 'base-settings)
