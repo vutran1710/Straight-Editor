@@ -30,7 +30,7 @@
    Plus some custom functions...
 
 * Major modes:
-- Python (using LSP, kinda slow but on other choice for now)
+- Python (using Pyright)
 - Web-mode (Support Javascript/Typescript/Html/Css/React/Svelt)
 - Clojure
 - Docker
