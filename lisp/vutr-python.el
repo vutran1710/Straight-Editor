@@ -47,17 +47,11 @@
   :ensure t
   :hook (python-mode . python-isort-on-save-mode))
 
-(use-package lsp-python-ms
+(use-package lsp-pyright
   :ensure t
-  :init
-  (setq lsp-python-ms-auto-install-server t)
-  (setq lsp-diagnostics-provider :none)
-  (add-to-list 'auto-mode-alist '("\\Pipfile\\'" . conf-unix-mode))
-  :hook
-  (python-mode . (lambda ()
-                   (require 'lsp-python-ms)
-                   (lsp-deferred))))
-
+  :hook (python-mode . (lambda ()
+                         (require 'lsp-pyright)
+                         (lsp-deferred))))
 
 (provide 'vutr-python)
 ;;; vutr-python ends here

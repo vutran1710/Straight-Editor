@@ -44,8 +44,6 @@
 (delete-selection-mode t)
 (recentf-mode 1)
 (setq-default require-final-newline t)
-(require 'mood-line)
-(mood-line-mode)
 
 
 (provide 'base-settings)
