@@ -137,7 +137,9 @@
 
 (use-package undo-tree
   :ensure t
-  :config (global-undo-tree-mode))
+  :config
+  (setq undo-tree-auto-save-history nil)
+  (global-undo-tree-mode))
 
 (use-package smartparens
   :ensure t
@@ -227,9 +229,6 @@
   :ensure t)
 
 (use-package nord-theme
-  :ensure t)
-
-(use-package solo-jazz-theme
   :ensure t)
 
 (use-package cycle-themes
