@@ -22,4 +22,5 @@
 ;; post-setup
 (require 'user-defined)
 (require 'keybindings)
+(require 'custom-settings)
 ;;; vutr ends here
