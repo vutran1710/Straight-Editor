@@ -17,7 +17,7 @@
 (global-set-key (kbd "C-c p p") 'projectile-switch-project)
 
 (global-set-key (kbd "C-;" ) 'projectile-find-file)
-(global-set-key (kbd "C-c p s" ) 'rg-menu)
+(global-set-key (kbd "C-c p s" ) 'rg-project)
 (global-set-key (kbd "C-c C-e") 'wgrep-change-to-wgrep-mode)
 
 (global-set-key (kbd "C-t") 'frog-jump-buffer)
@@ -56,10 +56,11 @@
 
 (global-set-key (kbd "C-c b") 'instant-switch-to-previous-buffer)
 
+(global-set-key (kbd "C-c C-k") 'kill-buffer-and-window)
+
 (global-set-key (kbd "C-a") 'smarter-move-beginning-of-line)
 
 (global-set-key (kbd "<f10>") 'restart-emacs)
-(global-set-key (kbd "<f8>") 'cycle-themes)
 
 
 (provide 'keybindings)
