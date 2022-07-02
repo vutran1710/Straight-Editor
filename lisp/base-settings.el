@@ -47,4 +47,4 @@
 
 
 (provide 'base-settings)
-;;; base-settings ends here
+;;; base-settings.el ends here
