@@ -18,6 +18,7 @@
 (require 'vutr-clojure)
 (require 'vutr-sol)
 (require 'vutr-rust)
+(require 'vutr-go)
 
 ;; post-setup
 (require 'user-defined)
