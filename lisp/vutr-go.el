@@ -21,7 +21,11 @@
                      (set (make-local-variable 'flycheck-checkers)
                           '(lsp-ui
                             golangci-lint))
+                     (setq-default indent-tabs-mode nil)
+                     (setq-default tab-width 4)
+                     (setq indent-line-function 'insert-tab)
                      )))
+
 
 (provide 'vutr-go)
 ;;; vutr-go ends here
