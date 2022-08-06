@@ -227,4 +227,4 @@
   :ensure t)
 
 (provide 'global-packages-setup)
-;;; global-packages-setup ends here
+;;; global-packages-setup.el ends here
