@@ -89,18 +89,12 @@
 (use-package dockerfile-mode
   :ensure t)
 
-(use-package doom-modeline
+(use-package mood-line
   :ensure t
-  :config (setq doom-modeline-height 20)
-  :init (doom-modeline-mode 1))
+  :init (mood-line-mode))
 
-(use-package doom-themes
-  :ensure t
-  :config
-  (setq doom-themes-enable-bold t
-        doom-themes-enable-italic t)
-  (doom-themes-visual-bell-config)
-  (doom-themes-org-config))
+(use-package nano-theme
+  :ensure t)
 
 (use-package dotenv-mode
   :ensure t
@@ -216,9 +210,6 @@
                                      company-capf))))
   :config
   (add-to-list 'auto-mode-alist '("\\.\\(http\\|api\\)\\'" . restclient-mode)))
-
-(use-package json-navigator
-  :ensure t)
 
 (use-package quickrun
   :ensure t)
