@@ -9,6 +9,7 @@
 ;; pre-setup
 (require 'base-settings)
 (require 'global-packages-setup)
+(require 'themes)
 
 ;; programming load
 (require 'vutr-lsp)
@@ -24,4 +25,4 @@
 (require 'user-defined)
 (require 'keybindings)
 (require 'custom-settings)
-;;; vutr ends here
+;;; vutr.el ends here

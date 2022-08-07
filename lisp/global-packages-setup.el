@@ -93,9 +93,6 @@
   :ensure t
   :init (mood-line-mode))
 
-(use-package nano-theme
-  :ensure t)
-
 (use-package dotenv-mode
   :ensure t
   :config (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
