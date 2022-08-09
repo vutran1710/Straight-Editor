@@ -27,5 +27,9 @@
                      )))
 
 
+(use-package gotest
+  :ensure t)
+
+
 (provide 'vutr-go)
-;;; vutr-go ends here
+;;; vutr-go.el ends here
