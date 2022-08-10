@@ -9,7 +9,6 @@
 ;; pre-setup
 (require 'base-settings)
 (require 'global-packages-setup)
-(require 'themes)
 
 ;; programming load
 (require 'vutr-lsp)
