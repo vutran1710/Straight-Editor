@@ -5,7 +5,10 @@
 
 (defun lsp-go-install-save-hooks ()
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
-  (add-hook 'before-save-hook #'lsp-organize-imports t t))
+  (add-hook 'before-save-hook #'lsp-organize-imports t t)
+  (add-hook 'before-save-hook (lambda ()
+                                (if (eq major-mode 'go-mode)
+                                    (gofmt)))))
 
 (use-package flycheck-golangci-lint
   :ensure t
@@ -24,7 +27,6 @@
                      (setq-default indent-tabs-mode nil)
                      (setq-default tab-width 4)
                      (setq indent-line-function 'insert-tab)
-                     (add-hook 'before-save-hook #'gofmt)
                      )))
 
 
