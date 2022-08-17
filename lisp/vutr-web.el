@@ -106,7 +106,7 @@
   :after (web-mode)
   :hook
   (web-mode . (lambda ()
-                (when (member (file-name-extension buffer-file-name) '("tsx" "jsx" "ts" "js"))
+                (when (member (file-name-extension buffer-file-name) '("tsx" "jsx" "ts" "js" "scss" "css" "sass"))
                   (prettier-js-mode)))))
 
 (provide 'vutr-web)
