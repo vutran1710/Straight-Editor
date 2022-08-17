@@ -24,11 +24,6 @@
 
 
 ;; Install stuffs
-(use-package poetry
-  :ensure t
-  :config
-  (poetry-tracking-mode nil))
-
 (use-package pyvenv
   :ensure t
   :diminish
