@@ -35,6 +35,10 @@
   (pyvenv-mode +1)
   (pyvenv-tracking-mode +1))
 
+(use-package poetry
+  :ensure t
+  :init (poetry-tracking-mode t))
+
 (use-package blacken
   :ensure t)
 
