@@ -19,6 +19,7 @@
 (require 'vutr-sol)
 (require 'vutr-rust)
 (require 'vutr-go)
+(require 'vutr-graphql)
 
 ;; post-setup
 (require 'user-defined)
