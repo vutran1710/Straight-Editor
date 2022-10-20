@@ -98,11 +98,11 @@
 (use-package dockerfile-mode
   :ensure t)
 
-(use-package doom-modeline
+(use-package mood-line
   :ensure t
-  :init (doom-modeline-mode 1))
+  :init (mood-line-mode))
 
-(use-package doom-themes
+(use-package kaolin-themes
   :ensure t)
 
 (use-package dotenv-mode
