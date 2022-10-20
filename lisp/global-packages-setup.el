@@ -235,5 +235,11 @@
 (use-package zop-to-char
   :ensure t)
 
+(use-package eglot
+  :ensure t
+  :hook
+  (rust-mode . eglot-ensure)
+  (go-mode . eglot-ensure))
+
 (provide 'global-packages-setup)
 ;;; global-packages-setup.el ends here
