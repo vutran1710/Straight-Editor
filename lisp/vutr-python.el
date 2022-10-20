@@ -46,11 +46,6 @@
   :ensure t
   :hook (python-mode . python-isort-on-save-mode))
 
-(use-package lsp-pyright
-  :ensure t
-  :hook (python-mode . (lambda ()
-                         (require 'lsp-pyright)
-                         (lsp-deferred))))
 
 (provide 'vutr-python)
 ;;; vutr-python ends here

@@ -65,8 +65,6 @@
 ;;; consult bindings
 (global-set-key (kbd "M-g g") 'consult-goto-line)
 (global-set-key (kbd "C-x C-b") 'consult-buffer)
-(global-set-key (kbd "C-c C-o") 'consult-lsp-file-symbols)
-(global-set-key (kbd "C-c C-g") 'consult-lsp-symbols)
 
 (provide 'keybindings)
 ;;; keybindings ends here

@@ -72,9 +72,6 @@
 (use-package consult
   :ensure t)
 
-(use-package consult-lsp
-  :ensure t)
-
 (use-package ctrlf
   :ensure t
   :init (ctrlf-mode +1))

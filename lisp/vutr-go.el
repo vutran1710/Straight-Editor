@@ -9,20 +9,20 @@
 
 (use-package go-mode
   :ensure t
-  :config
-  (gofmt-before-save)
-  :hook (go-mode . (lambda()
-                     (flycheck-golangci-lint-setup)
-                     (set (make-local-variable 'flycheck-checkers)
-                          '(golangci-lint))
-                     (setq-default indent-tabs-mode nil)
-                     (setq-default tab-width 4)
-                     (setq indent-line-function 'insert-tab))))
+  :hook ((before-save . (lambda()
+                          (when (eq major-mode 'go-mode) (gofmt))))
+         (go-mode . (lambda()
+                      (flycheck-golangci-lint-setup)
+                      (set (make-local-variable 'flycheck-checkers)
+                           '(golangci-lint))
+                      (gofmt-before-save)
+                      (setq-default indent-tabs-mode nil)
+                      (setq-default tab-width 4)
+                      (setq indent-line-function 'insert-tab)))))
 
 
 (use-package gotest
   :ensure t)
-
 
 (provide 'vutr-go)
 ;;; vutr-go.el ends here
