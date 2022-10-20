@@ -11,7 +11,6 @@
 (require 'global-packages-setup)
 
 ;; programming load
-(require 'vutr-lsp)
 (require 'vutr-org)
 (require 'vutr-web)
 (require 'vutr-python)
