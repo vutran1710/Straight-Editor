@@ -32,8 +32,12 @@
 * Major modes:
 - Python (using Pyright)
 - Web-mode (Support Javascript/Typescript/Html/Css/React/Svelt)
+- Rust
+- Go
 - Clojure
 - Docker
+- Kubernetes
+- Graphql
 - Markdown/Github-Markdown
 
 
