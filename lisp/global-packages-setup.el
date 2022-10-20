@@ -170,17 +170,23 @@
 (use-package frog-jump-buffer
   :ensure t)
 
-(use-package selectrum
+(use-package vertico
   :ensure t
-  :commands selectrum-mode
-  :init (selectrum-mode +1))
-
-(use-package selectrum-prescient
-  :ensure t
-  :commands (selectrum-prescient-mode prescient-persist-mode)
   :init
-  (selectrum-prescient-mode +1)
-  (prescient-persist-mode +1))
+  (vertico-mode)
+  (setq vertico-scroll-margin 0)
+  (setq vertico-count 10))
+
+(use-package savehist
+  :init
+  (savehist-mode))
+
+(use-package orderless
+  :ensure t
+  :init
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
 
 (use-package iedit
   :ensure t
