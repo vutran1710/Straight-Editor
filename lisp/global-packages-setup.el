@@ -238,5 +238,8 @@
   (rust-mode . eglot-ensure)
   (go-mode . eglot-ensure))
 
+(use-package protobuf-mode
+  :ensure t)
+
 (provide 'global-packages-setup)
 ;;; global-packages-setup.el ends here
