@@ -98,11 +98,17 @@
 (use-package dockerfile-mode
   :ensure t)
 
+(use-package mermaid-mode
+  :ensure t)
+
 (use-package mood-line
   :ensure t
   :init (mood-line-mode))
 
 (use-package kaolin-themes
+  :ensure t)
+
+(use-package ayu-theme
   :ensure t)
 
 (use-package dotenv-mode
