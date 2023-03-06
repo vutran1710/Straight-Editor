@@ -45,6 +45,9 @@
 (recentf-mode 1)
 (setq-default require-final-newline t)
 
+(setq initial-scratch-message "\
+;; Don`t Complain!
+")
 
 (provide 'base-settings)
 ;;; base-settings.el ends here
