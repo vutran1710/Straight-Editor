@@ -5,10 +5,7 @@
 #+EMAIL: me@vutr.io`
 
 * Target
-- Minimal
-- Efficient
-
-  Achieved by using...
+Minimal, efficient - meaning no bloated packages
   - ctrlf
   - marginalia
   - Avy
@@ -18,7 +15,6 @@
   - rg
   - undo-tree
   - beacon
-  - json-navigator
   - smartparentheses
   - fix-word
   - expand-region
