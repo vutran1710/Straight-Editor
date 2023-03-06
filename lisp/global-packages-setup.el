@@ -105,12 +105,6 @@
   :ensure t
   :init (mood-line-mode))
 
-(use-package kaolin-themes
-  :ensure t)
-
-(use-package ayu-theme
-  :ensure t)
-
 (use-package dotenv-mode
   :ensure t
   :config (add-to-list 'auto-mode-alist '("\\.env\\..*\\'" . dotenv-mode)))
@@ -246,6 +240,22 @@
 
 (use-package protobuf-mode
   :ensure t)
+
+
+;; THEME SECTION ========================================================================
+(use-package flucui-themes
+  :ensure t)
+
+(use-package ayu-theme
+  :ensure t)
+
+(use-package darktooth-theme
+  :ensure t)
+
+(use-package zenburn-theme
+  :ensure t)
+
+(load-theme 'zenburn)
 
 (provide 'global-packages-setup)
 ;;; global-packages-setup.el ends here

@@ -18,7 +18,7 @@
 
 ;; Font & faces
 (set-face-attribute 'default nil :font "Roboto Mono 13")
-(setq-default line-spacing 2)
+(setq-default line-spacing 1)
 
 ;; Opening-window-size
 (when (window-system)
