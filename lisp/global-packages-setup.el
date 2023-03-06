@@ -242,14 +242,8 @@
   :ensure t)
 
 
-;; THEME SECTION ========================================================================
-(use-package flucui-themes
-  :ensure t)
-
+;; THEMES SECTION ===================================================================
 (use-package ayu-theme
-  :ensure t)
-
-(use-package darktooth-theme
   :ensure t)
 
 (use-package zenburn-theme
