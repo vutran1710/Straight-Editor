@@ -18,6 +18,7 @@
   (let ((venv-path (concat (projectile-project-root) ".venv")))
     (if (f-exists? venv-path)
         (progn
+          (pyvenv-activate venv-path)
           (setup-checkers (concat venv-path "/bin/python3"))
           (setq python-isort-command (concat venv-path "/bin/isort"))
           (setq blacken-executable (concat venv-path "/bin/black"))))))
@@ -30,14 +31,18 @@
   :hook
   (python-mode . (lambda()
                    (blacken-mode)
-                   (find-venv-dir-and-setup-checkers)))
+                   (find-venv-dir-and-setup-checkers)
+                   (eglot-ensure)))
   :config
   (pyvenv-mode +1)
   (pyvenv-tracking-mode +1))
 
 (use-package poetry
   :ensure t
-  :init (poetry-tracking-mode t))
+  :defer t
+  :config
+  (setq poetry-tracking-strategy 'switch-buffer)
+  :hook (python-mode . poetry-tracking-mode))
 
 (use-package blacken
   :ensure t)
