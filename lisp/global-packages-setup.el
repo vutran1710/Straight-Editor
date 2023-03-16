@@ -241,6 +241,12 @@
 (use-package protobuf-mode
   :ensure t)
 
+(use-package dired-sidebar
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar)
+  :config
+  (setq dired-sidebar-subtree-line-prefix ".."))
+
 
 ;; THEMES SECTION ===================================================================
 (use-package ayu-theme
@@ -248,8 +254,6 @@
 
 (use-package zenburn-theme
   :ensure t)
-
-(load-theme 'zenburn)
 
 (provide 'global-packages-setup)
 ;;; global-packages-setup.el ends here

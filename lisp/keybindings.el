@@ -17,7 +17,7 @@
 (global-set-key (kbd "C-c p p") 'projectile-switch-project)
 
 (global-set-key (kbd "C-;" ) 'projectile-find-file)
-(global-set-key (kbd "C-c p s" ) 'rg-project)
+(global-set-key (kbd "C-c p s" ) 'projectile-ripgrep)
 (global-set-key (kbd "C-c C-e") 'wgrep-change-to-wgrep-mode)
 
 (global-set-key (kbd "C-t") 'frog-jump-buffer)
@@ -60,11 +60,14 @@
 
 (global-set-key (kbd "C-a") 'smarter-move-beginning-of-line)
 
+(global-set-key (kbd "C-c C-n" ) 'dired-sidebar-toggle-sidebar)
+
 (global-set-key (kbd "<f10>") 'restart-emacs)
 
 ;;; consult bindings
 (global-set-key (kbd "M-g g") 'consult-goto-line)
 (global-set-key (kbd "C-x C-b") 'consult-buffer)
+(global-set-key (kbd "C-c C-p s" ) 'consult-ripgrep)
 
 (provide 'keybindings)
-;;; keybindings ends here
+;;; keybindings.el ends here
