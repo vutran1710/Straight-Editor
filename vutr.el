@@ -11,12 +11,10 @@
 (require 'global-packages-setup)
 
 ;; programming load
-;; (require 'vutr-clojure)
 ;; (require 'vutr-go)
 ;; (require 'vutr-org)
 ;; (require 'vutr-python)
-;; (require 'vutr-sol)
-(require 'vutr-rust)
+;; (require 'vutr-rust)
 ;; (require 'vutr-web)
 
 ;; post-setup
