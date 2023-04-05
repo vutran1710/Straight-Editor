@@ -196,10 +196,12 @@
 
 (use-package yasnippet
   :ensure t
-  :config (yas-global-mode))
+  :defer 2
+  :config (yas-global-mode 1))
 
 (use-package yasnippet-snippets
   :ensure t
+  :defer
   :after yasnippet)
 
 (use-package markdown-mode
