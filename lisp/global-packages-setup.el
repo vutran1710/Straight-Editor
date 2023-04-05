@@ -98,9 +98,6 @@
 (use-package dockerfile-mode
   :ensure t)
 
-(use-package mermaid-mode
-  :ensure t)
-
 (use-package mood-line
   :ensure t
   :init (mood-line-mode))
