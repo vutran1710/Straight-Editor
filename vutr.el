@@ -11,17 +11,15 @@
 (require 'global-packages-setup)
 
 ;; programming load
-(require 'vutr-org)
-(require 'vutr-web)
-(require 'vutr-python)
-(require 'vutr-clojure)
-(require 'vutr-sol)
+;; (require 'vutr-clojure)
+;; (require 'vutr-go)
+;; (require 'vutr-org)
+;; (require 'vutr-python)
+;; (require 'vutr-sol)
 (require 'vutr-rust)
-(require 'vutr-go)
-(require 'vutr-graphql)
+;; (require 'vutr-web)
 
 ;; post-setup
 (require 'user-defined)
 (require 'keybindings)
-(require 'custom-settings)
 ;;; vutr.el ends here

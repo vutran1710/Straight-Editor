@@ -83,9 +83,6 @@
   (diff-hl-flydiff-mode)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh t))
 
-(use-package docker
-  :ensure t)
-
 (use-package kubernetes
   :ensure t)
 
@@ -126,6 +123,9 @@
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
+
+(use-package graphql-mode
+  :ensure t)
 
 (use-package marginalia
   :ensure t
@@ -218,7 +218,6 @@
                        (setq-local tab-width 4
                                    company-backends
                                    '(company-restclient
-                                     company-yasnippet
                                      company-capf))))
   :config
   (add-to-list 'auto-mode-alist '("\\.\\(http\\|api\\)\\'" . restclient-mode)))
