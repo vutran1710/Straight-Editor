@@ -51,6 +51,8 @@
   :ensure t
   :hook (python-mode . python-isort-on-save-mode))
 
+(use-package python-pytest
+  :ensure t)
 
 (provide 'vutr-python)
-;;; vutr-python ends here
+;;; vutr-python.el ends here
