@@ -45,7 +45,8 @@
   :hook (python-mode . poetry-tracking-mode))
 
 (use-package blacken
-  :ensure t)
+  :ensure t
+  :hook (python-mode . blacken-mode))
 
 (use-package python-isort
   :ensure t
