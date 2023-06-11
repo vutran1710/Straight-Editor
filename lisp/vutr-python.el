@@ -44,7 +44,7 @@
   :defer t
   :config
   (setq poetry-tracking-strategy 'switch-buffer)
-  :hook (python-mode . poetry-tracking-mode))
+  :hook (python-mode . eglot-ensure))
 
 (use-package blacken
   :ensure t
