@@ -89,6 +89,10 @@
 (use-package k8s-mode
   :ensure t)
 
+(use-package docker
+  :ensure t
+  :bind ("C-c d" . docker))
+
 (use-package docker-compose-mode
   :ensure t)
 

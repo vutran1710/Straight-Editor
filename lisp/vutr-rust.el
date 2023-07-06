@@ -10,7 +10,8 @@
   :bind (:map rustic-mode-map
               ("C-c C-c l" . flycheck-list-errors))
   :config
-  (setq rustic-format-on-save t))
+  (setq rustic-format-on-save t)
+  (setenv "RUST_LOG" "info"))
 
 
 (provide 'vutr-rust)
