@@ -17,8 +17,9 @@
 (setq inhibit-startup-screen t)
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "Roboto Mono 13")
-(setq-default line-spacing 0)
+(set-face-attribute 'default nil :font "IntelOne Mono 13")
+(setq-default line-spacing 1)
+(pixel-scroll-precision-mode t)
 
 ;; Opening-window-size
 (when (window-system)
@@ -40,7 +41,6 @@
 ;; Misc
 (fset 'yes-or-no-p 'y-or-n-p)
 (add-hook 'before-save-hook 'whitespace-cleanup)
-(show-paren-mode 1)
 (delete-selection-mode t)
 (recentf-mode 1)
 (setq-default require-final-newline t)

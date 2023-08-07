@@ -260,5 +260,8 @@
 (use-package tango-plus-theme
   :ensure t)
 
+(use-package solo-jazz-theme
+  :ensure t)
+
 (provide 'global-packages-setup)
 ;;; global-packages-setup.el ends here
