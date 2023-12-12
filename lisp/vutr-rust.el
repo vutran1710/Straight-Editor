@@ -4,13 +4,14 @@
 ;;; Code:
 
 (use-package rustic
-  :ensure
+  :ensure t
   :init
   (setq rustic-lsp-client 'eglot)
   :bind (:map rustic-mode-map
               ("C-c C-c l" . flycheck-list-errors))
   :config
   (setq rustic-format-on-save t)
+  (setq rustic-rustfmt-args "+nightly")
   (setenv "RUST_LOG" "info"))
 
 
