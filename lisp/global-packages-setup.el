@@ -1,4 +1,4 @@
-;;; package --- Summary:
+;;; global-packages-setup.el --- Essential packages that needs for all setup -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; installing global packages
 ;;; updated June 23 2021
