@@ -17,7 +17,7 @@
 (setq inhibit-startup-screen t)
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "IntelOne Mono 13")
+(set-face-attribute 'default nil :font "IntelOne Mono 14")
 (setq-default line-spacing 1)
 (pixel-scroll-precision-mode t)
 
@@ -44,6 +44,10 @@
 (delete-selection-mode t)
 (recentf-mode 1)
 (setq-default require-final-newline t)
+
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (local-set-key (kbd "M-;") #'comment-line)))
 
 (setq initial-scratch-message "\
 ;; Don`t Complain!
