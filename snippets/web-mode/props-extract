@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: extract-props
-# key: _prop
-# --
-const { $1 } = this.props

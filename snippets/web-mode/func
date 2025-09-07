@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: method-function
-# key: func
-# --
-${1:function} ($2) {
-  $0
-}

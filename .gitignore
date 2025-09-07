@@ -21,3 +21,12 @@ transient/
 rpc-venv
 speed-type/
 .last-package-update-day
+var/
+.temp.el~
+bookmarks
+*lsp-session*
+tests/
+projectile.cache
+projects
+history
+eln-cache/

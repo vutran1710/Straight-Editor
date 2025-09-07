@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: import default
-# key: idm
-# --
-import ${1:module} from '${2:path}'

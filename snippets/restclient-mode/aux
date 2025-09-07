@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Authorization with Bearer
+# key: be
+# --
+Authorization: Bearer-${1:token}
+$0
