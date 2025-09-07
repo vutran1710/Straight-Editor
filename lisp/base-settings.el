@@ -1,4 +1,4 @@
-;;; package --- Summary
+;;; base-settings.el --- Basic settings for emacs on MacOSX environment -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; basic settings for Emacs June 17 2021
 ;;; Code:
@@ -17,7 +17,7 @@
 (setq inhibit-startup-screen t)
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "IntelOne Mono 14")
+(set-face-attribute 'default nil :font "IntelOne Mono 15")
 (setq-default line-spacing 1)
 (pixel-scroll-precision-mode t)
 

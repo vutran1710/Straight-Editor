@@ -1,4 +1,4 @@
-;;; package -- Summary
+;;; vutr.el -- Module load to support programming -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Emacs config entry-point
 ;;; Code:
