@@ -38,36 +38,32 @@
   :ensure t
   :init (browse-kill-ring-default-keybindings))
 
-(use-package company
+(use-package cape
   :ensure t
-  :defer t
-  :init (global-company-mode)
-  :diminish company-mode
-  :config
-  (setq-default company-idle-delay .01
-                company-dabbrev-other-buffers 'all
-                company-dabbrev-code-other-buffers 'all
-                company-dabbrev-code-everywhere t
-                company-minimum-prefix-length 1
-                company-show-numbers t
-                company-tooltip-limit 6
-                company-tooltip-align-annotations t
-                company-require-match nil
-                company-echo-delay 0.1
-                company-dabbrev-downcase nil)
+  :init
+  ;; Add useful CAPFs; they’ll be tried after LSP
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-symbol)
+  ;; Handy commands to invoke explicitly if desired:
+  ;; M-x cape-dabbrev, cape-file, cape-keyword, cape-symbol, cape-line, ...
+  )
 
-  (setq company-frontends
-        '(company-pseudo-tooltip-frontend
-          company-echo-metadata-frontend))
+(use-package corfu
+  :ensure t
+  :init
+  (setq corfu-auto t
+        corfu-auto-delay 0.05
+        corfu-auto-prefix 1
+        corfu-preselect 'prompt
+        corfu-quit-no-match 'separator   ;; quit if you hit RET with no match
+        corfu-on-exact-match nil)
+  (global-corfu-mode 1))
 
-  (setq company-backends
-        '(company-capf
-          company-dabbrev
-          company-dabbrev-code
-          company-files)))
-
-(use-package company-restclient
-  :ensure t)
+;; Optional: docs tooltip for current candidate
+(use-package corfu-popupinfo
+  :after corfu
+  :init (corfu-popupinfo-mode 1))
 
 (use-package consult
   :ensure t)
@@ -222,9 +218,7 @@
   :hook
   (restclient-mode . (lambda ()
                        (setq-local tab-width 4
-                                   company-backends
-                                   '(company-restclient
-                                     company-capf))))
+                                   )))
   :config
   (add-to-list 'auto-mode-alist '("\\.\\(http\\|api\\)\\'" . restclient-mode)))
 
@@ -236,9 +230,16 @@
 
 (use-package eglot
   :ensure t
-  :hook
-  (rust-mode . eglot-ensure)
-  (go-mode . eglot-ensure))
+  :hook ((rust-ts-mode        . eglot-ensure)
+         (rustic-mode . eglot-ensure)
+         (rust-mode . eglot-ensure)
+         (typescript-ts-mode  . eglot-ensure)
+         (tsx-ts-mode         . eglot-ensure)
+         (python-ts-mode      . eglot-ensure)
+         (json-ts-mode        . eglot-ensure))
+  :config
+  ;; Silence event spam in *EGLOT events*
+  (setq eglot-events-buffer-size 0))
 
 (use-package protobuf-mode
   :ensure t)

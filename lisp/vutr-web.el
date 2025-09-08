@@ -24,15 +24,6 @@
               (expand-file-name "eslint_d/bin/eslint_d.js" node-dir)))
 
 
-(defun config-company ()
-  "Setup company-backends."
-  (setq-local company-backends
-              '(company-tide
-                company-web-html
-                company-css
-                company-capf)))
-
-
 (defun config-flycheck ()
   "Setup flycheck on web-mode."
   (flycheck-add-mode 'javascript-eslint 'web-mode)
@@ -40,8 +31,6 @@
                 (append flycheck-disabled-checkers
                         '(javascript-jshint json-jsonlist))))
 
-(use-package company-web
-  :ensure t)
 
 (use-package xref-js2
   :ensure t)
@@ -97,7 +86,6 @@
         indent-tabs-mode nil)
   :hook
   (web-mode . (lambda()
-                (config-company)
                 (setup-executables (locate-node-modules))
                 (config-flycheck))))
 

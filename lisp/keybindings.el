@@ -64,6 +64,10 @@
 
 (global-set-key (kbd "<f10>") 'restart-emacs)
 
+(with-eval-after-load 'corfu
+  (define-key corfu-map (kbd "C-<return>") #'corfu-insert)
+  (define-key corfu-map (kbd "M-<return>") #'corfu-complete))
+
 ;;; consult bindings
 (global-set-key (kbd "M-g g") 'consult-goto-line)
 (global-set-key (kbd "C-x C-b") 'consult-buffer)
