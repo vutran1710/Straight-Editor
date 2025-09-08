@@ -53,5 +53,12 @@
 ;; Don`t Complain!
 ")
 
+(setq major-mode-remap-alist
+      '((js-mode . js-ts-mode)
+        (typescript-mode . typescript-ts-mode)
+        (rust-mode . rust-ts-mode)
+        (css-mode . css-ts-mode)
+        (json-mode . json-ts-mode)))
+
 (provide 'base-settings)
 ;;; base-settings.el ends here

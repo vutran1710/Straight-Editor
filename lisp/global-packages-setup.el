@@ -38,6 +38,33 @@
   :ensure t
   :init (browse-kill-ring-default-keybindings))
 
+(use-package cape
+  :ensure t
+  :init
+  ;; Add useful CAPFs; they’ll be tried after LSP
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-symbol)
+  ;; Handy commands to invoke explicitly if desired:
+  ;; M-x cape-dabbrev, cape-file, cape-keyword, cape-symbol, cape-line, ...
+  )
+
+(use-package corfu
+  :ensure t
+  :init
+  (setq corfu-auto t
+        corfu-auto-delay 0.05
+        corfu-auto-prefix 1
+        corfu-preselect 'prompt
+        corfu-quit-no-match 'separator   ;; quit if you hit RET with no match
+        corfu-on-exact-match nil)
+  (global-corfu-mode 1))
+
+;; Optional: docs tooltip for current candidate
+(use-package corfu-popupinfo
+  :after corfu
+  :init (corfu-popupinfo-mode 1))
+
 (use-package consult
   :ensure t)
 
@@ -203,9 +230,16 @@
 
 (use-package eglot
   :ensure t
-  :hook
-  (rust-mode . eglot-ensure)
-  (go-mode . eglot-ensure))
+  :hook ((rust-ts-mode        . eglot-ensure)
+         (rustic-mode . eglot-ensure)
+         (rust-mode . eglot-ensure)
+         (typescript-ts-mode  . eglot-ensure)
+         (tsx-ts-mode         . eglot-ensure)
+         (python-ts-mode      . eglot-ensure)
+         (json-ts-mode        . eglot-ensure))
+  :config
+  ;; Silence event spam in *EGLOT events*
+  (setq eglot-events-buffer-size 0))
 
 (use-package protobuf-mode
   :ensure t)
