@@ -38,37 +38,6 @@
   :ensure t
   :init (browse-kill-ring-default-keybindings))
 
-(use-package company
-  :ensure t
-  :defer t
-  :init (global-company-mode)
-  :diminish company-mode
-  :config
-  (setq-default company-idle-delay .01
-                company-dabbrev-other-buffers 'all
-                company-dabbrev-code-other-buffers 'all
-                company-dabbrev-code-everywhere t
-                company-minimum-prefix-length 1
-                company-show-numbers t
-                company-tooltip-limit 6
-                company-tooltip-align-annotations t
-                company-require-match nil
-                company-echo-delay 0.1
-                company-dabbrev-downcase nil)
-
-  (setq company-frontends
-        '(company-pseudo-tooltip-frontend
-          company-echo-metadata-frontend))
-
-  (setq company-backends
-        '(company-capf
-          company-dabbrev
-          company-dabbrev-code
-          company-files)))
-
-(use-package company-restclient
-  :ensure t)
-
 (use-package consult
   :ensure t)
 
@@ -222,9 +191,7 @@
   :hook
   (restclient-mode . (lambda ()
                        (setq-local tab-width 4
-                                   company-backends
-                                   '(company-restclient
-                                     company-capf))))
+                                   )))
   :config
   (add-to-list 'auto-mode-alist '("\\.\\(http\\|api\\)\\'" . restclient-mode)))
 
