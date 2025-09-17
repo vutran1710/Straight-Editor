@@ -9,14 +9,15 @@
 ;; pre-setup
 (require 'base-settings)
 (require 'global-packages-setup)
+(require 'vutr-treesit)
 
 ;; programming load
 ;; (require 'vutr-go)
 ;; (require 'vutr-org)
 ;; (require 'vutr-python)
-;; (require 'vutr-rust)
+(require 'vutr-rust)
 ;; (require 'vutr-web)
-;; (require 'vutr-ai)
+(require 'vutr-ai)
 
 ;; post-setup
 (require 'user-defined)

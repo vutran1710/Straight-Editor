@@ -4,6 +4,13 @@
 ;;; updated June 23 2021
 ;;; Code:
 
+;;; Sure run load env-vars first before anything else
+(use-package load-env-vars
+  :ensure t
+  :init
+  (let ((base-env (expand-file-name ".env" user-emacs-directory)))
+    (when (file-exists-p base-env)
+      (load-env-vars base-env))))
 
 (use-package auto-package-update
   :ensure t)
@@ -230,16 +237,11 @@
 
 (use-package eglot
   :ensure t
-  :hook ((rust-ts-mode        . eglot-ensure)
-         (rustic-mode . eglot-ensure)
-         (rust-mode . eglot-ensure)
-         (typescript-ts-mode  . eglot-ensure)
-         (tsx-ts-mode         . eglot-ensure)
-         (python-ts-mode      . eglot-ensure)
-         (json-ts-mode        . eglot-ensure))
+  :hook ((prog-mode        . eglot-ensure))
   :config
   ;; Silence event spam in *EGLOT events*
-  (setq eglot-events-buffer-size 0))
+  (setq eglot-events-buffer-size 0)
+  (setq eglot-inlay-hints-mode 0))
 
 (use-package protobuf-mode
   :ensure t)
@@ -262,6 +264,9 @@
   :ensure t)
 
 (use-package solo-jazz-theme
+  :ensure t)
+
+(use-package catppuccin-theme
   :ensure t)
 
 (provide 'global-packages-setup)
