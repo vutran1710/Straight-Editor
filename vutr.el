@@ -16,6 +16,7 @@
 ;; (require 'vutr-python)
 ;; (require 'vutr-rust)
 ;; (require 'vutr-web)
+;; (require 'vutr-ai)
 
 ;; post-setup
 (require 'user-defined)
