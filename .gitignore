@@ -30,3 +30,6 @@ projectile.cache
 projects
 history
 eln-cache/
+tree-sitter/
+*.dylib
+*.aider.*
