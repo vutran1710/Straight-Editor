@@ -99,5 +99,23 @@ With negative N, comment out original line and use the absolute value."
   (beginning-of-line (or (and arg (1+ arg)) 2))
   (if (and arg (not (= 1 arg))) (message "%d lines copied" arg)))
 
+;; Convenience prefix alongside the stock C-x p
+(with-eval-after-load 'project
+  (define-key global-map (kbd "C-c p") project-prefix-map)
+
+  ;; Use Consult for project search & buffers
+  (define-key project-prefix-map (kbd "s") #'consult-ripgrep)        ;; search in project root
+  (define-key project-prefix-map (kbd "B") #'consult-project-buffer) ;; buffers scoped to project
+
+  ;; (Optional) nicer “switch project” menu (Emacs 29+)
+  (when (boundp 'project-switch-commands)
+    (setq project-switch-commands
+          '((?f "Find file"         project-find-file)
+            (?s "Ripgrep (Consult)" consult-ripgrep)
+            (?b "Switch buffer"     project-switch-to-buffer)
+            (?! "Shell"             project-shell)
+            (?g "Magit status"      magit-status)))))
+
+
 (provide 'user-defined)
 ;;; user-defined ends here

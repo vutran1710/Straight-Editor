@@ -17,7 +17,7 @@
 (setq inhibit-startup-screen t)
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "IntelOne Mono 15")
+(set-face-attribute 'default nil :font "Fira Code 13")
 (setq-default line-spacing 1)
 (pixel-scroll-precision-mode t)
 
@@ -53,12 +53,6 @@
 ;; Don`t Complain!
 ")
 
-(setq major-mode-remap-alist
-      '((js-mode . js-ts-mode)
-        (typescript-mode . typescript-ts-mode)
-        (rust-mode . rust-ts-mode)
-        (css-mode . css-ts-mode)
-        (json-mode . json-ts-mode)))
 
 (provide 'base-settings)
 ;;; base-settings.el ends here

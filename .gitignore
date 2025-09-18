@@ -33,3 +33,6 @@ eln-cache/
 tree-sitter/
 *.dylib
 *.aider.*
+*.env
+.aider*
+request/
