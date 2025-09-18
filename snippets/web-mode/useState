@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: useState
-# key: ust
-# --
-const [${1:state}, ${2:setState}] = useState${0:<type>}(${1:state})

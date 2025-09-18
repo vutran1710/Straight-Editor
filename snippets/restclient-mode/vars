@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: Vars initializing
-# key: va
-# --
-:url = ${1}
-:api = ${2}

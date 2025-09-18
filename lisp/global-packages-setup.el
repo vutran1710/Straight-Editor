@@ -220,16 +220,6 @@
          ("\\.md\\'"       . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
-(use-package yasnippet
-  :ensure t
-  :defer 2
-  :config (yas-global-mode 1))
-
-(use-package yasnippet-snippets
-  :ensure t
-  :after yasnippet
-  :defer t)
-
 ;;;; Search & wgrep
 (use-package rg :ensure t :commands (rg rg-project))
 (use-package wgrep
