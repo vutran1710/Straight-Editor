@@ -50,14 +50,14 @@ To make Aider work properly, you need to create two configuration files in your 
 
 ```yaml
 model: github_copilot/claude-sonnet-4
-weak-model: github_copilot/o4-mini
+weak-model: github_copilot/gpt-4o-mini
 show-model-warnings: false
 ```
 
 2. **`.emacs.d/.aider.model.settings.yml`** - Model-specific settings
 ```yaml
 - name: github_copilot/claude-sonnet-4
-  # edit_format: diff
+  edit_format: diff
   extra_params:
     max_tokens: 80000
     extra_headers:
@@ -66,8 +66,8 @@ show-model-warnings: false
       Editor-Version: vscode/1.85.1
       Copilot-Integration-Id: vscode-chat
 
-- name: github_copilot/o4-mini
-  # edit_format: diff
+- name: github_copilot/gpt-4o-mini
+  edit_format: diff
   extra_params:
     max_tokens: 80000
     extra_headers:
