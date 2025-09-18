@@ -99,9 +99,6 @@ With negative N, comment out original line and use the absolute value."
   (beginning-of-line (or (and arg (1+ arg)) 2))
   (if (and arg (not (= 1 arg))) (message "%d lines copied" arg)))
 
-;; Ensure Consult knows what a “project” is (explicit but not strictly required)
-(setq consult-project-function (lambda (_) (project-current t)))
-
 ;; Convenience prefix alongside the stock C-x p
 (with-eval-after-load 'project
   (define-key global-map (kbd "C-c p") project-prefix-map)
@@ -123,12 +120,6 @@ With negative N, comment out original line and use the absolute value."
   "Return current project root or nil."
   (when-let ((proj (project-current)))
     (project-root proj)))
-
-(defun my/project-ripgrep ()
-  "Ripgrep at project root (falls back to current dir)."
-  (interactive)
-  (let ((dir (or (my/project-root) default-directory)))
-    (consult-ripgrep dir)))
 
 (defun my/project-vc ()
   "Open VCS UI at project root. Prefer Magit if available."

@@ -75,11 +75,7 @@
 
 (use-package consult
   :ensure t
-  :commands (consult-ripgrep consult-line consult-buffer consult-imenu consult-flymake)
-  :bind (("C-s"   . consult-line)
-         ("C-c r" . consult-ripgrep)
-         ("C-x b" . consult-buffer)
-         ("M-g i" . consult-imenu)))
+  :commands (consult-ripgrep consult-line consult-buffer consult-imenu consult-flymake))
 
 (use-package marginalia
   :ensure t

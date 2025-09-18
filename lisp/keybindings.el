@@ -9,7 +9,6 @@
 (global-set-key (kbd "C-c m") #'my/project-vc)
 (global-set-key (kbd "C-c p p") #'project-switch-project)
 (global-set-key (kbd "C-;") #'project-find-file)
-(global-set-key (kbd "C-c p s") #'my/project-ripgrep)
 ;;; ------------------------------------------------------------------------------
 
 
@@ -28,6 +27,14 @@
 (global-set-key (kbd "C-c s a") 'sp-beginning-of-sexp)
 (global-set-key (kbd "C-c s k") 'sp-kill-sexp)
 (global-set-key (kbd "C-c s t") 'smartparens-strict-mode)
+;;; ------------------------------------------------------------------------------
+
+
+;;; consult bindings -------------------------------------------------------------
+(global-set-key (kbd "M-g g") 'consult-goto-line)
+(global-set-key (kbd "C-s") 'consult-line)
+(global-set-key (kbd "C-x b") 'consult-buffer)
+(global-set-key (kbd "M-g i") 'consult-imenu)
 ;;; ------------------------------------------------------------------------------
 
 
@@ -59,10 +66,6 @@
   (define-key corfu-map (kbd "C-<return>") #'corfu-insert)
   (define-key corfu-map (kbd "M-<return>") #'corfu-complete))
 
-;;; consult bindings
-(global-set-key (kbd "M-g g") 'consult-goto-line)
-(global-set-key (kbd "C-x C-b") 'consult-buffer)
-(global-set-key (kbd "C-c C-p s" ) 'consult-ripgrep)
 
 (provide 'keybindings)
 ;;; keybindings.el ends here
