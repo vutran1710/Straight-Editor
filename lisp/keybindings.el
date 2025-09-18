@@ -6,7 +6,7 @@
 (global-set-key (kbd "M-o") 'ace-window)
 
 ;;; project management ------------------------------------------------------------
-(global-set-key (kbd "C-c m") #'my/project-vc)
+(global-set-key (kbd "C-c m") #'magit-status)
 (global-set-key (kbd "C-c p p") #'project-switch-project)
 (global-set-key (kbd "C-;") #'project-find-file)
 ;;; ------------------------------------------------------------------------------

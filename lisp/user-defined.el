@@ -116,20 +116,6 @@ With negative N, comment out original line and use the absolute value."
             (?! "Shell"             project-shell)
             (?g "Magit status"      magit-status)))))
 
-(defun my/project-root ()
-  "Return current project root or nil."
-  (when-let ((proj (project-current)))
-    (project-root proj)))
-
-(defun my/project-vc ()
-  "Open VCS UI at project root. Prefer Magit if available."
-  (interactive)
-  (let ((dir (or (my/project-root) default-directory)))
-    (cond
-     ((fboundp 'magit-status) (magit-status dir))
-     ((fboundp 'project-vc-dir) (project-vc-dir)) ; Emacs builtin VC-Dir at project root
-     (t (vc-dir dir)))))
-
 
 (provide 'user-defined)
 ;;; user-defined ends here
