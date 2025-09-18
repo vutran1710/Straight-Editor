@@ -6,18 +6,28 @@
 (global-set-key (kbd "M-o") 'ace-window)
 
 ;;; project management ------------------------------------------------------------
-;; 1) C-c m  -> projectile-vc        ==> project VC (Magit if present)
 (global-set-key (kbd "C-c m") #'my/project-vc)
-
-;; 2) C-c p p -> projectile-switch-project ==> project-switch-project
 (global-set-key (kbd "C-c p p") #'project-switch-project)
-
-;; 3) C-;     -> projectile-find-file      ==> project-find-file
-;;    (Note: this overrides the popular comment binding; default comment is M-;.)
 (global-set-key (kbd "C-;") #'project-find-file)
-
-;; 4) C-c p s -> projectile-ripgrep        ==> consult-ripgrep at project root
 (global-set-key (kbd "C-c p s") #'my/project-ripgrep)
+;;; ------------------------------------------------------------------------------
+
+
+;;; text case changing -----------------------------------------------------------
+(global-set-key (kbd "M-u") #'fix-word-upcase)
+(global-set-key (kbd "M-l") #'fix-word-downcase)
+(global-set-key (kbd "M-c") #'fix-word-capitalize)
+;;; ------------------------------------------------------------------------------
+
+
+;;; smartparens bindings ---------------------------------------------------------
+(global-set-key (kbd "C-c s r") 'sp-rewrap-sexp)
+(global-set-key (kbd "C-c s u") 'sp-unwrap-sexp)
+(global-set-key (kbd "C-c s j") 'sp-slurp-hybrid-sexp)
+(global-set-key (kbd "C-c s e") 'sp-end-of-sexp)
+(global-set-key (kbd "C-c s a") 'sp-beginning-of-sexp)
+(global-set-key (kbd "C-c s k") 'sp-kill-sexp)
+(global-set-key (kbd "C-c s t") 'smartparens-strict-mode)
 ;;; ------------------------------------------------------------------------------
 
 
@@ -38,29 +48,11 @@
 (global-set-key (kbd "M-z") 'zop-up-to-char)
 (global-set-key (kbd "M-Z") 'zop-to-char)
 (global-set-key (kbd "C-c h") 'recenter)
-(global-set-key (kbd "C-c s r") 'sp-rewrap-sexp)
-(global-set-key (kbd "C-c s u") 'sp-unwrap-sexp)
-(global-set-key (kbd "C-c s j") 'sp-slurp-hybrid-sexp)
-(global-set-key (kbd "C-c s e") 'sp-end-of-sexp)
-(global-set-key (kbd "C-c s a") 'sp-beginning-of-sexp)
-(global-set-key (kbd "C-c s k") 'sp-kill-sexp)
-(global-set-key (kbd "C-c s t") 'smartparens-strict-mode)
-
-;;; text case changing -----------------------------------------------------------
-(global-set-key (kbd "M-u") #'fix-word-upcase)
-(global-set-key (kbd "M-l") #'fix-word-downcase)
-(global-set-key (kbd "M-c") #'fix-word-capitalize)
-;;; ------------------------------------------------------------------------------
-
 (global-set-key (kbd "C-c q") 'emmet-expand-yas)
 (global-set-key (kbd "C-c b") 'instant-switch-to-previous-buffer)
-
 (global-set-key (kbd "C-c C-k") 'kill-buffer-and-window)
-
 (global-set-key (kbd "C-a") 'smarter-move-beginning-of-line)
-
 (global-set-key (kbd "C-c C-n" ) 'dired-sidebar-toggle-sidebar)
-
 (global-set-key (kbd "<f10>") 'restart-emacs)
 
 (with-eval-after-load 'corfu
