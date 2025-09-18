@@ -9,7 +9,6 @@
 ;; pre-setup
 (require 'base-settings)
 (require 'global-packages-setup)
-(require 'vutr-treesit)
 
 ;; programming load
 ;; (require 'vutr-go)

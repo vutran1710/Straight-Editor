@@ -99,5 +99,46 @@ With negative N, comment out original line and use the absolute value."
   (beginning-of-line (or (and arg (1+ arg)) 2))
   (if (and arg (not (= 1 arg))) (message "%d lines copied" arg)))
 
+;; Ensure Consult knows what a “project” is (explicit but not strictly required)
+(setq consult-project-function (lambda (_) (project-current t)))
+
+;; Convenience prefix alongside the stock C-x p
+(with-eval-after-load 'project
+  (define-key global-map (kbd "C-c p") project-prefix-map)
+
+  ;; Use Consult for project search & buffers
+  (define-key project-prefix-map (kbd "s") #'consult-ripgrep)        ;; search in project root
+  (define-key project-prefix-map (kbd "B") #'consult-project-buffer) ;; buffers scoped to project
+
+  ;; (Optional) nicer “switch project” menu (Emacs 29+)
+  (when (boundp 'project-switch-commands)
+    (setq project-switch-commands
+          '((?f "Find file"         project-find-file)
+            (?s "Ripgrep (Consult)" consult-ripgrep)
+            (?b "Switch buffer"     project-switch-to-buffer)
+            (?! "Shell"             project-shell)
+            (?g "Magit status"      magit-status)))))
+
+(defun my/project-root ()
+  "Return current project root or nil."
+  (when-let ((proj (project-current)))
+    (project-root proj)))
+
+(defun my/project-ripgrep ()
+  "Ripgrep at project root (falls back to current dir)."
+  (interactive)
+  (let ((dir (or (my/project-root) default-directory)))
+    (consult-ripgrep dir)))
+
+(defun my/project-vc ()
+  "Open VCS UI at project root. Prefer Magit if available."
+  (interactive)
+  (let ((dir (or (my/project-root) default-directory)))
+    (cond
+     ((fboundp 'magit-status) (magit-status dir))
+     ((fboundp 'project-vc-dir) (project-vc-dir)) ; Emacs builtin VC-Dir at project root
+     (t (vc-dir dir)))))
+
+
 (provide 'user-defined)
 ;;; user-defined ends here

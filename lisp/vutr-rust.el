@@ -16,7 +16,6 @@
   :hook
   ((rustic-mode . eglot-ensure)
    (eglot-managed-mode . (lambda ()
-                           (setq eglot-inlay-hints-mode 0)
                            (add-hook 'before-save-hook #'eglot-format-buffer -10 t)))
    (rustic-mode . (lambda () (setq-local compile-command "cargo check"))))
   :bind
