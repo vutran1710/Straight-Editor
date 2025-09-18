@@ -69,6 +69,11 @@
   (setq copilot-max-char 300000)  ;; optional; or remove if you prefer strict cutoff
   (add-to-list 'copilot-disable-predicates #'vutr/copilot-too-large-or-temp-p))
 
+(define-prefix-command 'vutr-ai-map)
+(global-set-key (kbd "C-c a") 'vutr-ai-map)
+(define-key vutr-ai-map (kbd "t") #'vutr/copilot-toggle)
+(define-key vutr-ai-map (kbd "a") #'copilot-accept-completion)
+
 
 (provide 'vutr-ai)
 ;;; vutr-ai.el ends here
