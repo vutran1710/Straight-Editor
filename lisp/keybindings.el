@@ -3,7 +3,6 @@
 ;;; my own key-bindings
 ;;; Code:
 
-(global-set-key (kbd "M-o") 'ace-window)
 
 ;;; project management ------------------------------------------------------------
 (global-set-key (kbd "C-c m") #'magit-status)
@@ -37,7 +36,7 @@
 (global-set-key (kbd "M-g i") 'consult-imenu)
 ;;; ------------------------------------------------------------------------------
 
-
+(global-set-key (kbd "M-o") 'ace-window)
 (global-set-key (kbd "C-c n") 'duplicate-line-or-region)
 (global-set-key (kbd "C-c k") 'copy-line)
 (global-set-key (kbd "M-m") 'execute-extended-command)

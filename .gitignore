@@ -34,3 +34,4 @@ tree-sitter/
 *.dylib
 *.aider.*
 *.env
+.aider*
