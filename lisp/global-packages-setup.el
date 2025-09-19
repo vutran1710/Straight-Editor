@@ -251,6 +251,14 @@
   :commands (dired-sidebar-toggle-sidebar)
   :config (setq dired-sidebar-subtree-line-prefix ".."))
 
+;;;; Dashboard
+(use-package dashboard
+  :ensure t
+  :config
+  (setq dashboard-center-content t)
+  (setq dashboard-vertically-center-content t)
+  (dashboard-setup-startup-hook))
+
 ;;;; Icons & Themes
 (use-package all-the-icons :ensure t :commands (all-the-icons-install-fonts))
 (use-package ayu-theme         :ensure t)
