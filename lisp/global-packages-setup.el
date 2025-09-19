@@ -260,7 +260,6 @@
 (use-package zenburn-theme     :ensure t)
 (use-package tango-plus-theme  :ensure t)
 (use-package solo-jazz-theme   :ensure t)
-(use-package catppuccin-theme  :ensure t :init (setq catppuccin-flavor 'latte))
 
 (provide 'global-packages-setup)
 ;;; global-packages-setup.el ends here
