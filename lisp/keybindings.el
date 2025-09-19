@@ -7,8 +7,17 @@
 (global-set-key (kbd "C-s") 'isearch-forward)
 (global-set-key (kbd "C-r") 'isearch-backward)
 (global-set-key (kbd "<f10>") 'restart-emacs)
-(global-set-key (kbd "RET") 'my-fancy-newline)
 ;;; -------------------------------------------------------------------------------
+
+
+;;; keybinding for user-defined functions -----------------------------------------
+(global-set-key (kbd "RET") 'vutr/fancy-newline)
+(global-set-key (kbd "C-l") 'vutr/smart-kill-whole-line)
+(global-set-key (kbd "C-c b") 'vutr/switch-to-previous-buffer)
+(global-set-key (kbd "C-c n") 'vutr/duplicate-line-or-region)
+(global-set-key (kbd "C-a") 'vutr/move-beginning-of-line)
+(global-set-key (kbd "C-c k") 'vutr/copy-line)
+;;; ------------------------------------------------------------------------------
 
 
 ;;; project management ------------------------------------------------------------
@@ -44,8 +53,6 @@
 
 
 (global-set-key (kbd "M-o") 'ace-window)
-(global-set-key (kbd "C-c n") 'duplicate-line-or-region)
-(global-set-key (kbd "C-c k") 'copy-line)
 (global-set-key (kbd "M-m") 'execute-extended-command)
 (global-set-key (kbd "C-c C-e") 'wgrep-change-to-wgrep-mode)
 (global-set-key (kbd "C-t") 'frog-jump-buffer)
@@ -55,15 +62,12 @@
 (global-set-key (kbd "C-c 2") 'avy-goto-char-2)
 (global-set-key (kbd "C-]") 'er/expand-region)
 (global-set-key (kbd "C-c i i") 'iedit-mode)
-(global-set-key (kbd "C-l") 'smart-kill-whole-line)
 (global-set-key (kbd "C-c d") 'docker)
 (global-set-key (kbd "M-z") 'zop-up-to-char)
 (global-set-key (kbd "M-Z") 'zop-to-char)
 (global-set-key (kbd "C-c h") 'recenter)
 (global-set-key (kbd "C-c q") 'emmet-expand-yas)
-(global-set-key (kbd "C-c b") 'instant-switch-to-previous-buffer)
 (global-set-key (kbd "C-c C-k") 'kill-buffer-and-window)
-(global-set-key (kbd "C-a") 'smarter-move-beginning-of-line)
 (global-set-key (kbd "C-c C-n" ) 'dired-sidebar-toggle-sidebar)
 
 
