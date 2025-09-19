@@ -36,8 +36,7 @@
 ;; Quick window switching
 (use-package ace-window
   :ensure t
-  :defer t
-  :bind ("M-o" . ace-window))
+  :defer t)
 
 ;; Jump to characters/lines/words
 (use-package avy
@@ -56,8 +55,6 @@
 (use-package expand-region
   :ensure t
   :defer t
-  :bind (("C-]"   . er/expand-region)
-         ("C-M-]" . er/contract-region))
   :commands (er/expand-region er/contract-region))
 
 ;; Multiple cursor editing
@@ -227,10 +224,6 @@
   (with-eval-after-load 'magit
     (add-hook 'magit-post-refresh-hook #'diff-hl-magit-post-refresh t)))
 
-;; Enhanced project.el bindings
-(with-eval-after-load 'project
-  (define-key project-prefix-map (kbd "s") #'project-search))
-
 ;;;;; System Integration
 
 ;; Shell environment sync (GUI only)
@@ -347,7 +340,6 @@
 (use-package docker
   :ensure t
   :defer t
-  :bind ("C-c d" . docker)
   :commands docker)
 
 ;; Dockerfile editing
