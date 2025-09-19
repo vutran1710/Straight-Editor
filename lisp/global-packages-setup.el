@@ -1,149 +1,225 @@
 ;;; global-packages-setup.el --- Essential, documented global packages  -*- lexical-binding: t; -*-
+
 ;;; Commentary:
-;;; Startup-friendly global package setup with short per-package docs.
-;;; - Vertico + Orderless + Consult + Marginalia (minibuffer UX)
-;;; - Corfu (+ Cape, popupinfo) for in-buffer completion
-;;; - Eglot-first LSP; Flymake UI; Flycheck available but not global
-;;; - tree-sitter via treesit-auto
-;;; - project.el replaces Projectile; ctrlf removed
-;;; Updated: 2025-09-18
+;; Startup-friendly global package setup with short per-package docs.
+;; - Vertico + Orderless + Consult + Marginalia (minibuffer UX)
+;; - Corfu (+ Cape, popupinfo) for in-buffer completion
+;; - Eglot-first LSP; Flymake UI; Flycheck available but not global
+;; - tree-sitter via treesit-auto
+;; - project.el replaces Projectile; ctrlf removed
+;; Updated: 2025-09-18
+
 ;;; Code:
 
-;;;; Load .env early
+;;;;; Environment and Package Management
+
+;; Load .env early for environment configuration
 (use-package load-env-vars
   :ensure t
+  :defer nil
   :init
   (let ((base-env (expand-file-name ".env" user-emacs-directory)))
     (when (file-exists-p base-env)
       (load-env-vars base-env))))
 
-;;;; Package maintenance
+;; Automatic package updates
 (use-package auto-package-update
   :ensure t
+  :defer t
   :commands (auto-package-update-now auto-package-update-maybe)
-  :init
-  (setq auto-package-update-delete-old-versions t
-        auto-package-update-hide-results t))
+  :custom
+  (auto-package-update-delete-old-versions t)
+  (auto-package-update-hide-results t))
 
-;;;; Window, navigation, selection QoL
+;;;;; Window Management and Navigation
+
+;; Quick window switching
 (use-package ace-window
   :ensure t
-  :commands ace-window
-  :bind (("M-o" . ace-window)))
+  :defer t
+  :bind ("M-o" . ace-window))
 
+;; Jump to characters/lines/words
 (use-package avy
   :ensure t
+  :defer t
   :commands (avy-goto-char avy-goto-char-2 avy-goto-line avy-goto-word-1)
-  :init (setq avy-background t)
-  :config (avy-setup-default)
+  :custom
+  (avy-background t)
   :custom-face
   (avy-lead-face ((t (:weight bold :foreground "IndianRed1"))))
-  (avy-lead-face-0 ((t (:weight bold :foreground "burlywood2")))))
+  (avy-lead-face-0 ((t (:weight bold :foreground "burlywood2"))))
+  :config
+  (avy-setup-default))
 
+;; Smart region expansion
 (use-package expand-region
   :ensure t
-  :commands (er/expand-region er/contract-region)
+  :defer t
   :bind (("C-]"   . er/expand-region)
          ("C-M-]" . er/contract-region))
-  ;; One-key outward selection growth; complements iedit/avy.
-  )
+  :commands (er/expand-region er/contract-region))
 
+;; Multiple cursor editing
 (use-package iedit
   :ensure t
-  :commands iedit-mode
-  :diminish iedit-mode)
+  :defer t
+  :diminish iedit-mode
+  :commands iedit-mode)
 
-(use-package zop-to-char :ensure t :commands (zop-up-to-char zop-to-char))
+;; Enhanced zap-to-char
+(use-package zop-to-char
+  :ensure t
+  :defer t
+  :commands (zop-up-to-char zop-to-char))
 
-;;;; Minibuffer UX: Vertico + Orderless + Consult + Marginalia
+;;;;; Minibuffer and Completion Framework
+
+;; Save minibuffer history
+(use-package savehist
+  :ensure nil
+  :defer nil
+  :init
+  (savehist-mode 1))
+
+;; Vertical minibuffer completion
 (use-package vertico
   :ensure t
+  :defer nil
+  :custom
+  (vertico-scroll-margin 0)
+  (vertico-count 10)
+  (vertico-resize t)
   :init
-  (setq vertico-scroll-margin 0
-        vertico-count 10
-        vertico-resize t)
   (vertico-mode 1))
 
-(use-package savehist :init (savehist-mode 1))
-
+;; Flexible completion matching
 (use-package orderless
   :ensure t
-  :init
-  (setq completion-styles '(orderless basic)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
+  :defer nil
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-defaults nil)
+  (completion-category-overrides '((file (styles partial-completion)))))
 
+;; Enhanced search and navigation commands
 (use-package consult
   :ensure t
+  :defer t
   :commands (consult-ripgrep consult-line consult-buffer consult-imenu consult-flymake))
 
+;; Rich annotations in minibuffer
 (use-package marginalia
   :ensure t
-  :init (marginalia-mode 1)
+  :defer nil
   :bind (:map minibuffer-local-map
-              ("M-A" . marginalia-cycle)))
+              ("M-A" . marginalia-cycle))
+  :init
+  (marginalia-mode 1))
 
-;;;; In-buffer completion
+;;;;; In-Buffer Completion
+
+;; Modern completion-at-point UI
 (use-package corfu
   :ensure t
+  :defer nil
+  :custom
+  (corfu-auto t)
+  (corfu-auto-delay 0.05)
+  (corfu-auto-prefix 1)
+  (corfu-preselect 'prompt)
+  (corfu-quit-no-match 'separator)
+  (corfu-on-exact-match nil)
   :init
-  (setq corfu-auto t
-        corfu-auto-delay 0.05
-        corfu-auto-prefix 1
-        corfu-preselect 'prompt
-        corfu-quit-no-match 'separator
-        corfu-on-exact-match nil)
   (global-corfu-mode 1)
   (corfu-popupinfo-mode 1))
 
+;; Completion backends
 (use-package cape
   :ensure t
+  :defer nil
   :init
   (add-to-list 'completion-at-point-functions #'cape-file t)
   (add-to-list 'completion-at-point-functions #'cape-dabbrev t)
   (add-to-list 'completion-at-point-functions #'cape-symbol t))
 
-;;;; Editing helpers / visuals
+;;;;; Editing Enhancement
+
+;; Automatic indentation
 (use-package aggressive-indent
   :ensure t
+  :defer t
   :hook ((emacs-lisp-mode . aggressive-indent-mode)
          (web-mode        . aggressive-indent-mode)
          (json-mode       . aggressive-indent-mode)
          (typescript-mode . aggressive-indent-mode)
          (clojure-mode    . aggressive-indent-mode)))
 
+;; Smart parentheses handling
 (use-package smartparens
   :ensure t
+  :defer nil
   :diminish smartparens-mode
-  :init (setq sp-show-pair-from-inside t)
+  :custom
+  (sp-show-pair-from-inside t)
   :config
   (require 'smartparens-config)
-  (smartparens-global-mode +1))
+  (smartparens-global-mode 1))
 
+;; Visual undo system
 (use-package undo-tree
   :ensure t
+  :defer nil
   :diminish undo-tree-mode
-  :init (setq undo-tree-auto-save-history nil)
-  :config (global-undo-tree-mode 1))
+  :custom
+  (undo-tree-auto-save-history nil)
+  :config
+  (global-undo-tree-mode 1))
 
-(use-package editorconfig :ensure t :init (editorconfig-mode 1))
+;; EditorConfig support
+(use-package editorconfig
+  :ensure t
+  :defer nil
+  :init
+  (editorconfig-mode 1))
 
+;; Keybinding help
 (use-package which-key
   :ensure t
+  :defer nil
   :diminish which-key-mode
-  :init (which-key-mode 1)
-  :config
-  (setq which-key-idle-delay 1
-        which-key-idle-secondary-delay 0.05))
+  :custom
+  (which-key-idle-delay 1)
+  (which-key-idle-secondary-delay 0.05)
+  :init
+  (which-key-mode 1))
 
-(use-package beacon :ensure t :init (beacon-mode 1))
-(use-package mood-line :ensure t :init (mood-line-mode 1))
+;; Cursor highlighting
+(use-package beacon
+  :ensure t
+  :defer nil
+  :init
+  (beacon-mode 1))
 
-;;;; VCS / Projects
-(use-package magit :ensure t :commands (magit-status magit-blame))
+;; Minimal mode line
+(use-package mood-line
+  :ensure t
+  :defer nil
+  :init
+  (mood-line-mode 1))
 
+;;;;; Version Control and Projects
+
+;; Git interface
+(use-package magit
+  :ensure t
+  :defer t
+  :commands (magit-status magit-blame))
+
+;; VCS diff highlighting
 (use-package diff-hl
   :ensure t
+  :defer t
   :hook ((prog-mode . diff-hl-mode)
          (text-mode . diff-hl-mode))
   :config
@@ -151,26 +227,28 @@
   (with-eval-after-load 'magit
     (add-hook 'magit-post-refresh-hook #'diff-hl-magit-post-refresh t)))
 
-;; Use built-in project.el instead of Projectile
-;; Helpful bindings mirroring common workflows:
-;; C-x p f -> project-find-file
-;; C-x p p -> project-switch-project
-;; C-x p s -> project-search (or consult-ripgrep)
-;; C-x p ! -> project-shell
+;; Enhanced project.el bindings
 (with-eval-after-load 'project
   (define-key project-prefix-map (kbd "s") #'project-search))
 
-;;;; Shell env (GUI only)
+;;;;; System Integration
+
+;; Shell environment sync (GUI only)
 (use-package exec-path-from-shell
   :ensure t
+  :defer nil
   :init
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize)))
 
-;;;; Treesitter
+;;;;; Language Support
+
+;; Tree-sitter integration
 (use-package treesit-auto
   :ensure t
-  :custom (treesit-auto-install 'prompt)
+  :defer nil
+  :custom
+  (treesit-auto-install 'prompt)
   :config
   (let ((rust-recipe (make-treesit-auto-recipe
                       :lang 'rust
@@ -184,84 +262,172 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode 1))
 
-
+;; Syntax checking (on-demand)
 (use-package flycheck
   :ensure t
+  :defer t
   :commands (flycheck-mode flycheck-list-errors))
 
-;;;; HTTP / proto / markdown / snippets
-(use-package graphql-mode :ensure t :mode "\\.graphqls?\\'")
-(use-package know-your-http-well :ensure t)
+;;;;; Web and API Development
 
+;; GraphQL support
+(use-package graphql-mode
+  :ensure t
+  :defer t
+  :mode "\\.graphqls?\\'")
+
+;; HTTP reference
+(use-package know-your-http-well
+  :ensure t
+  :defer t)
+
+;; REST client
 (use-package restclient
   :ensure t
+  :defer t
   :mode ("\\.\\(http\\|api\\)\\'" . restclient-mode)
   :hook (restclient-mode . (lambda () (setq-local tab-width 4))))
 
-(use-package protobuf-mode :ensure t :mode "\\.proto\\'")
+;; Protocol Buffers
+(use-package protobuf-mode
+  :ensure t
+  :defer t
+  :mode "\\.proto\\'")
 
+;; Markdown editing
 (use-package markdown-mode
   :ensure t
+  :defer t
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'"       . markdown-mode))
-  :init (setq markdown-command "multimarkdown"))
+  :custom
+  (markdown-command "multimarkdown"))
 
-;;;; Search & wgrep
-(use-package rg :ensure t :commands (rg rg-project))
+;;;;; Search and Replace
+
+;; Ripgrep integration
+(use-package rg
+  :ensure t
+  :defer t
+  :commands (rg rg-project))
+
+;; Editable grep results
 (use-package wgrep
   :ensure t
+  :defer t
   :commands wgrep-change-to-wgrep-mode
-  :init (setq wgrep-auto-save-buffer t))
+  :custom
+  (wgrep-auto-save-buffer t))
 
-;;;; Kill ring & misc utilities
+;;;;; Utilities
+
+;; Kill ring browser
 (use-package browse-kill-ring
   :ensure t
+  :defer t
   :commands browse-kill-ring
-  :init (browse-kill-ring-default-keybindings))
+  :init
+  (browse-kill-ring-default-keybindings))
 
-(use-package quickrun :ensure t :commands quickrun)
-(use-package fix-word :ensure t :commands (fix-word-upcase fix-word-downcase fix-word-capitalize))
+;; Quick code execution
+(use-package quickrun
+  :ensure t
+  :defer t
+  :commands quickrun)
 
-;;;; Docker/K8s
+;; Word case fixing
+(use-package fix-word
+  :ensure t
+  :defer t
+  :commands (fix-word-upcase fix-word-downcase fix-word-capitalize))
+
+;;;;; DevOps and Infrastructure
+
+;; Docker interface
 (use-package docker
   :ensure t
-  :commands docker
-  :bind (("C-c d" . docker)))
+  :defer t
+  :bind ("C-c d" . docker)
+  :commands docker)
 
-(use-package dockerfile-mode :ensure t :mode "Dockerfile\\'")
-(use-package docker-compose-mode :ensure t :mode "docker-compose\\.*\\.yml\\'")
-(use-package kubernetes :ensure t :commands kubernetes-overview)
-(use-package k8s-mode :ensure t :mode "\\.\\(k8s\\|ya?ml\\)\\'")
+;; Dockerfile editing
+(use-package dockerfile-mode
+  :ensure t
+  :defer t
+  :mode "Dockerfile\\'")
 
-;;;; Env files
+;; Docker Compose support
+(use-package docker-compose-mode
+  :ensure t
+  :defer t
+  :mode "docker-compose\\.*\\.yml\\'")
+
+;; Kubernetes management
+(use-package kubernetes
+  :ensure t
+  :defer t
+  :commands kubernetes-overview)
+
+;; Kubernetes YAML editing
+(use-package k8s-mode
+  :ensure t
+  :defer t
+  :mode "\\.\\(k8s\\|ya?ml\\)\\'")
+
+;; Environment files
 (use-package dotenv-mode
   :ensure t
+  :defer t
   :mode "\\.env\\..*\\'")
 
-;;;; Sidebar
+;;;;; UI Enhancement
+
+;; File browser sidebar
 (use-package dired-sidebar
   :ensure t
-  :commands (dired-sidebar-toggle-sidebar)
-  :config (setq dired-sidebar-subtree-line-prefix ".."))
+  :defer t
+  :commands dired-sidebar-toggle-sidebar
+  :custom
+  (dired-sidebar-subtree-line-prefix ".."))
 
-;;;; Dashboard
+;; Startup dashboard
 (use-package dashboard
   :ensure t
+  :defer nil
+  :custom
+  (dashboard-startup-banner 'official)
+  (dashboard-vertically-center-content t)
+  (dashboard-center-content t)
+  (dashboard-set-heading-icons t)
+  (dashboard-navigation-cycle t)
+  (dashboard-show-shortcuts t)
   :config
-  (setq dashboard-startup-banner 'official
-        dashboard-vertically-center-content t
-        dashboard-center-content t
-        dashboard-set-heading-icons t
-        dashboard-navigation-cycle t
-        dashboard-show-shortcuts t)
   (dashboard-setup-startup-hook))
 
-;;;; Icons & Themes
-(use-package all-the-icons :ensure t :commands (all-the-icons-install-fonts))
-(use-package ayu-theme         :ensure t)
-(use-package zenburn-theme     :ensure t)
-(use-package tango-plus-theme  :ensure t)
-(use-package solo-jazz-theme   :ensure t)
+;;;;; Icons and Themes
+
+;; Icon fonts
+(use-package all-the-icons
+  :ensure t
+  :defer t
+  :commands all-the-icons-install-fonts)
+
+;; Color themes
+(use-package ayu-theme
+  :ensure t
+  :defer t)
+
+(use-package zenburn-theme
+  :ensure t
+  :defer t)
+
+(use-package tango-plus-theme
+  :ensure t
+  :defer t)
+
+(use-package solo-jazz-theme
+  :ensure t
+  :defer t)
 
 (provide 'global-packages-setup)
 ;;; global-packages-setup.el ends here
