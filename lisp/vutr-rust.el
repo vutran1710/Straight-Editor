@@ -5,38 +5,24 @@
 ;; Always open Rust files in rust-ts-mode
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
 
-;;;; Helpers
-(defun vutr/rust-project-root ()
-  "Best-effort project root (Cargo.toml > project.el > default)."
-  (or (locate-dominating-file default-directory "Cargo.toml")
-      (when-let ((pr (project-current nil))) (project-root pr))
-      default-directory))
+;;;; LSP with eglot
+(use-package eglot
+  :ensure t
+  :hook (rust-ts-mode . eglot-ensure)
+  :config
+  ;; Make sure eglot uses rust-analyzer via rustup stable (if PATH isn’t enough)
+  (add-to-list 'eglot-server-programs
+               '((rust-ts-mode rust-mode)
+                 . ("rustup" "run" "stable" "rust-analyzer")))
+  ;; Enable auto-format on save via rust-analyzer
+  (add-hook 'eglot-managed-mode-hook
+            (lambda ()
+              (add-hook 'before-save-hook #'eglot-format-buffer -10 t)))
+  ;; Turn off inlay hints by default if you don’t like them
+  (add-hook 'eglot-managed-mode-hook
+            (lambda () (eglot-inlay-hints-mode -1))))
 
-(defun vutr/cargo (subcmd)
-  "Run `cargo SUBCMD' from the project root using `compile'."
-  (let ((default-directory (vutr/rust-project-root)))
-    (save-some-buffers t)
-    (compile (format "cargo %s" subcmd))))
-
-(defun vutr/cargo-check  () (interactive) (vutr/cargo "check"))
-(defun vutr/cargo-build  () (interactive) (vutr/cargo "build"))
-(defun vutr/cargo-test   () (interactive) (vutr/cargo "test --all"))
-(defun vutr/cargo-run    () (interactive) (vutr/cargo "run"))
-(defun vutr/cargo-clippy () (interactive) (vutr/cargo "clippy --all-targets -- -D warnings"))
-(defun vutr/cargo-fmt    () (interactive) (vutr/cargo "+nightly fmt"))
-
-(defun vutr/rust-show-diagnostics ()
-  (interactive)
-  (if (fboundp 'flymake-show-buffer-diagnostics)
-      (flymake-show-buffer-diagnostics)
-    (user-error "Flymake UI not available (need Emacs 29+)")))
-
-(defun vutr/rust-eldoc ()
-  (interactive)
-  (if (fboundp 'eldoc-doc-buffer)
-      (eldoc-doc-buffer)
-    (eldoc-print-current-symbol-info)))
-
+;;; Cargo integration via rustic
 (use-package rustic
   :ensure t
   :mode nil
@@ -63,20 +49,10 @@
     (define-key m (kbd "C-c C-c b") #'rustic-cargo-build)
     (define-key m (kbd "C-c C-c t") #'rustic-cargo-test)              ;; all tests
     (define-key m (kbd "C-c C-c u") #'rustic-cargo-current-test)      ;; <— test at point
-    (define-key m (kbd "C-c C-c f") #'rustic-cargo-test-current-file) ;; file’s tests
     (define-key m (kbd "C-c C-c R") #'rustic-cargo-run)
     (define-key m (kbd "C-c C-c C") #'rustic-cargo-clippy)
     (define-key m (kbd "C-c C-c F") #'rustic-cargo-fmt)))
 
-;; Convenient default compile command in Rust buffers
-(add-hook 'rust-ts-mode-hook
-          (lambda ()
-            (setq-local compile-command "cargo check")))
-
-;; Turn off eglot-inlay-hints-mode by default
-(add-hook 'eglot-managed-mode-hook
-          (lambda ()
-            (eglot-inlay-hints-mode -1)))
 
 (provide 'vutr-rust)
 ;;; vutr-rust.el ends here

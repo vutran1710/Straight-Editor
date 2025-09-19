@@ -184,13 +184,6 @@
   (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode 1))
 
-;;;; LSP: Eglot-first (Flymake UI). Flycheck optional.
-(use-package eglot
-  :ensure t
-  :hook ((prog-mode . eglot-ensure))
-  :init
-  (setq eglot-events-buffer-size 0
-        eglot-inlay-hints-mode 0))
 
 (use-package flycheck
   :ensure t
