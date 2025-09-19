@@ -37,22 +37,36 @@
       (eldoc-doc-buffer)
     (eldoc-print-current-symbol-info)))
 
+(use-package rustic
+  :ensure t
+  :mode nil
+  :after (rust-mode)
+  :custom
+  (rustic-analyzer-command '("rustup" "run" "stable" "rust-analyzer"))
+  :init
+  ;; Prevent rustic from auto-taking over .rs buffers
+  (setq rust-mode-treesitter-derive nil
+        rustic-lsp-client nil
+        rustic-format-on-save nil))
 
-;;;; Keybindings (rust-ts-mode)
+;; Keybindings for rust-ts-mode
 (with-eval-after-load 'rust-ts-mode
   (let ((m rust-ts-mode-map))
-    ;; Diagnostics / code actions / rename / doc
-    (define-key m (kbd "C-c C-c l") #'vutr/rust-show-diagnostics)
+    ;; LSP / diagnostics
+    (define-key m (kbd "C-c C-c l") #'flymake-show-buffer-diagnostics)
     (define-key m (kbd "C-c C-c a") #'eglot-code-actions)
     (define-key m (kbd "C-c C-c r") #'eglot-rename)
-    (define-key m (kbd "C-c C-c d") #'vutr/rust-eldoc)
-    ;; Cargo (pure Emacs, no rustic)
-    (define-key m (kbd "C-c C-c c") #'vutr/cargo-check)
-    (define-key m (kbd "C-c C-c b") #'vutr/cargo-build)
-    (define-key m (kbd "C-c C-c t") #'vutr/cargo-test)
-    (define-key m (kbd "C-c C-c R") #'vutr/cargo-run)
-    (define-key m (kbd "C-c C-c C") #'vutr/cargo-clippy)
-    (define-key m (kbd "C-c C-c f") #'vutr/cargo-fmt)))
+    (define-key m (kbd "C-c C-c d") #'eldoc-doc-buffer)
+
+    ;; Cargo via rustic
+    (define-key m (kbd "C-c C-c c") #'rustic-cargo-check)
+    (define-key m (kbd "C-c C-c b") #'rustic-cargo-build)
+    (define-key m (kbd "C-c C-c t") #'rustic-cargo-test)              ;; all tests
+    (define-key m (kbd "C-c C-c u") #'rustic-cargo-current-test)      ;; <— test at point
+    (define-key m (kbd "C-c C-c f") #'rustic-cargo-test-current-file) ;; file’s tests
+    (define-key m (kbd "C-c C-c R") #'rustic-cargo-run)
+    (define-key m (kbd "C-c C-c C") #'rustic-cargo-clippy)
+    (define-key m (kbd "C-c C-c F") #'rustic-cargo-fmt)))
 
 ;; Convenient default compile command in Rust buffers
 (add-hook 'rust-ts-mode-hook
