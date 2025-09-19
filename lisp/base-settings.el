@@ -17,7 +17,7 @@
 (setq inhibit-startup-screen t)
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "Fira Code 13")
+(set-face-attribute 'default nil :font "Monaco 13")
 (setq-default line-spacing 1)
 (pixel-scroll-precision-mode t)
 
@@ -49,6 +49,14 @@
           (lambda ()
             (local-set-key (kbd "M-;") #'comment-line)))
 
+;; Always unload other themes before loading a new one
+(defun vutr/disable-all-themes (&rest _)
+  "Disable all active themes before loading a new one."
+  (mapc #'disable-theme custom-enabled-themes))
+
+(advice-add 'load-theme :before #'vutr/disable-all-themes)
+
+;; Scratch buffer message
 (setq initial-scratch-message "\
 ;; Don`t Complain!
 ")

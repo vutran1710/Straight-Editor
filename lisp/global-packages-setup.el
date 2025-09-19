@@ -255,8 +255,12 @@
 (use-package dashboard
   :ensure t
   :config
-  (setq dashboard-center-content t)
-  (setq dashboard-vertically-center-content t)
+  (setq dashboard-startup-banner 'official
+        dashboard-vertically-center-content t
+        dashboard-center-content t
+        dashboard-set-heading-icons t
+        dashboard-navigation-cycle t
+        dashboard-show-shortcuts t)
   (dashboard-setup-startup-hook))
 
 ;;;; Icons & Themes
