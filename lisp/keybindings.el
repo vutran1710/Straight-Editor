@@ -3,6 +3,13 @@
 ;;; my own key-bindings
 ;;; Code:
 
+;;; system-wide keybindings -------------------------------------------------------
+(global-set-key (kbd "C-s") 'isearch-forward)
+(global-set-key (kbd "C-r") 'isearch-backward)
+(global-set-key (kbd "<f10>") 'restart-emacs)
+(global-set-key (kbd "RET") 'my-fancy-newline)
+;;; -------------------------------------------------------------------------------
+
 
 ;;; project management ------------------------------------------------------------
 (global-set-key (kbd "C-c m") #'magit-status)
@@ -31,10 +38,10 @@
 
 ;;; consult bindings -------------------------------------------------------------
 (global-set-key (kbd "M-g g") 'consult-goto-line)
-(global-set-key (kbd "C-s") 'consult-line)
 (global-set-key (kbd "C-x b") 'consult-buffer)
 (global-set-key (kbd "M-g i") 'consult-imenu)
 ;;; ------------------------------------------------------------------------------
+
 
 (global-set-key (kbd "M-o") 'ace-window)
 (global-set-key (kbd "C-c n") 'duplicate-line-or-region)
@@ -50,7 +57,6 @@
 (global-set-key (kbd "C-c i i") 'iedit-mode)
 (global-set-key (kbd "C-l") 'smart-kill-whole-line)
 (global-set-key (kbd "C-c d") 'docker)
-(global-set-key (kbd "RET") 'my-fancy-newline)
 (global-set-key (kbd "M-z") 'zop-up-to-char)
 (global-set-key (kbd "M-Z") 'zop-to-char)
 (global-set-key (kbd "C-c h") 'recenter)
@@ -59,7 +65,7 @@
 (global-set-key (kbd "C-c C-k") 'kill-buffer-and-window)
 (global-set-key (kbd "C-a") 'smarter-move-beginning-of-line)
 (global-set-key (kbd "C-c C-n" ) 'dired-sidebar-toggle-sidebar)
-(global-set-key (kbd "<f10>") 'restart-emacs)
+
 
 (with-eval-after-load 'corfu
   (define-key corfu-map (kbd "C-<return>") #'corfu-insert)

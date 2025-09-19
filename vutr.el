@@ -22,7 +22,4 @@
 (require 'user-defined)
 (require 'keybindings)
 
-;; default theme
-(load-theme 'ayu-light t)
-
 ;;; vutr.el ends here
