@@ -33,6 +33,12 @@
 
 ;;;;; Window Management and Navigation
 
+;; Better isearch
+(use-package ctrlf
+  :ensure t
+  :init
+  (ctrlf-mode 1))
+
 ;; Quick window switching
 (use-package ace-window
   :ensure t
