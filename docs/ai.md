@@ -52,8 +52,8 @@ To make Aider work properly, you need to create two configuration files in your 
 model: github_copilot/claude-sonnet-4
 weak-model: github_copilot/gpt-4o-mini
 show-model-warnings: false
-no-auto-accept-architect: true
-no-auto-commit: true
+auto-accept-architect: false
+auto-commits: false
 ```
 
 2. **`.emacs.d/.aider.model.settings.yml`** - Model-specific settings
