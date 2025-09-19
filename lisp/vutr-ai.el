@@ -29,7 +29,8 @@ Warn if missing and return the value."
   :ensure t
   :hook (prog-mode . copilot-mode)
   :config
-  (setq copilot-idle-delay 0.1))
+  (setq copilot-idle-delay 0.1)
+  (setq copilot-indent-offset-warning-disable t))
 
 
 ;; COPILOT CHAT: side-panel "AI agent"

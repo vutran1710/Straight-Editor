@@ -12,10 +12,9 @@
 
 ;; programming load
 ;; (require 'vutr-go)
-;; (require 'vutr-org)
 ;; (require 'vutr-python)
-(require 'vutr-rust)
 ;; (require 'vutr-web)
+(require 'vutr-rust)
 (require 'vutr-ai)
 
 ;; post-setup
