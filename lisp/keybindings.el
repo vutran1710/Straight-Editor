@@ -4,8 +4,6 @@
 ;;; Code:
 
 ;;; system-wide keybindings ------------------------------------
-(global-set-key (kbd "C-s") 'isearch-forward)
-(global-set-key (kbd "C-r") 'isearch-backward)
 (global-set-key (kbd "<f10>") 'restart-emacs)
 ;;; ------------------------------------------------------------
 
