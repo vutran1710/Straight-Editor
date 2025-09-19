@@ -390,20 +390,6 @@
   :custom
   (dired-sidebar-subtree-line-prefix ".."))
 
-;; Startup dashboard
-(use-package dashboard
-  :ensure t
-  :defer nil
-  :custom
-  (dashboard-startup-banner 'official)
-  (dashboard-vertically-center-content t)
-  (dashboard-center-content t)
-  (dashboard-set-heading-icons t)
-  (dashboard-navigation-cycle t)
-  (dashboard-show-shortcuts t)
-  :config
-  (dashboard-setup-startup-hook))
-
 ;;;;; Icons and Themes
 
 ;; Icon fonts
