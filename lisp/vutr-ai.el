@@ -27,9 +27,17 @@ Warn if missing and return the value."
 ;; COPILOT: inline AI autocomplete
 (use-package copilot
   :ensure t
-  :hook (prog-mode . copilot-mode)   ;; add text-mode if you want prose help
-  :custom
-  (copilot-indent-offset-warning-disable t))
+  :hook (prog-mode . copilot-mode)
+  :config
+  (setq copilot-idle-delay 0.1))
+
+
+;; COPILOT CHAT: side-panel "AI agent"
+(use-package copilot-chat
+  :ensure t
+  :after copilot
+  :config
+  (setq copilot-chat-model "gpt-4"))
 
 ;;;###autoload
 (defun vutr-ai/copilot-toggle ()
@@ -38,15 +46,6 @@ Warn if missing and return the value."
   (if (bound-and-true-p copilot-mode)
       (progn (copilot-mode -1) (message "Copilot: OFF"))
     (copilot-mode 1) (message "Copilot: ON")))
-
-;; COPILOT CHAT: side-panel "AI agent"
-(use-package copilot-chat
-  :ensure t
-  :commands (copilot-chat-display copilot-chat-ask copilot-chat-explain
-             copilot-chat-fix copilot-chat-review copilot-chat-open 
-             copilot-chat-reset)
-  :init
-  (setq copilot-chat-frontend 'shell-maker))  ;; default UI + streaming
 
 ;; AIDER: Aider UI inside Emacs (repo-aware diff edits)
 ;; Prerequisite: `pipx install aider-chat` (or `pip install -U aider-chat`)
