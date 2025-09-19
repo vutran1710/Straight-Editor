@@ -93,11 +93,8 @@
         corfu-preselect 'prompt
         corfu-quit-no-match 'separator
         corfu-on-exact-match nil)
-  (global-corfu-mode 1))
-
-(use-package corfu-popupinfo
-  :after corfu
-  :init (corfu-popupinfo-mode 1))
+  (global-corfu-mode 1)
+  (corfu-popupinfo-mode 1))
 
 (use-package cape
   :ensure t
