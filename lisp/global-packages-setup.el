@@ -134,8 +134,10 @@
   (corfu-quit-no-match 'separator)
   (corfu-on-exact-match nil)
   :init
-  (global-corfu-mode 1)
-  (corfu-popupinfo-mode 1))
+  (corfu-popupinfo-mode 1)
+  :hook ((prog-mode . corfu-mode)
+         (shell-mode . corfu-mode)
+         (eshell-mode . corfu-mode)))
 
 ;; Completion backends
 (use-package cape
