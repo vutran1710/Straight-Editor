@@ -1,9 +1,14 @@
-;;; package --- Summary:
+;;; user-defined.el --- User-defined utility functions -*- lexical-binding: t; -*-
+
 ;;; Commentary:
-;;; hello
+;; Collection of custom utility functions for enhanced Emacs workflow.
+;; Includes functions for dired sorting, smart navigation, line manipulation,
+;; and project management.
+
 ;;; Code:
 
-(defun mydired-sort ()
+;;;###autoload
+(defun vutr/dired-sort ()
   "Sort dired listings with directories first."
   (save-excursion
     (let (buffer-read-only)
@@ -12,12 +17,14 @@
     (set-buffer-modified-p nil)))
 
 (defadvice dired-readin
-    (after dired-after-updating-hook first () activate)
+    (after vutr--dired-after-updating-hook first () activate)
   "Sort dired listings with directories first before adding mark."
-  (mydired-sort))
+  (vutr/dired-sort))
 
-(defun my-fancy-newline ()
-  "Add two newlines and put the cursor at the right indentation."
+;;;###autoload
+(defun vutr/fancy-newline ()
+  "Add two newlines and put the cursor at the right indentation.
+Works intelligently with brackets, braces, and parentheses."
   (interactive)
   (if (or
        (and (equal (char-before) 123) ; {}
@@ -31,19 +38,23 @@
              (indent-for-tab-command))
     (newline-and-indent)))
 
-(defun smart-kill-whole-line (&optional arg)
-  "Kill-whole-line that respects indentation."
+;;;###autoload
+(defun vutr/smart-kill-whole-line (&optional arg)
+  "Kill whole line that respects indentation.
+With prefix ARG, kill ARG lines."
   (interactive "P")
   (kill-whole-line arg)
   (back-to-indentation))
 
-(defun instant-switch-to-previous-buffer ()
+;;;###autoload
+(defun vutr/switch-to-previous-buffer ()
   "Switch to previously open buffer.
 Repeated invocations toggle between the two most recently open buffers."
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
-(defun duplicate-line-or-region (&optional n)
+;;;###autoload
+(defun vutr/duplicate-line-or-region (&optional n)
   "Duplicate current line, or region if active.
 With argument N, make N copies.
 With negative N, comment out original line and use the absolute value."
@@ -65,8 +76,13 @@ With negative N, comment out original line and use the absolute value."
         (forward-line 1)
         (forward-char pos)))))
 
-(defun smarter-move-beginning-of-line (arg)
-  "Move point back to indentation of beginning of line."
+;;;###autoload
+(defun vutr/move-beginning-of-line (arg)
+  "Move point back to indentation of beginning of line.
+Move point to the first non-whitespace character on this line.
+If point is already there, move to the beginning of the line.
+Effectively toggle between the two positions.
+With ARG not 1, move forward ARG - 1 lines first."
   (interactive "^p")
   (setq arg (or arg 1))
   (when (/= arg 1)
@@ -78,13 +94,14 @@ With negative N, comment out original line and use the absolute value."
     (when (= orig-point (point))
       (move-beginning-of-line 1))))
 
-(defun copy-line (arg)
-  "Copy lines (as many as prefix argument) in the kill ring.
-      Ease of use features:
-      - Move to start of next line.
-      - Appends the copy on sequential calls.
-      - Use newline as last char even on the last line of the buffer.
-      - If region is active, copy its lines."
+;;;###autoload
+(defun vutr/copy-line (arg)
+  "Copy lines (as many as prefix argument ARG) in the kill ring.
+Ease of use features:
+- Move to start of next line.
+- Appends the copy on sequential calls.
+- Use newline as last char even on the last line of the buffer.
+- If region is active, copy its lines."
   (interactive "p")
   (let ((beg (line-beginning-position))
         (end (line-end-position arg)))
@@ -92,30 +109,37 @@ With negative N, comment out original line and use the absolute value."
       (if (> (point) (mark))
           (setq beg (save-excursion (goto-char (mark)) (line-beginning-position)))
         (setq end (save-excursion (goto-char (mark)) (line-end-position)))))
-    (if (eq last-command 'copy-line)
+    (if (eq last-command 'vutr/copy-line)
         (kill-append (buffer-substring beg end) (< end beg))
       (kill-ring-save beg end)))
   (kill-append "\n" nil)
   (beginning-of-line (or (and arg (1+ arg)) 2))
   (if (and arg (not (= 1 arg))) (message "%d lines copied" arg)))
 
-;; Convenience prefix alongside the stock C-x p
+;; Project management enhancements
+(defun vutr--setup-project-keybindings ()
+  "Setup project management keybindings."
+  (when (featurep 'project)
+    ;; Convenience prefix alongside the stock C-x p
+    (define-key global-map (kbd "C-c p") project-prefix-map)
+    
+    ;; Use Consult for project search & buffers
+    (when (fboundp 'consult-ripgrep)
+      (define-key project-prefix-map (kbd "s") #'consult-ripgrep))
+    (when (fboundp 'consult-project-buffer)
+      (define-key project-prefix-map (kbd "B") #'consult-project-buffer))
+    
+    ;; Optional nicer "switch project" menu (Emacs 29+)
+    (when (boundp 'project-switch-commands)
+      (setq project-switch-commands
+            '((?f "Find file"         project-find-file)
+              (?s "Ripgrep (Consult)" consult-ripgrep)
+              (?b "Switch buffer"     project-switch-to-buffer)
+              (?! "Shell"             project-shell)
+              (?g "Magit status"      magit-status))))))
+
 (with-eval-after-load 'project
-  (define-key global-map (kbd "C-c p") project-prefix-map)
-
-  ;; Use Consult for project search & buffers
-  (define-key project-prefix-map (kbd "s") #'consult-ripgrep)        ;; search in project root
-  (define-key project-prefix-map (kbd "B") #'consult-project-buffer) ;; buffers scoped to project
-
-  ;; (Optional) nicer “switch project” menu (Emacs 29+)
-  (when (boundp 'project-switch-commands)
-    (setq project-switch-commands
-          '((?f "Find file"         project-find-file)
-            (?s "Ripgrep (Consult)" consult-ripgrep)
-            (?b "Switch buffer"     project-switch-to-buffer)
-            (?! "Shell"             project-shell)
-            (?g "Magit status"      magit-status)))))
-
+  (vutr--setup-project-keybindings))
 
 (provide 'user-defined)
-;;; user-defined ends here
+;;; user-defined.el ends here

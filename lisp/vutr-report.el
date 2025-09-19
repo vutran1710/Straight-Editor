@@ -1,10 +1,15 @@
-;;; vutr-report.el --- Build dashboard items & single-block renderers -*- lexical-binding: t; -*-
+;;; vutr-report.el --- Build dashboard items and block renderers -*- lexical-binding: t; -*-
+
+;;; Commentary:
+;; Provides functionality to build dashboard items and single-block renderers
+;; for feature reporting and module loading diagnostics.
+
+;;; Code:
 
 (require 'cl-lib)
 (require 'subr-x)
 
-;; -------- feature -> source file -------------------------------------------
-(defun vutr/feature-file (feature)
+(defun vutr-report--feature-file (feature)
   "Return FILE that provided FEATURE, or nil if unknown.
 Handles both (provide FEATURE) and (provide . FEATURE) entries in `load-history`."
   (cl-loop for (file . forms) in load-history
@@ -19,9 +24,7 @@ Handles both (provide FEATURE) and (provide . FEATURE) entries in `load-history`
                   forms)
              file)))
 
-
-;; -------- core: one feature -> one item ------------------------------------
-(defun vutr/report-item (feature)
+(defun vutr-report--item (feature)
   "Return a block-item plist for FEATURE (no rendering).
 
 Item shape for `dashboard/body-table`:
@@ -34,13 +37,13 @@ Loads FEATURE if needed, times it, and sets a sensible :action."
     (condition-case e
         (progn
           (unless already (require feature))
-          (setq ms (float-time (time-subtract (current-time) t0)))
-          (setq status 'ok))
+          (setq ms (float-time (time-subtract (current-time) t0))
+                status 'ok))
       (error
-       (setq ms (float-time (time-subtract (current-time) t0)))
-       (setq status 'failed
+       (setq ms (float-time (time-subtract (current-time) t0))
+             status 'failed
              err (error-message-string e))))
-    (setq file (vutr/feature-file feature))
+    (setq file (vutr-report--feature-file feature))
     (let* ((ok    (eq status 'ok))
            (title (symbol-name feature))
            (desc  (cond
@@ -58,20 +61,19 @@ Loads FEATURE if needed, times it, and sets a sensible :action."
                      (t   (lambda () (message "No action for %s" title))))))))
 
 ;;;###autoload
-(defun vutr/report-modules (features)
+(defun vutr-report/modules (features)
   "Return a LIST of block items for FEATURES (list of symbols).
 This does NOT render anything—perfect for composing with other items later."
   (unless (listp features)
-    (user-error "vutr/report-modules expects a list of feature symbols"))
-  (mapcar #'vutr/report-item features))
+    (user-error "vutr-report/modules expects a list of feature symbols"))
+  (mapcar #'vutr-report--item features))
 
-;; -------- optional: one feature -> one-row renderer ------------------------
 ;;;###autoload
-(defun vutr/report-block (feature)
+(defun vutr-report/block (feature)
   "Return a RENDERER (thunk) that draws a one-row table for FEATURE.
-Convenience wrapper around `dashboard/body-table` using `vutr/report-item`."
+Convenience wrapper around `dashboard/body-table` using `vutr-report--item`."
   (require 'dashboard/block) ;; load renderer only when needed
-  (let ((item (vutr/report-item feature)))
+  (let ((item (vutr-report--item feature)))
     (dashboard/body-table (list item))))
 
 (provide 'vutr-report)

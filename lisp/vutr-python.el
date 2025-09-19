@@ -1,40 +1,43 @@
-;;; package --- Summary:
+;;; vutr-python.el --- Python development environment setup -*- lexical-binding: t; -*-
+
 ;;; Commentary:
-;;; python setup
+;; Python IDE setup with virtual environment support, linting,
+;; formatting, and testing capabilities.
+
 ;;; Code:
 
-;; Custom tweaks
-(defun setup-checkers (python-bin-path)
-  "Setup checkers path depends on the location of virtualenv dir."
+(defun vutr-python--setup-checkers (python-bin-path)
+  "Setup checker executables based on PYTHON-BIN-PATH from virtualenv."
   (require 'flycheck)
-  (setq flycheck-python-pylint-executable (concat python-bin-path "pylint"))
-  (setq flycheck-python-flake8-executable (concat python-bin-path "flake8"))
-  (setq flycheck-python-mypy-executable (concat python-bin-path "mypy"))
+  (setq flycheck-python-pylint-executable (concat python-bin-path "pylint")
+        flycheck-python-flake8-executable (concat python-bin-path "flake8")
+        flycheck-python-mypy-executable (concat python-bin-path "mypy"))
   (flycheck-add-next-checker 'python-flake8 'python-pylint)
   (flycheck-add-next-checker 'python-pylint 'python-mypy))
 
-(defun find-venv-dir-and-setup-checkers ()
-  "Look for .venv dir.  If exists, setup flycheck-checkers."
+(defun vutr-python--find-venv-and-setup ()
+  "Look for .venv directory and setup flycheck checkers if found."
   (require 'projectile)
   (let ((venv-path (concat (projectile-project-root) ".venv")))
-    (if (file-directory-p venv-path)
-        (progn
-          (pyvenv-activate venv-path)
-          (setup-checkers (concat venv-path "/bin/"))
-          (setq python-isort-command (concat venv-path "/bin/isort"))
-          (setq blacken-executable (concat venv-path "/bin/black"))))))
+    (when (file-directory-p venv-path)
+      (pyvenv-activate venv-path)
+      (vutr-python--setup-checkers (concat venv-path "/bin/"))
+      (setq python-isort-command (concat venv-path "/bin/isort")
+            blacken-executable (concat venv-path "/bin/black")))))
 
+(defun vutr-python--mode-hook ()
+  "Setup function for python-mode."
+  (message "Python mode: setting up checking...")
+  (vutr-python--find-venv-and-setup)
+  (blacken-mode)
+  (eglot-ensure))
 
-;; Install stuffs
+;; Package installations and configurations
 (use-package pyvenv
   :ensure t
   :diminish
   :hook
-  (python-mode . (lambda()
-                   (message "python set checking....")
-                   (find-venv-dir-and-setup-checkers)
-                   (blacken-mode)
-                   (eglot-ensure)))
+  (python-mode . vutr-python--mode-hook)
   :config
   (pyvenv-mode +1)
   (pyvenv-tracking-mode +1))

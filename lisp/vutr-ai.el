@@ -1,55 +1,55 @@
-;;; vutr-ai.el --- Copilot Pro + Copilot Chat + Aider -*- lexical-binding: t; -*-
+;;; vutr-ai.el --- AI integration with Copilot, Chat, and Aider -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-;; One-stop AI module for Emacs:
+;; One-stop AI module for Emacs providing:
 ;; - Copilot (inline ghost text) with GUI Super-key binds + TTY fallbacks
 ;; - Copilot Chat (side-panel agent)
 ;; - Aider (Aider UI; repo-aware diffs) via aider.el
-;; Keybindings avoid your existing map (C-;, C-c n/k/m/r/d/h/b/q/1/2, C-c p*, C-c C-*, etc.)
-;; and preserve Corfu's C-RET / M-RET.
+;; Keybindings avoid existing mappings and preserve Corfu's C-RET / M-RET.
 
 ;;; Code:
 
-;;;; Environment PATH for macOS GUI Emacs
+;; Environment PATH for macOS GUI Emacs
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns x))
   :ensure t
   :init (exec-path-from-shell-initialize))
 
-;; Helper to require an env var and set it in Emacs
-(defun require-env (var)
-  "Ensure VAR is set in the environment. Warn if missing."
+(defun vutr-ai--require-env (var)
+  "Ensure environment variable VAR is set in the environment.
+Warn if missing and return the value."
   (let ((val (getenv var)))
     (if val
         (setenv var val)
-      (warn "Environment variable %s is not set!" var))))
+      (warn "Environment variable %s is not set!" var))
+    val))
 
-;;;; COPILOT: inline AI autocomplete
+;; COPILOT: inline AI autocomplete
 (use-package copilot
   :ensure t
   :hook (prog-mode . copilot-mode)   ;; add text-mode if you want prose help
   :custom
   (copilot-indent-offset-warning-disable t))
 
-;; Simple toggle (doesn't clash with your map; also bound under C-c a t below)
-(defun vutr/copilot-toggle ()
-  "Toggle Copilot in current buffer."
+;;;###autoload
+(defun vutr-ai/copilot-toggle ()
+  "Toggle Copilot mode in current buffer."
   (interactive)
   (if (bound-and-true-p copilot-mode)
       (progn (copilot-mode -1) (message "Copilot: OFF"))
     (copilot-mode 1) (message "Copilot: ON")))
 
-;;;; COPILOT CHAT: side-panel "AI agent"
+;; COPILOT CHAT: side-panel "AI agent"
 (use-package copilot-chat
   :ensure t
   :commands (copilot-chat-display copilot-chat-ask copilot-chat-explain
-                                  copilot-chat-fix copilot-chat-review copilot-chat-open copilot-chat-reset)
+             copilot-chat-fix copilot-chat-review copilot-chat-open 
+             copilot-chat-reset)
   :init
   (setq copilot-chat-frontend 'shell-maker))  ;; default UI + streaming
 
-;;;; AIDER: Aider UI inside Emacs (repo-aware diff edits)
-;; Install aider.el from GitHub using straight.el or manual installation
-;; Prereq: `pipx install aider-chat` (or `pip install -U aider-chat`)
+;; AIDER: Aider UI inside Emacs (repo-aware diff edits)
+;; Prerequisite: `pipx install aider-chat` (or `pip install -U aider-chat`)
 (use-package aider
   :ensure t
   :config
@@ -57,23 +57,23 @@
   (global-auto-revert-mode 1)
   (auto-revert-mode 1))
 
-
-;;; ------------------------------------------------------------------------
-;;; --- Copilot guards for big/temp buffers ---
-(defun vutr/copilot-too-large-or-temp-p ()
+;; Copilot guards for big/temp buffers
+(defun vutr-ai--copilot-too-large-or-temp-p ()
+  "Return non-nil if current buffer should not use Copilot.
+Checks for buffer size, temporary buffers, and minibuffers."
   (or (> (buffer-size) 200000)
       (string-match-p "\\`\\*temp\\*" (buffer-name))
       (minibufferp)))
 
 (with-eval-after-load 'copilot
   (setq copilot-max-char 300000)  ;; optional; or remove if you prefer strict cutoff
-  (add-to-list 'copilot-disable-predicates #'vutr/copilot-too-large-or-temp-p))
+  (add-to-list 'copilot-disable-predicates #'vutr-ai--copilot-too-large-or-temp-p))
 
+;; Keybinding setup
 (define-prefix-command 'vutr-ai-map)
 (global-set-key (kbd "C-c a") 'vutr-ai-map)
-(define-key vutr-ai-map (kbd "t") #'vutr/copilot-toggle)
+(define-key vutr-ai-map (kbd "t") #'vutr-ai/copilot-toggle)
 (define-key vutr-ai-map (kbd "a") #'copilot-accept-completion)
-
 
 (provide 'vutr-ai)
 ;;; vutr-ai.el ends here

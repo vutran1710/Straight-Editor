@@ -1,34 +1,36 @@
-;;; package --- Summary:
+;;; vutr-clojure.el --- Clojure development environment setup -*- lexical-binding: t; -*-
+
 ;;; Commentary:
-;;; Clojure IDE setup
+;; Comprehensive Clojure IDE setup with CIDER, refactoring tools,
+;; syntax checking, and formatting capabilities.
+
 ;;; Code:
 
-;;; Custom config function
-(defun custom-clj-mode-hook ()
-  "Hook on clojure-mode."
+(defun vutr-clojure--mode-hook ()
+  "Hook function for clojure-mode setup."
   (yas-reload-all)
-		    (yas-minor-mode)
-		    (eldoc-mode)
-		    (aggressive-indent-mode)
-		    (clj-refactor-mode)
-		    (add-hook 'before-save-hook #'clj-mode-before-save-hook))
+  (yas-minor-mode)
+  (eldoc-mode)
+  (aggressive-indent-mode)
+  (clj-refactor-mode)
+  (add-hook 'before-save-hook #'vutr-clojure--before-save-hook nil t))
 
-(defun config-cider ()
-  "Setup cider."
-  (setq clojure-indent-style 'align-arguments)
-  (setq clojure-align-forms-automatically t)
-  (setq cider-repl-pop-to-buffer-on-connect nil)
-  (setq cider-repl-use-pretty-printing t)
-  (setq cider-repl-history-file ".cider-repl-history"
-	nrepl-log-messages t)
+(defun vutr-clojure--config-cider ()
+  "Configure CIDER settings for Clojure development."
+  (setq clojure-indent-style 'align-arguments
+        clojure-align-forms-automatically t
+        cider-repl-pop-to-buffer-on-connect nil
+        cider-repl-use-pretty-printing t
+        cider-repl-history-file ".cider-repl-history"
+        nrepl-log-messages t)
   (flycheck-clojure-setup))
 
-(defun clj-mode-before-save-hook ()
-  "Format clj file before save hook."
+(defun vutr-clojure--before-save-hook ()
+  "Format Clojure buffer before saving."
   (when (eq major-mode 'clojure-mode)
     (cider-format-buffer)))
 
-;;; Install packages
+;; Package installations and configurations
 (use-package clojure-mode
   :ensure t
   :config
@@ -54,8 +56,8 @@
   :ensure t
   :defer t
   :hook
-  (clojure-mode . custom-clj-mode-hook)
-  :config (config-cider))
+  (clojure-mode . vutr-clojure--mode-hook)
+  :config (vutr-clojure--config-cider))
 
 (use-package clj-refactor
   :ensure t
