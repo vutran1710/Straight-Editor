@@ -36,3 +36,4 @@ tree-sitter/
 *.env
 .aider*
 request/
+bookmarks
