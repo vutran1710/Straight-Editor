@@ -362,18 +362,6 @@
   :defer t
   :mode "docker-compose\\.*\\.yml\\'")
 
-;; Kubernetes management
-(use-package kubernetes
-  :ensure t
-  :defer t
-  :commands kubernetes-overview)
-
-;; Kubernetes YAML editing
-(use-package k8s-mode
-  :ensure t
-  :defer t
-  :mode "\\.\\(k8s\\|ya?ml\\)\\'")
-
 ;; Environment files
 (use-package dotenv-mode
   :ensure t
