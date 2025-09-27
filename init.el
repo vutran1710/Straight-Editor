@@ -6,15 +6,29 @@
 
 ;;; Code:
 
-;; Setup package repositories: ELPA & MELPA
-(require 'package)
+;; Disable package.el in favour of straight.el
+(setq package-enable-at-startup nil)
 
-(setq package-archives
-      '(("gnu"    . "https://elpa.gnu.org/packages/")
-        ("nongnu" . "https://elpa.nongnu.org/nongnu/")
-        ("melpa"  . "https://melpa.org/packages/")))
+;; Bootstrap straight.el
+(defvar bootstrap-version)
+(let* ((straight-base (expand-file-name "straight/repos/straight.el"
+                                        user-emacs-directory))
+       (bootstrap-file (expand-file-name "bootstrap.el" straight-base))
+       (bootstrap-version 6))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
 
-(package-initialize)
+;; Straight + use-package integration
+(setq straight-use-package-by-default t)
+(straight-use-package 'use-package)
+(require 'use-package)
+(setq-default custom-safe-themes t)
 
 ;; Start emacs-server
 (defun vutr--ensure-server-running ()
@@ -25,17 +39,10 @@
 
 (add-hook 'after-init-hook #'vutr--ensure-server-running)
 
-;; Install use-package
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(require 'use-package)
-(setq-default custom-safe-themes t)
-
 ;; Move all temp variables & settings to a separate file
 (setq custom-file (expand-file-name ".temp.el" user-emacs-directory))
-(load custom-file)
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 ;; Load main configuration
 (load-file "~/.emacs.d/vutr.el")
