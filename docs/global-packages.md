@@ -2,6 +2,8 @@
 
 This file summarizes the core UX stack, key bindings, and common commands from your Emacs `global-packages-setup.el`.
 
+> Package management is handled by [straight.el](https://github.com/radian-software/straight.el), so packages are cloned via Git on first launch and cached in `~/.emacs.d/straight/`.
+
 > Updated: 2025‑09‑18
 
 ---

@@ -21,6 +21,7 @@ A comprehensive, modular Emacs configuration designed for modern development wor
 - **Modular Architecture** - Clean separation across multiple configuration files
 - **Smart Completion** - Vertico + Orderless + Consult + Corfu stack
 - **Performance Optimized** - Guards against large buffers and resource usage
+- **Reproducible Packages** - Git-based installs managed through straight.el
 - **Cross-Platform** - Optimized for macOS with cross-platform compatibility
 
 ## 📁 Project Structure
@@ -65,7 +66,7 @@ A comprehensive, modular Emacs configuration designed for modern development wor
    cd ~/.emacs.d
    ```
 
-3. **Start Emacs** - packages install automatically on first run
+3. **Start Emacs** - packages install automatically on first run via straight.el
 
 ### AI Setup (Optional)
 
