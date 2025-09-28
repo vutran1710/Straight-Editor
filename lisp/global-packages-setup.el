@@ -207,24 +207,9 @@
   (beacon-mode 1))
 
 ;; Minimal mode line
-(use-package lambda-line
-  :straight (:type git :host github :repo "lambda-emacs/lambda-line")
-  :custom
-  (lambda-line-icon-time t) ;; requires ClockFace font (see below)
-  (lambda-line-clockface-update-fontset "ClockFaceRect") ;; set clock icon
-  (lambda-line-abbrev t) ;; abbreviate major modes
-  (lambda-line-hspace "  ")  ;; add some cushion
-  (lambda-line-prefix t) ;; use a prefix symbol
-  (lambda-line-prefix-padding nil) ;; no extra space for prefix
-  (lambda-line-status-invert nil)  ;; no invert colors
-  (lambda-line-gui-ro-symbol  " ⨂") ;; symbols
-  (lambda-line-gui-mod-symbol " ⬤")
-  (lambda-line-gui-rw-symbol  " ◯")
-  (lambda-line-space-top +.50)  ;; padding on top and bottom of line
-  (lambda-line-space-bottom -.50)
-  (lambda-line-symbol-position 0.1) ;; adjust the vertical placement of symbol
-  :config
-  (lambda-line-mode))
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
 
 ;;;;; Version Control and Projects
 
@@ -399,6 +384,11 @@
   :defer t
   :commands all-the-icons-install-fonts)
 
+(use-package nerd-icons
+  :ensure t
+  :defer t
+  :commands nerd-icons-install-fonts)
+
 ;; Color themes
 (use-package ayu-theme
   :ensure t
@@ -413,6 +403,10 @@
   :defer t)
 
 (use-package solo-jazz-theme
+  :ensure t
+  :defer t)
+
+(use-package monokai-pro-theme
   :ensure t
   :defer t)
 
