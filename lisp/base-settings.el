@@ -17,17 +17,17 @@
 (setq inhibit-startup-screen t)
 
 ;; Font & faces
-(set-face-attribute 'default nil :font "Monaco 13")
-(setq-default line-spacing 1)
+(set-face-attribute 'default nil :font "Courier 14")
+(setq-default line-spacing 4)
 (pixel-scroll-precision-mode t)
 
 ;; Opening-window-size
 (when (window-system)
-  (set-frame-size (selected-frame) 130 60)
+  (set-frame-size (selected-frame) 120 50)
   (set-frame-position (selected-frame) 50 30))
 
 ;; Calibrate emacs default settings
-(setq default-directory "/Users/vutran/Works/")
+(setq default-directory "~/Works/")
 (setq-default auto-save-default nil
               indent-tabs-mode nil
               make-backup-files nil

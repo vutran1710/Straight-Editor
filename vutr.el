@@ -21,7 +21,5 @@
 (require 'user-defined)
 (require 'keybindings)
 
-;; default theme
-(load-theme 'ayu-grey t)
-
+(provide 'vutr)
 ;;; vutr.el ends here
