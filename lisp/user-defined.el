@@ -122,13 +122,13 @@ Ease of use features:
   (when (featurep 'project)
     ;; Convenience prefix alongside the stock C-x p
     (define-key global-map (kbd "C-c p") project-prefix-map)
-    
+
     ;; Use Consult for project search & buffers
     (when (fboundp 'consult-ripgrep)
       (define-key project-prefix-map (kbd "s") #'consult-ripgrep))
     (when (fboundp 'consult-project-buffer)
       (define-key project-prefix-map (kbd "B") #'consult-project-buffer))
-    
+
     ;; Optional nicer "switch project" menu (Emacs 29+)
     (when (boundp 'project-switch-commands)
       (setq project-switch-commands
@@ -137,6 +137,29 @@ Ease of use features:
               (?b "Switch buffer"     project-switch-to-buffer)
               (?! "Shell"             project-shell)
               (?g "Magit status"      magit-status))))))
+
+;;;###autoload
+(defun vutr/rename-current-buffer-file (new-name)
+  "Rename the current buffer and its visited file to NEW-NAME.
+If NEW-NAME already exists, ask for confirmation before overwriting."
+  (interactive
+   (let ((name (buffer-name)))
+     (list (read-file-name "New name: " (file-name-directory name) name nil name))))
+  (let ((old-name (buffer-name))
+        (old-filename (buffer-file-name)))
+    (if (not old-filename)
+        (error "Buffer '%s' is not visiting a file" old-name)
+      (if (get-buffer new-name)
+          (error "A buffer named '%s' already exists" new-name)
+        (when (file-exists-p new-name)
+          (unless (yes-or-no-p (format "File '%s' already exists. Overwrite? " new-name))
+            (user-error "Rename canceled")))
+        (rename-file old-filename new-name 1)
+        (set-visited-file-name new-name)
+        (rename-buffer (file-name-nondirectory new-name))
+        (set-buffer-modified-p nil)
+        (message "Renamed '%s' to '%s'" old-name (buffer-name))))))
+
 
 (with-eval-after-load 'project
   (vutr--setup-project-keybindings))
