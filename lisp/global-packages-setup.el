@@ -406,9 +406,6 @@
   :ensure t
   :defer t)
 
-(use-package monokai-pro-theme
-  :ensure t
-  :defer t)
 
 (provide 'global-packages-setup)
 ;;; global-packages-setup.el ends here
